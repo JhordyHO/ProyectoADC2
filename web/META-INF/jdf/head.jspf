@@ -1,0 +1,30 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Bootstrap -->
+    <link href="recursos/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Font Awesome -->
+    <link href="recursos/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <!-- NProgress -->
+    <link href="recursos/vendors/nprogress/nprogress.css" rel="stylesheet" type="text/css"/>
+    <!-- Animate.css -->
+    <link href="recursos/vendors/animate.css/animate.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Custom Theme Style -->
+    <link href="recursos/build/css/custom.min.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- iCheck -->
+    <link href="recursos/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="recursos/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="recursos/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="recursos/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    
+    <!-- #FAVICONS-->
+    <link rel="shortcut icon" href="recursos/img/favicon/favicon2.ico" type="image/x-icon">
+    <link rel="icon" href="recursos/img/favicon/favicon2.ico" type="image/x-icon">
