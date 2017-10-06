@@ -98,7 +98,7 @@
                                                     <td>2630045/td>
                                                     <td>5</td>
                                                     <td>Muebles y enseres</td>
-                                                    <td>bueno</td>
+                                                    <td>Regular</td>
                                                     <td>30/05/2010</td>
                                                     <td>Se recibio en buen estado</td>
                                                     <td><button type="button" class="btn btn-success">Editar</button></td>
@@ -111,7 +111,7 @@
                                                     <td>362508/td>
                                                     <td>5</td>
                                                     <td>	Equipos de Informatica</td>
-                                                    <td>bueno</td>
+                                                    <td>Malo</td>
                                                     <td>30/05/2016</td>
                                                     <td>Se recibio en buen estado</td>
                                                     <td><button type="button" class="btn btn-success">Editar</button></td>

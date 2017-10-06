@@ -67,11 +67,11 @@
                                                 </li>
                                             </ul>
 
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit m-right-xs"></i>Actualizar</button>
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-upload m-right-xs"></i>Registrar</button>
+                                            <button class="btn btn-success" data-toggle="modal" data-target="#modal1"><i class="fa fa-edit m-right-xs"></i>Actualizar</button>
+                                            <button class="btn btn-success" data-toggle="modal" data-target="#modal2"><i class="fa fa-upload m-right-xs"></i>Registrar</button>
                                             <br />
                                         </div>
-                                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal fade bs-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
 
@@ -79,6 +79,84 @@
                                                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                         </button>
                                                         <h4 class="modal-title" id="myModalLabel">Registrar</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="form-horizontal form-label-left" novalidate>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Paterno <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Materno <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Fecha Cumpleaños <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Telefono <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Dirección <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Email <span class="required">*</span>
+                                                                </label> 
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" class="btn btn-primary">Guardar</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <!--modal 2-->
+                                           <div class="modal fade bs-example-modal-lg" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                        </button>
+                                                        <h4 class="modal-title" id="myModalLabel">Actualizar</h4>
                                                     </div>
                                                     <div class="modal-body">
                                                         <form class="form-horizontal form-label-left" novalidate>

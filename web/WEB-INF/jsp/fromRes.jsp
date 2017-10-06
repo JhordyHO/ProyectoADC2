@@ -47,93 +47,113 @@
                                         </ul>
                                         <div class="clearfix"></div>
                                     </div>
-                                     <form class="form-horizontal form-label-left" novalidate>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Paterno <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Materno <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Fecha Cumpleaños <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="date" id="number" name="number" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Telefono <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="occupation" type="number" name="occupation" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Dirección <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Email <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Nombre Usuario <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Contraseña <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Departamento <span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                     <footer>
-                        <div class="pull-right">
-                            Ingenieria de Sistemas Upeu © 2017 <a href="#">Svep Desing 1.0</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </footer>
-                </div>
-            </div>
-            <%@include file="../../META-INF/jdf/footer.jspf" %>
-    </body>
-</html>
+                                    <form class="form-horizontal form-label-left" novalidate>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Paterno <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Materno <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Fecha de Cumpleaños<span class="required">*</span></label>
+                                            <div class="input-group date col-md-6 col-sm-6 col-xs-12 " id='myDatepicker2'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Telefono <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="occupation" type="number" name="occupation" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Dirección <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Email <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 ">Rol</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select class="select2_single form-control" tabindex="-1">
+                                                    <option></option>
+                                                    <option value="AK">Administrador</option>
+                                                    <option value="HI">Docente</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 ">Departamento</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select class="select2_single form-control" tabindex="-1">
+                                                    <option></option>
+                                                    <option value="AK">Administrador</option>
+                                                    <option value="HI">Docente</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Nombre Usuario <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="#">Contraseña <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="password" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="modal-footer" style="text-align:center">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </form>
+                                    <footer>
+                                        <div class="pull-right">
+                                            Ingenieria de Sistemas Upeu © 2017 <a href="#">Svep Desing 1.0</a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </footer>
+                                </div>
+                            </div>
+                            <%@include file="../../META-INF/jdf/footer.jspf" %>
+                            </body>
+                            </html>
