@@ -62,9 +62,9 @@
                                             <thead>
                                                 <tr>
                                                     <th data-hide="phone">ID</th>
-                                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre del Mobiliario</th>
-                                                    <th data-hide="phone">Marca del Mobiliario</th>
-                                                    <th data-hide="phone">Numero de Serie del Mobiliario</th>
+                                                    <th data-hide="expand">Nombre Mobiliario</th>
+                                                    <th data-hide="phone">Marca Mobiliario</th>
+                                                    <th data-hide="phone">Numero de Serie Mobiliario</th>
                                                     <th data-hide="phone">Cantidad</th>
                                                     <th data-hide="phone">Categoria</th>
                                                     <th data-hide="phone">Estado</th>
