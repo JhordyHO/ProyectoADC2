@@ -24,7 +24,28 @@
     <link href="recursos/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="recursos/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    
+     <!-- Datatables -->
+    <link href="recursos/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="recursos/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="recursos/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="recursos/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="recursos/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
     <!-- #FAVICONS-->
     <link rel="shortcut icon" href="recursos/img/favicon/favicon2.ico" type="image/x-icon">
     <link rel="icon" href="recursos/img/favicon/favicon2.ico" type="image/x-icon">
+     <!-- bootstra    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+p-daterangepicker -->
+    <link href="recursos/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href="recursos/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="recursos/vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="recursos/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="recursos/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+     <!-- Bootstrap Colorpicker -->
+    <link href="recursos/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+    <link href="recursos/vendors/cropper/dist/cropper.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="recursos/build/css/custom.min.css" rel="stylesheet">

@@ -30,15 +30,15 @@
                   <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="Rtesorera">Perfil</a></li>
-                      <li><a href="index2.html">Modificar User y Clave</a></li>
+                      <li><a href="Cpass">Modificar User y Clave</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">Responsables</a></li>
-                      <li><a href="form_advanced.html">Departamentos</a></li>
-                      <li><a href="form_validation.html">Mobiliarios</a></li>
-                      <li><a href="form_wizards.html">Categorias</a></li>
+                      <li><a href="Rresponsable">Responsables</a></li>
+                      <li><a href="Rdepar">Departamentos</a></li>
+                      <li><a href="Rmobiliario">Mobiliarios</a></li>
+                      <li><a href="Rcate">Categorias</a></li>
                     </ul>
                   </li>
                   <li><a><i class   ="fa fa-desktop"></i> Consultar Mobiliarios <span class="fa fa-chevron-down"></span></a>

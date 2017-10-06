@@ -29,5 +29,25 @@ public class HomeController {
     public String Rtesorera(){  
         return "Rtesorera";
     }
+    @RequestMapping("/Cpass")
+    public String Cpass(){  
+        return "Cpass";
+    }
+    @RequestMapping("/Rresponsable")
+    public String Rresponsable(){  
+        return "Rresponsable";
+    }
+    @RequestMapping("/Rdepar")
+    public String Rdepar(){  
+        return "Rdepar";
+    }
+    @RequestMapping("/Rmobiliario")
+    public String Rmobiliario(){  
+        return "Rmobiliario";
+    }
+    @RequestMapping("/Rcate")
+    public String Rcate(){  
+        return "Rcate";
+    }
    
 }
