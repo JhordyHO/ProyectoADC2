@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Rmobiliario
-    Created on : 05/10/2017, 01:46:45 PM
+    Document   : roles
+    Created on : 06/10/2017, 12:01:49 PM
     Author     : LENOVO
 --%>
 
@@ -21,7 +21,7 @@
                     <div class="">
                         <div class="page-title">
                             <div class="title_left">
-                                <h3>Resgistrar Mobiliario</h3>
+                                <h3>Resgistrar Rol</h3>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -49,27 +49,48 @@
                                     </div>
                                     <!-- main -->
                                     <!-- modal -->
-                                    <a href="fromMob" class="btn btn-success" ><i class="fa fa-edit m-right-xs"></i>Agregar</a>
-                                    
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
+                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">Agregar Nuevo Rol</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="form-horizontal form-label-left" novalidate>
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                    <button type="button" class="btn btn-primary">Guardar</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!--end modal -->
                                     <div class="x_content">
                                         <h1 class="text-muted font-13 m-b-30">
-                                           Lista de Mobiliarios
+                                           Lista de Rol
                                         </h1>
                                         <br>
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th data-hide="phone">ID</th>
-                                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre del Mobiliario</th>
-                                                    <th data-hide="phone">Marca del Mobiliario</th>
-                                                    <th data-hide="phone">Numero de Serie del Mobiliario</th>
-                                                    <th data-hide="phone">Cantidad</th>
-                                                    <th data-hide="phone">Categoria</th>
-                                                    <th data-hide="phone">Estado</th>
-                                                    <th data-hide="phone">Fecha Registro</th>
-                                                    <th data-hide="phone">Comentario</th>
+                                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre</th>
                                                     <th data-hide="phone">Editar</th>
                                                     <th data-hide="phone">Borrar</th>
                                                 </tr>
@@ -80,40 +101,19 @@
 
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Laptop</td>
-                                                    <td>toshiba</td>
-                                                    <td>55214628</td>
-                                                    <td>5</td>
-                                                    <td>Maquinas y Equipos Diversos</td>
-                                                    <td>bueno</td>
-                                                    <td>30/05/2007</td>
-                                                    <td>Se recibio en buen estado</td>
+                                                    <td>Docente</td>
                                                     <td><button type="button" class="btn btn-success">Editar</button></td>
                                                     <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Escritorios</td>
-                                                    <td>mova</td>
-                                                    <td>2630045/td>
-                                                    <td>5</td>
-                                                    <td>Muebles y enseres</td>
-                                                    <td>bueno</td>
-                                                    <td>30/05/2010</td>
-                                                    <td>Se recibio en buen estado</td>
+                                                    <td>Administrador</td>
                                                     <td><button type="button" class="btn btn-success">Editar</button></td>
                                                     <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>TV</td>
-                                                    <td>noc</td>
-                                                    <td>362508/td>
-                                                    <td>5</td>
-                                                    <td>	Equipos de Informatica</td>
-                                                    <td>bueno</td>
-                                                    <td>30/05/2016</td>
-                                                    <td>Se recibio en buen estado</td>
+                                                    <td>Tesorera</td>
                                                     <td><button type="button" class="btn btn-success">Editar</button></td>
                                                     <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                                                 </tr>
@@ -137,3 +137,4 @@
             <%@include file="../../META-INF/jdf/footer.jspf" %>
     </body>
 </html>
+

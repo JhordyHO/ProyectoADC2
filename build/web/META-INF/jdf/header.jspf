@@ -35,17 +35,17 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="Rresponsable">Responsables</a></li>
+                      <li><a href="fromRes">Responsables</a></li>
                       <li><a href="Rdepar">Departamentos</a></li>
-                      <li><a href="Rmobiliario">Mobiliarios</a></li>
+                      <li><a href="fromMob">Mobiliarios</a></li>
                       <li><a href="Rcate">Categorias</a></li>
+                      <li><a href="roles">Roles</a></li>
                     </ul>
                   </li>
                   <li><a><i class   ="fa fa-desktop"></i> Consultar Mobiliarios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="general_elements.html">Listar Mobiliario</a></li>
-                      <li><a href="media_gallery.html">Listar Responsables</a></li>
-                      <li><a href="typography.html">Mobiliarios en Bajas</a></li>
+                      <li><a href="Rmobiliario">Listar Mobiliario</a></li>
+                      <li><a href="Rresponsable">Listar Responsables</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-file-text-o"></i> Reporte General <span class="fa fa-chevron-down"></span></a>

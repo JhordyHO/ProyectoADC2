@@ -49,5 +49,21 @@ public class HomeController {
     public String Rcate(){  
         return "Rcate";
     }
+    @RequestMapping("/Cmobiliario")
+    public String Cmobiliario(){  
+        return "Cmobiliario";
+    }
+    @RequestMapping("/fromRes")
+    public String fromRes(){  
+        return "fromRes";
+    }
+    @RequestMapping("/fromMob")
+    public String fromMob(){  
+        return "fromMob";
+    }
+     @RequestMapping("/roles")
+    public String roles(){  
+        return "roles";
+    }
    
 }

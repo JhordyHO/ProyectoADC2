@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Rmobiliario
-    Created on : 05/10/2017, 01:46:45 PM
+    Document   : Cmobiliario
+    Created on : 06/10/2017, 10:32:05 AM
     Author     : LENOVO
 --%>
 
@@ -21,7 +21,7 @@
                     <div class="">
                         <div class="page-title">
                             <div class="title_left">
-                                <h3>Resgistrar Mobiliario</h3>
+                                <h3>Consultar Mobiliario </h3>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -48,14 +48,10 @@
                                         <div class="clearfix"></div>
                                     </div>
                                     <!-- main -->
-                                    <!-- modal -->
-                                    <a href="fromMob" class="btn btn-success" ><i class="fa fa-edit m-right-xs"></i>Agregar</a>
-                                    
-
-                                    <!--end modal -->
+                                   
                                     <div class="x_content">
                                         <h1 class="text-muted font-13 m-b-30">
-                                           Lista de Mobiliarios
+                                            Lista de Mobiliarios
                                         </h1>
                                         <br>
                                         <table id="datatable" class="table table-striped table-bordered">
@@ -70,8 +66,9 @@
                                                     <th data-hide="phone">Estado</th>
                                                     <th data-hide="phone">Fecha Registro</th>
                                                     <th data-hide="phone">Comentario</th>
-                                                    <th data-hide="phone">Editar</th>
-                                                    <th data-hide="phone">Borrar</th>
+                                                    <th data-hide="phone">Accion 1</th>
+                                                    <th data-hide="phone">Accion 2</th>
+                                                    <th data-hide="phone">Accion 3</th>
                                                 </tr>
                                             </thead>
 
@@ -88,8 +85,9 @@
                                                     <td>bueno</td>
                                                     <td>30/05/2007</td>
                                                     <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                                                    <td><button type="button" class="btn btn-success">Bueno</button></td>
+                                                    <td><button type="button" class="btn btn-success">Regular</button></td>
+                                                    <td><button type="button" class="btn btn-danger">Malo</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
@@ -101,8 +99,9 @@
                                                     <td>bueno</td>
                                                     <td>30/05/2010</td>
                                                     <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                                                  <td><button type="button" class="btn btn-success">Bueno</button></td>
+                                                    <td><button type="button" class="btn btn-success">Regular</button></td>
+                                                    <td><button type="button" class="btn btn-danger">Malo</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
@@ -114,8 +113,9 @@
                                                     <td>bueno</td>
                                                     <td>30/05/2016</td>
                                                     <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                                                   <td><button type="button" class="btn btn-success">Bueno</button></td>
+                                                    <td><button type="button" class="btn btn-success">Regular</button></td>
+                                                    <td><button type="button" class="btn btn-danger">Malo</button></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -137,3 +137,4 @@
             <%@include file="../../META-INF/jdf/footer.jspf" %>
     </body>
 </html>
+
