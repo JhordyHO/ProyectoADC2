@@ -77,7 +77,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 ">Estado</label>
+                                            <label class="control-label col-md-3 col-sm-3 ">Estado <span class="required">*</span>
+                                            </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="select2_single form-control" tabindex="-1">
                                                     <option></option>
@@ -88,7 +89,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 ">Categoria</label>
+                                            <label class="control-label col-md-3 col-sm-3 ">Categoria<span class="required">*</span>
+                                            </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="select2_single form-control" tabindex="-1">
                                                     <option></option>
@@ -110,7 +112,8 @@
                                         </div>
                                         -->
                                         <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 " for="message">Comentario :</label>
+                                        <label class="control-label col-md-3 col-sm-3 ">Comentario <span class="required">*</span>
+                                        </label>
                                         <textarea class="col-md-6 col-sm-6 col-xs-12" id="message" required="required" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
                                                   data-parsley-validation-threshold="10"></textarea>
                                         </div>

@@ -69,20 +69,18 @@
                                                 <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Fecha de Cumpleaños<span class="required">*</span></label>
-                                            <div class="input-group date col-md-6 col-sm-6 col-xs-12 " id='myDatepicker2'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
+                                         <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Fecha de Cumpleaños <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="date" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+                                                <input type="number" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
                                             </div>
                                         </div>
                                         <div class="item form-group">
@@ -107,7 +105,8 @@
                                             </div>
                                         </div>
                                          <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 ">Rol</label>
+                                            <label class="control-label col-md-3 col-sm-3 ">Rol<span class="required">*</span>
+                                            </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="select2_single form-control" tabindex="-1">
                                                     <option></option>
@@ -117,7 +116,8 @@
                                             </div>
                                         </div>
                                          <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 ">Departamento</label>
+                                            <label class="control-label col-md-3 col-sm-3 ">Departamento<span class="required">*</span>
+                                            </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="select2_single form-control" tabindex="-1">
                                                     <option></option>

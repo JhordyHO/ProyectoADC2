@@ -62,9 +62,7 @@
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Apellido Paterno</th>
-                                                    <th>Apellido Materno</th>
+                                                    <th>Nombre Apellido</th>
                                                     <th>Fecha Cumpleaños</th>
                                                     <th>DNI</th>
                                                     <th>Telefono</th>
@@ -72,7 +70,7 @@
                                                     <th data-hide="phone">Correo Electronico</th>
                                                     <th data-hide="phone">Nombre Usuario</th>
                                                     <th data-hide="phone">Contraseña</th>
-                                                    <th data-hide="phone">Repite Contraseña</th>
+                                                    <th data-hide="phone">Rol</th>
                                                     <th data-hide="phone">Departamento</th>
                                                     <th data-hide="phone">Editar</th>
                                                     <th data-hide="phone">Borrar</th>
@@ -83,9 +81,7 @@
                                             <tbody>
 
                                                 <tr>
-                                                            <td>Manuel</td>
-                                                            <td>Perez</td>
-                                                            <td>Ruiz</td>
+                                                            <td>Manuel Perez Ruiz</td>
                                                             <td>30/08/1994</td>
                                                             <td>75002466</td>
                                                             <td>014523689</td>
@@ -93,15 +89,13 @@
                                                             <td>Manuel@gmail.com</td>
                                                             <td>Manuel</td>
                                                             <td>manuel0011</td>
-                                                            <td>manuel0011</td>
+                                                            <td>Administrador</td>
                                                             <td>Primaria</td>
                                                             <td><button type="button" class="btn btn-success">Editar</button></td>
                                                             <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                                                 </tr>
                                                   <tr>
-                                                            <td>Pedro</td>
-                                                            <td>zabala</td>
-                                                            <td>Venegas</td>
+                                                            <td>Pedro zabala Venegas</td>
                                                             <td>15/05/1856</td>
                                                             <td>070028566</td>
                                                             <td>015234856</td>
@@ -109,15 +103,13 @@
                                                             <td>pedro@gmail.com</td>
                                                             <td>pedro</td>
                                                             <td>predro1550</td>
-                                                            <td>predro1550</td>
+                                                            <td>Docente</td>
                                                             <td>inicial</td>
                                                             <td><button type="button" class="btn btn-success">Editar</button></td>
                                                             <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td>juan</td>
-                                                            <td>zabala</td>
-                                                            <td>rodrigues</td>
+                                                           <td>Juan zabala rodrigues</td>
                                                             <td>10/03/1686</td>
                                                             <td>071528566</td>
                                                             <td>015215856</td>
@@ -125,7 +117,7 @@
                                                             <td>juan@gmail.com</td>
                                                             <td>juan</td>
                                                             <td>juan5050</td>
-                                                            <td>juan5050</td>
+                                                            <td>docente</td>
                                                             <td>Primer Grado</td>
                                                             <td><button type="button" class="btn btn-success">Editar</button></td>
                                                             <td><button type="button" class="btn btn-danger">Eliminar</button></td>
