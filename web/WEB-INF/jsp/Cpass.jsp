@@ -71,8 +71,6 @@
                                         <br>
                                         <br>
                                         <br>
-                                        <br>
-                                        <br>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
                                             <form class="form-horizontal form-label-left" novalidate>
                                                 <div class="item form-group">
