@@ -278,6 +278,7 @@
                     </footer>
                 </div>
             </div>
+        </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
     </body>
 </html>

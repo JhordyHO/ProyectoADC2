@@ -31,7 +31,7 @@
                 <input type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                  <center><a class="btn btn-default submit" href="principal">Log in</a></center>
+                  <center><a class="btn btn-info" href="principal2">Log in</a></center>
               </div>
 
               <div class="clearfix"></div>

@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-    
+    //mapeo del login
    @RequestMapping("/login")
     public String index(Model model){
     //model.addAttribute("user", "jose Rayo");
         return "login";
     }
+    //pagina del admin- mapeo
    @RequestMapping("/principal")
     public String index(){  
         return "principal";
@@ -65,5 +66,36 @@ public class HomeController {
     public String roles(){  
         return "roles";
     }
-   
+    // fin de mapeo admin----
+    
+    //mapeo del docente-------
+    @RequestMapping("/principal2")
+    public String principal2(){
+        return "principal2";
+    }
+    @RequestMapping("/Rdocente")
+    public String Rdocente(){
+        return "Rdocente";
+    }
+     @RequestMapping("/Cpass2")
+    public String Cpass2(){
+        return "Cpass2";
+    }
+    @RequestMapping("/fromMob2")
+    public String fromMob2() {
+        return "fromMob2";
+    }
+
+    @RequestMapping("/Rmobiliario2")
+    public String Rmobiliario2() {
+        return "Rmobiliario2";
+    }
+    @RequestMapping("/Rmobiliario3")
+    public String Rmobiliario3() {
+        return "Rmobiliario3";
+    }
+      @RequestMapping("/CmobiliarioBja")
+    public String CmobiliarioBja() {
+        return "CmobiliarioBja";
+    }
 }
