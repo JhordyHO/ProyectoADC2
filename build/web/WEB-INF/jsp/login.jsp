@@ -22,7 +22,7 @@
         <div class="animate form login_form">
           <section class="login_content">
               
-              <form>
+            <form id="#" data-parsley-validate class="form-horizontal form-label-left">
               <h1> Sistema de Inventario </h1>
               <div>
                 <input type="text" class="form-control" placeholder="Username" required="" />
