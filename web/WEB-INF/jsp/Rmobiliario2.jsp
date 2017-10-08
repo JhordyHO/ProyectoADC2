@@ -48,9 +48,6 @@
                                         <div class="clearfix"></div>
                                     </div>
                                     <!-- main -->
-                                    <!-- modal -->
-                                    <a href="fromMob2" class="btn btn-success" ><i class="fa fa-edit m-right-xs"></i>Agregar</a>
-                                    <!--end modal -->
                                     <div class="x_content">
                                         <h1 class="text-muted font-13 m-b-30">
                                            Lista de Mobiliarios
