@@ -54,10 +54,6 @@ public class HomeController {
     public String Cmobiliario(){  
         return "Cmobiliario";
     }
-    @RequestMapping("/fromRes")
-    public String fromRes(){  
-        return "fromRes";
-    }
     @RequestMapping("/fromMob")
     public String fromMob(){  
         return "fromMob";

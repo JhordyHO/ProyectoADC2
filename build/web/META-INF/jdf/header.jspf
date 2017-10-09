@@ -35,7 +35,7 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fromRes">Responsables</a></li>
+                      <li><a href="Rresponsable">Responsables</a></li>
                       <li><a href="Rdepar">Departamentos</a></li>
                       <li><a href="fromMob">Mobiliarios</a></li>
                       <li><a href="Rcate">Categorias</a></li>
