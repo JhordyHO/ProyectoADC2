@@ -16,12 +16,12 @@
         <div class="container body"> 
             <div class="main_container">
                 <%@include file="../../META-INF/jdf/header.jspf"%>
-                <!-- page content -->
+               <!-- page content -->
                 <div class="right_col" role="main">
                     <div class="">
                         <div class="page-title">
                             <div class="title_left">
-                                <h3>Resgistrar Mobiliario</h3>
+                                <h3>Mobiliario en Baja</h3>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -48,10 +48,7 @@
                                         <div class="clearfix"></div>
                                     </div>
                                     <!-- main -->
-                                    <!-- modal -->
-                                    <a href="fromMob" class="btn btn-success" ><i class="fa fa-edit m-right-xs"></i>Agregar</a>
-                                    
-
+    
                                     <!--end modal -->
                                     <div class="x_content">
                                         <h1 class="text-muted font-13 m-b-30">
@@ -67,11 +64,8 @@
                                                     <th data-hide="phone">Numero de Serie Mobiliario</th>
                                                     <th data-hide="phone">Cantidad</th>
                                                     <th data-hide="phone">Categoria</th>
-                                                    <th data-hide="phone">Estado</th>
-                                                    <th data-hide="phone">Fecha Registro</th>
+                                                    <th data-hide="phone">Fecha Baja</th>
                                                     <th data-hide="phone">Comentario</th>
-                                                    <th data-hide="phone">Editar</th>
-                                                    <th data-hide="phone">Borrar</th>
                                                 </tr>
                                             </thead>
 
@@ -83,39 +77,30 @@
                                                     <td>Laptop</td>
                                                     <td>toshiba</td>
                                                     <td>55214628</td>
-                                                    <td>5</td>
+                                                    <td>2</td>
                                                     <td>Maquinas y Equipos Diversos</td>
-                                                    <td>bueno</td>
                                                     <td>30/05/2007</td>
-                                                    <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                                                    <td>Se encontro roto</td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
                                                     <td>Escritorios</td>
                                                     <td>mova</td>
                                                     <td>2630045/td>
-                                                    <td>5</td>
+                                                    <td>1</td>
                                                     <td>Muebles y enseres</td>
-                                                    <td>Regular</td>
                                                     <td>30/05/2010</td>
-                                                    <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                                                    <td>La pata de la mesa en mal estado</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
                                                     <td>TV</td>
                                                     <td>noc</td>
                                                     <td>362508/td>
-                                                    <td>5</td>
-                                                    <td>	Equipos de Informatica</td>
-                                                    <td>Malo</td>
+                                                    <td>3</td>
+                                                    <td>Equipos de Informatica</td>
                                                     <td>30/05/2016</td>
-                                                    <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                                                    <td>Pantalla rota</td>
                                                 </tr>
                                             </tbody>
                                         </table>

@@ -44,8 +44,7 @@
                   </li>
                   <li><a><i class   ="fa fa-desktop"></i> Consultar Mobiliarios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="Rmobiliario">Listar Mobiliario</a></li>
-                      <li><a href="Rresponsable">Listar Responsables</a></li>
+                      <li><a href="Rmobiliario">Mobiliarios en Baja</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-file-text-o"></i> Reporte General <span class="fa fa-chevron-down"></span></a>

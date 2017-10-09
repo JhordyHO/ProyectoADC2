@@ -96,6 +96,7 @@
                                                 </div>
                                             </form>
                                         </div>
+                                        <!--termina reporte--->
                                     </div>
                                 </div>
                             </div>

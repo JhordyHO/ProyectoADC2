@@ -67,14 +67,20 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <!--Empieza reportes-->
+                                         <!--Empieza reportes-->
                                         <br>
                                         <br>
                                         <br>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
                                             <form class="form-horizontal form-label-left" novalidate>
                                                 <div class="item form-group">
-                                                    <center><h2>Ingrese su nueva Contraseña</h2></center><br>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Usuario<span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="item form-group">
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Contraseña <span class="required">*</span>
                                                     </label>
                                                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -90,6 +96,7 @@
                                                 </div>
                                             </form>
                                         </div>
+                                        <!--termina reporte--->
                                     </div>
                                 </div>
                             </div>
