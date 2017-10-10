@@ -14,24 +14,22 @@
                 <img src="recursos/img/user2.PNG" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Administrador</span>
-                <h2>Erika Hurtado</h2>
+                  <a href="#" style="color: white;"><i class="fa fa-circle text-success"></i></a>
+                  <span>Administrador</span>   
+                  <h2>Erika Hurtado</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
-
             <br />
-
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="Rtesorera">Perfil</a></li>
-                      <li><a href="Cpass">Modificar User y Clave</a></li>
-                    </ul>
+                  <li><a a href="Rtesorera"><i class="fa fa-user"></i> Perfil</a>
+                   <!-- <ul class="nav child_menu">
+                      <li><a href="Rtesorera">Perfil</a></li> 
+                    </ul>-->
                   </li>
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">

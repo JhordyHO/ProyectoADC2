@@ -67,8 +67,8 @@
                                                 </li>
                                             </ul>
 
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#modal1"><i class="fa fa-edit m-right-xs"></i>Actualizar</button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#modal2"><i class="fa fa-upload m-right-xs"></i>Registrar</button>
+                                            <button class="btn btn-success" data-toggle="modal" data-target="#modal1"><i class="fa fa-edit m-right-xs"></i>EditarDatos</button>
+                                            <button class="btn btn-success" data-toggle="modal" data-target="#modal2"><i class="fa fa-edit m-right-xs"></i>EditarUser</button>
                                             <br />
                                         </div>
                                         <div class="modal fade bs-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -83,56 +83,14 @@
                                                     <div class="modal-body">
                                                         <form class="form-horizontal form-label-left" novalidate>
                                                             <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Usuario<span class="required">*</span>
                                                                 </label> 
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                                     <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                                 </div>
                                                             </div>
                                                             <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Paterno <span class="required">*</span>
-                                                                </label> 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Materno <span class="required">*</span>
-                                                                </label> 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Fecha Cumpleaños <span class="required">*</span>
-                                                                </label> 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>
-                                                                </label> 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Telefono <span class="required">*</span>
-                                                                </label> 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Dirección <span class="required">*</span>
-                                                                </label> 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Email <span class="required">*</span>
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Contraseña <span class="required">*</span>
                                                                 </label> 
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                                     <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">

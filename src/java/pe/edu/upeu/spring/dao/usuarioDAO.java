@@ -1,0 +1,75 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pe.edu.upeu.spring.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+import pe.edu.upeu.spring.interfaces.Operaciones;
+import pe.edu.upeu.spring.model.usuarios;
+import pe.edu.upeu.spring.util.Conexion;
+
+/**
+ *
+ * @author Jose Rayo
+ */
+public class usuarioDAO implements Operaciones<usuarios>{
+     private PreparedStatement ps;
+    private ResultSet rs;
+    private Connection conex;
+    private final static String SQL_VALIDA = "SELECT *FROM usuario WHERE user=? AND clave=?";
+    private final static String SQL_VALIDA2 = "SELECT *FROM usuario WHERE user=?";
+    private final static String SQL_CREATE = "INSERT INTO usuario (user, clave) VALUES (?, ?)";
+    private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
+    private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
+    private final static String SQL_SEARCH = "SELECT *FROM usuario WHERE user=?";
+    private final static String SQL_READALL = "SELECT *FROM usuario";
+    private final static String SQL_BUSCAR = "SELECT *FROM usuario WHERE idusuario=?";
+    
+     public int validar(String user, String clave){
+        int op=0;
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_VALIDA);
+            ps.setString(1, user);
+            ps.setString(2, clave);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                op = 1;
+            }
+        } catch (Exception e) {
+            System.out.println("Error: "+e);
+        }
+        return op;
+    }
+
+    @Override
+    public int create(usuarios d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int update(usuarios d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int delete(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<usuarios> readAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<usuarios> buscar(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}

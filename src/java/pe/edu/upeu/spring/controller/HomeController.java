@@ -15,12 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-    //mapeo del login
-   @RequestMapping("/login")
-    public String index(Model model){
-    //model.addAttribute("user", "jose Rayo");
-        return "login";
-    }
+
     //pagina del admin- mapeo
    @RequestMapping("/principal")
     public String index(){  
