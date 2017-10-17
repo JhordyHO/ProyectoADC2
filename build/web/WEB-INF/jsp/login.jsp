@@ -21,13 +21,13 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <form action="principal" method="post">
+                <form action="log" method="post">
                     <h1> Sistema de Inventario </h1>
                     <div>
-                        <input type="text" class="form-control" placeholder="Username" required="required" />
+                        <input type="text" name="user" class="form-control" placeholder="Username" required="required" />
                     </div>
                     <div>
-                        <input type="password" class="form-control" placeholder="Password" required="required" />
+                        <input type="password" name="clave" class="form-control" placeholder="Password" required="required" />
                     </div>
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

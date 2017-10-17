@@ -5,7 +5,9 @@
  */
 package pe.edu.upeu.spring.interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -17,4 +19,5 @@ public interface Operaciones<Entidad> {
     public int delete(int id);
     public List<Entidad> readAll();
     public List<Entidad> buscar(int id);
+    public ArrayList<Map<String, Object>> listar();
 }

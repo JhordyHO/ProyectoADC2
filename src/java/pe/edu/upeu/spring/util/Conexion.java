@@ -7,14 +7,16 @@ package pe.edu.upeu.spring.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
  * @author Jose Rayo
  */
 public class Conexion {
-    private static final String URL = "jdbc:mysql://localhost:3306/bdprueba?zeroDateTimeBehavior=convertToNull";
+    private static final String URL = "jdbc:mysql://localhost:3306/dbsvep?zeroDateTimeBehavior=convertToNull";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String USER = "root";
     private static final String PASS = "";
@@ -28,6 +30,27 @@ public class Conexion {
             }
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error: "+e);
+        }
+        return cx;
+    }
+     public ResultSet query(String sql) {
+
+        Statement st;
+        ResultSet rs = null;
+        try {
+            Connection conexion = this.getConexion();
+            st = conexion.createStatement();
+            rs = st.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rs;
+    }
+
+    public static Connection cerrar() {
+        if (cx != null) {
+            cx = null;
         }
         return cx;
     }
