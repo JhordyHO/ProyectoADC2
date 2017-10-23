@@ -71,7 +71,7 @@ public class rolesDAO implements Operaciones<roles>{
             ps.setObject(1, idrol);
             rs = ps.executeQuery();
             while (rs.next()) {
-                dto.put("NOMB_ROL",rs.getObject("nombre_Rol"));
+                dto.put("nombre_Rol",rs.getObject("nombre_Rol"));
                 lista.add(dto);
             }
         } catch (Exception ex) {

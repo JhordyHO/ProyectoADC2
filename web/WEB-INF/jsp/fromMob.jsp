@@ -3,7 +3,7 @@
     Created on : 06/10/2017, 11:49:52 AM
     Author     : LENOVO
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,13 @@
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
     </head>
+    <style>
+        #pai div
+        {
+            display: none;
+        }
+        
+    </style>
     <body class="nav-md">
         <div class="container body"> 
             <div class="main_container">
@@ -49,8 +56,8 @@
                                     </div>
                                     <!-- main -->
                                     <!-- modal -->
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
-                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                               <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
+                                                                   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
 
@@ -61,23 +68,46 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form class="form-horizontal form-label-left" novalidate>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoría</label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select id="select" class="form-control">
+                                                                    <option>Escoje una Opcion</option>
+                                                                    <option>Muebles y Utiles</option>
+                                                                    <option>Maquinas y Equipos Diversos</option>
+                                                                    <option value="3">Equipos de Informatica</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div id="pai">
+                                                            <div id="3" class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres</label>
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <select id="select" class="form-control">
+                                                                        <option>Escoje una Opcion</option>
+                                                                        <option>PC1</option>
+                                                                        <option>PC2</option>
+                                                                        <option>Mouse</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre Mobiliario<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Marca Mobiliario<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Marca<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
-
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Numero de Serie Mobiliario<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Serie<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
@@ -91,24 +121,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoria</label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <select class="form-control">
-                                                                    <option>Esjo una Opcion</option>
-                                                                    <option>Maquinas y Equipos Diversos</option>
-                                                                    <option>Muebles y enseres</option>
-                                                                    <option>	Equipos de Informatica</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select class="form-control">
                                                                     <option>Esjo una Opcion</option>
                                                                     <option>Bueno</option>
-                                                                    <option> Regular</option>
-                                                                    <option>Malo</option>
+                                                                    <option>Regular</option>
+                                                                    <option>Defectuoso</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -116,11 +135,9 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Comentario<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <textarea id="message" required="required" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
-                                                                          data-parsley-validation-threshold="10"></textarea>
+                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
-
 
                                                     </form>
                                                 </div>
@@ -132,7 +149,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <!--end modal -->
                                     <div class="x_content">
                                         <h1 class="text-muted font-13 m-b-30">
@@ -216,5 +232,17 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
+            <script>
+                    $(document).ready(function () {
+                       $('#select').on('change',function(){
+                           var selectValor = '#'+$(this).val();
+                           
+                           $('#pai').children('div').hide();
+                           $('#pai').children(selectValor).show();
+                       }); 
+                        
+                    });
+                
+            </script>
     </body>
 </html>
