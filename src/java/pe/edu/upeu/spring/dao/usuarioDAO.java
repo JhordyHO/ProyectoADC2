@@ -27,10 +27,9 @@ public class usuarioDAO implements Operaciones<usuarios>{
     private ResultSet rs;
     private Connection conex;
 
-    private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRoles, P.idDepartamento, P.idusuario, "
+    private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRoles, P.idDepartamento,   "
             + "P.nombre_Per,P.apellidoPater_Per,P.apellidoMater_Per,P.fechaCumpl_Date,P.dni_Per,P.telefono_Per,"
-            + "P.correo_Per,P.sexo_Per FROM usuario U,persona P WHERE U.user=? AND U.pass=? \n" +
-            "AND P.idusuario = U.idusuario";
+            + "P.correo_Per,P.sexo_Per FROM usuario U,persona P WHERE U.user=? AND U.pass=?  ";
     private final static String SQL_CREATE = "INSERT INTO usuario (user, clave) VALUES (?, ?)";
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
@@ -50,8 +49,7 @@ public class usuarioDAO implements Operaciones<usuarios>{
             while(rs.next()){
                 m.put("idpersona",rs.getInt("idPersona"));
                 m.put("idRoles", rs.getInt("idRoles"));
-                m.put("idDepartamento", rs.getInt("idDepartamento"));
-                m.put("idusuario", rs.getInt("idusuario"));
+                m.put("idDepartamento", rs.getInt("idDepartamento")); 
                 m.put("nombre_Per", rs.getString("nombre_Per"));
                 m.put("apellidoPater_Per", rs.getString("apellidoPater_Per"));
                 m.put("apellidoMater_Per", rs.getString("apellidoMater_Per"));

@@ -5,9 +5,17 @@
  */
 package pe.edu.upeu.spring.controller;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pe.edu.upeu.spring.dao.categoriaDAO;
+import pe.edu.upeu.spring.interfaces.Operaciones;
+import pe.edu.upeu.spring.model.categoria;
 
 /**
  *
@@ -15,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-
+      Operaciones cat = new categoriaDAO();
     //pagina del admin- mapeo
    @RequestMapping("/principal")
     public String index(){  
@@ -41,10 +49,57 @@ public class HomeController {
     public String Rmobiliario(){  
         return "Rmobiliario";
     }
+    //   CRUD REGISTRAR CATEGORIA
+     @RequestMapping("/add")
+    public void addnew(HttpServletRequest request, HttpServletResponse response) {
+        String nombre_Categ = request.getParameter("nombre_Categ");
+        categoria p = new categoria(nombre_Categ);
+        if (cat.create(p) == 1) {
+            try {
+                response.setContentType("text/plain");
+                response.setCharacterEncoding("UTF-8");
+                response.getWriter().write("Rcate");
+            } catch (IOException ex) {
+                Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+      // delete categoria
+    @RequestMapping("/delcat")
+    public String eliminarcat(Model model,HttpServletRequest request,HttpServletResponse response) {
+      String url="Rcate";
+    try {
+        int id=Integer.parseInt(request.getParameter("idCategoria"));
+    
+    if(cat.delete(id)>0){
+        url=Rcate(model);
+   
+    }
+    } catch (Exception ex) {
+        System.out.println("error"+ex);
+    }
+     return  url;
+    }
+    
+    //update
+    @RequestMapping("/updatecat")
+    public String update(Model model, categoria categoria){ 
+    String url = "Rcate"; 
+    if (cat.update(categoria) > 0) {
+        url = Rcate(model);
+    }
+    return url;
+    }
     @RequestMapping("/Rcate")
-    public String Rcate(){  
+    public String Rcate(Model model){  
+         try {
+            model.addAttribute("lista1", cat.readAll());
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        } 
         return "Rcate";
     }
+    //  END CRUD CATEGORIA
     @RequestMapping("/Cmobiliario")
     public String Cmobiliario(){  
         return "Cmobiliario";

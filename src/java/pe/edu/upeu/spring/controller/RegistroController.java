@@ -29,7 +29,7 @@ public class RegistroController {
                 model.setViewName("fromMob");
                 break;
             case "2":
-                model.setViewName("vistas/renuncia/RAarchivos");
+                model.setViewName("Rcate");
                 break;
             case "3":
                 model.setViewName("vistas/renuncia/Rautorizar");
