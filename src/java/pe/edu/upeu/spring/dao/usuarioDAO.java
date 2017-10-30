@@ -27,9 +27,9 @@ public class usuarioDAO implements Operaciones<usuarios>{
     private ResultSet rs;
     private Connection conex;
 
-    private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRoles, P.idDepartamento,   "
-            + "P.nombre_Per,P.apellidoPater_Per,P.apellidoMater_Per,P.fechaCumpl_Date,P.dni_Per,P.telefono_Per,"
-            + "P.correo_Per,P.sexo_Per FROM usuario U,persona P WHERE U.user=? AND U.pass=?  ";
+    private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRoles, P.idDepartamento,P.nombre_Per,"
+            + "P.apellidoPater_Per,P.apellidoMater_Per,P.fechaCumpl_Date,P.dni_Per,P.telefono_Per,P.correo_Per,"
+            + "P.sexo_Per FROM usuario U,persona P WHERE U.user=? AND U.pass=? AND P.idPersona = U.idPersona";
     private final static String SQL_CREATE = "INSERT INTO usuario (user, clave) VALUES (?, ?)";
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";

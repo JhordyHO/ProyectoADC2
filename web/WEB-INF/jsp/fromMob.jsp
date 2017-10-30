@@ -12,13 +12,6 @@
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
     </head>
-    <style>
-        #pai div
-        {
-            display: none;
-        }
-        
-    </style>
     <body class="nav-md">
         <div class="container body"> 
             <div class="main_container">
@@ -72,7 +65,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoría</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select id="select" class="form-control">
-                                                                    <option>Escoje una Opcion</option>
+                                                                    <option disabled="disabled">Escoje una Opcion</option>
                                                                     <option>Muebles y Utiles</option>
                                                                     <option>Maquinas y Equipos Diversos</option>
                                                                     <option value="3">Equipos de Informatica</option>
@@ -80,11 +73,11 @@
                                                             </div>
                                                         </div>
                                                         <div id="pai">
-                                                            <div id="3" class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres</label>
+                                                            <div id="3" class="item form-group"  style="display: none">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres del Equipo</label>
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                                     <select id="select" class="form-control">
-                                                                        <option>Escoje una Opcion</option>
+                                                                        <option disabled="disabled">Escoje una Opcion</option>
                                                                         <option>PC1</option>
                                                                         <option>PC2</option>
                                                                         <option>Mouse</option>
@@ -124,7 +117,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select class="form-control">
-                                                                    <option>Esjo una Opcion</option>
+                                                                    <option disabled="disabled">Escoja una Opcion</option>
                                                                     <option>Bueno</option>
                                                                     <option>Regular</option>
                                                                     <option>Defectuoso</option>
