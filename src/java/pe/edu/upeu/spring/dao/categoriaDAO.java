@@ -117,4 +117,17 @@ public class categoriaDAO implements Operaciones<categoria>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+     public ResultSet list(){
+        ResultSet rm=null;
+
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_READALL);
+            rm = ps.executeQuery();
+        } catch (Exception e) {
+            System.out.println("Error al listar categoria por ResultSet "+e);
+        }
+        return rm;
+    }
+    
 }

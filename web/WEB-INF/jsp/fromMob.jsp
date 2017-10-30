@@ -5,6 +5,8 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="cat" class="pe.edu.upeu.spring.dao.categoriaDAO"/>
+<%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -65,10 +67,11 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoría</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select id="select" class="form-control">
-                                                                    <option disabled="disabled">Escoje una Opcion</option>
-                                                                    <option>Muebles y Utiles</option>
-                                                                    <option>Maquinas y Equipos Diversos</option>
-                                                                    <option value="3">Equipos de Informatica</option>
+                                                                    <option selected disabled>Escoje una Opcion</option>
+                                                                    <%ResultSet rs = cat.list();
+                                                                    while(rs.next()) {%>
+                                                                    <option value="<%=rs.getInt("idCategoria")%>"><%=rs.getString("nombre_Categ")%></option>
+                                                                    <%}%>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -77,7 +80,7 @@
                                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres del Equipo</label>
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                                     <select id="select" class="form-control">
-                                                                        <option disabled="disabled">Escoje una Opcion</option>
+                                                                        <option selected disabled>Escoje una Opcion</option>
                                                                         <option>PC1</option>
                                                                         <option>PC2</option>
                                                                         <option>Mouse</option>
@@ -117,7 +120,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select class="form-control">
-                                                                    <option disabled="disabled">Escoja una Opcion</option>
+                                                                    <option selected disabled>Escoja una Opcion</option>
                                                                     <option>Bueno</option>
                                                                     <option>Regular</option>
                                                                     <option>Defectuoso</option>
