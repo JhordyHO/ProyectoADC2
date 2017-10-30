@@ -7,6 +7,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="cat" class="pe.edu.upeu.spring.dao.categoriaDAO"/>
 <%@page import="java.sql.ResultSet"%>
+<%@page import="java.util.*" %>
+<%@page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,6 +16,11 @@
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
     </head>
+    <%
+   Date dNow = new Date();
+   SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/yyyy");
+   String currentDate = ft.format(dNow);
+   %>
     <body class="nav-md">
         <div class="container body"> 
             <div class="main_container">
@@ -62,7 +69,7 @@
                                                     <h4 class="modal-title" id="myModalLabel">Agregar Nuevo Mobiliario</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form class="form-horizontal form-label-left" novalidate>
+                                                    <form action="save" method="post" class="form-horizontal form-label-left" novalidate>
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoría</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -89,31 +96,31 @@
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input name="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Marca<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input name="marcaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Serie<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input name="serieMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Cantidad<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input name="cantiMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -121,27 +128,36 @@
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select class="form-control">
                                                                     <option selected disabled>Escoja una Opcion</option>
-                                                                    <option>Bueno</option>
-                                                                    <option>Regular</option>
-                                                                    <option>Defectuoso</option>
+                                                                    <option value="Bueno">Bueno</option>
+                                                                    <option value="Regular">Regular</option>
+                                                                    <option value="Defectuoso">Defectuoso</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Comentario<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Fecha_Registro<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input name="comentaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="<%=currentDate%>">
                                                             </div>
                                                         </div>
 
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Comentario<span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input name="comentaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="ln_solid"></div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-6 col-md-offset-3">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                                <input type="submit" name="boton" value="Registrar" class="btn btn-primary">
+                                                            </div>
+                                                        </div>                                                    
                                                     </form>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                                    <button type="button" class="btn btn-primary">Guardar</button>
-                                                </div>
-
                                             </div>
                                         </div>
                                     </div>

@@ -10,8 +10,11 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import pe.edu.upeu.spring.dao.mobiliarioDAO;
+import pe.edu.upeu.spring.model.mobiliario;
 
 /**
  *
@@ -19,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class RegistroController {
+    private mobiliarioDAO mob = new mobiliarioDAO();
     
     @RequestMapping(value = "/maper")
     public ModelAndView RedireccionRenuncia(ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -43,5 +47,19 @@ public class RegistroController {
         }
         return model;
     }
+    // <---GUARDAR---->
+ @RequestMapping("/save")
+    public String save(Model model, mobiliario d){
+        String url = "fromMob";
+        try {
+            if(mob.create(d)>0){
+                System.err.println("Se registro corectamente");
+            }
+        } catch (Exception e) {
+        }
+        return url;
+    }
+ 
+ // <----//FIN DE GUARDAR---->
     
 }
