@@ -47,7 +47,7 @@ public class usuarioDAO implements Operaciones<usuarios>{
             ps.setString(2, Clave);
             rs = ps.executeQuery();
             while(rs.next()){
-                m.put("idpersona",rs.getInt("idPersona"));
+                m.put("idPersona",rs.getInt("idPersona"));
                 m.put("idRoles", rs.getInt("idRoles"));
                 m.put("idDepartamento", rs.getInt("idDepartamento")); 
                 m.put("nombre_Per", rs.getString("nombre_Per"));

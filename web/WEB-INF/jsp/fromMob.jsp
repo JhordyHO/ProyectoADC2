@@ -88,9 +88,9 @@
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                                     <select id="select" class="form-control">
                                                                         <option selected disabled>Escoje una Opcion</option>
-                                                                        <option>PC1</option>
-                                                                        <option>PC2</option>
-                                                                        <option>Mouse</option>
+                                                                        <option value="1">PC1</option>
+                                                                        <option value="2">PC2</option>
+                                                                        <option value="3">Mouse</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -170,62 +170,30 @@
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th data-hide="phone">ID</th>
                                                     <th data-hide="expand">Nombre Mobiliario</th>
                                                     <th data-hide="phone">Marca Mobiliario</th>
                                                     <th data-hide="phone">Numero de Serie Mobiliario</th>
                                                     <th data-hide="phone">Cantidad</th>
-                                                    <th data-hide="phone">Categoria</th>
                                                     <th data-hide="phone">Estado</th>
                                                     <th data-hide="phone">Fecha Registro</th>
                                                     <th data-hide="phone">Comentario</th>
-                                                    <th data-hide="phone">Editar</th>
-                                                    <th data-hide="phone">Borrar</th>
+                                                    <th data-hide="phone" colspan="2">OPCION</th>
                                                 </tr>
                                             </thead>
-
-
                                             <tbody>
-
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Laptop</td>
-                                                    <td>toshiba</td>
-                                                    <td>55214628</td>
-                                                    <td>5</td>
-                                                    <td>Maquinas y Equipos Diversos</td>
-                                                    <td>bueno</td>
-                                                    <td>30/05/2007</td>
-                                                    <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Escritorios</td>
-                                                    <td>mova</td>
-                                                    <td>2630045/td>
-                                                    <td>5</td>
-                                                    <td>Muebles y enseres</td>
-                                                    <td>Regular</td>
-                                                    <td>30/05/2010</td>
-                                                    <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>TV</td>
-                                                    <td>noc</td>
-                                                    <td>362508/td>
-                                                    <td>5</td>
-                                                    <td>	Equipos de Informatica</td>
-                                                    <td>Malo</td>
-                                                    <td>30/05/2016</td>
-                                                    <td>Se recibio en buen estado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-                                                </tr>
+                                                <c:forEach var="datos" begin="0" items="${lista}">    
+                                                    <tr>
+                                                        <td><c:out value="${datos.nombre_Mob}"></c:out></td>
+                                                        <td><c:out value="${datos.marca_Mob}"></c:out></td>
+                                                        <td><c:out value="${datos.serie_Mob}"></c:out></td>
+                                                        <td><c:out value="${datos.cantidad}"></c:out></td>
+                                                        <td><c:out value="${datos.estado}"></c:out></td>
+                                                        <td><c:out value="${datos.fechaReg_Mob}"></c:out></td>
+                                                        <td><c:out value="${datos.comentario}"></c:out></td>
+                                                        <td><a href="edit?id=<c:out value="${datos.idMobiliario}"></c:out>" class="btn btn-success">Editar</a></td>
+                                                        <td><a href="x?id=<c:out value="${datos.idMobiliario}"></c:out>" class="btn btn-danger">eliminar</a></td>
+                                                        </tr>
+                                                </c:forEach>
                                             </tbody>
                                         </table>
                                     </div>

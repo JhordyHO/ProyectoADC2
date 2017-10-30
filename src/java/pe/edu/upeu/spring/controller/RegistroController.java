@@ -25,12 +25,13 @@ public class RegistroController {
     private mobiliarioDAO mob = new mobiliarioDAO();
     
     @RequestMapping(value = "/maper")
-    public ModelAndView RedireccionRenuncia(ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public ModelAndView RedireccionRenuncia(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
         String opc = request.getParameter("opc");
         switch (opc) {
             case "1":
                 model.setViewName("fromMob");
+                model2.addAttribute("lista",mob.readAll());
                 break;
             case "2":
                 model.setViewName("Rcate");
@@ -53,7 +54,7 @@ public class RegistroController {
         String url = "fromMob";
         try {
             if(mob.create(d)>0){
-                System.err.println("Se registro corectamente");
+                System.out.println("Se registro corectamente");
             }
         } catch (Exception e) {
         }

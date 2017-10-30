@@ -14,118 +14,118 @@ public class mobiliario {
     public mobiliario() {
     }
 
-    public mobiliario(String nombreMob, String marcaMob, String serieMob, String cantiMob, String estadoMob, String fechaMob, String comentaMob) {
-        this.nombreMob = nombreMob;
-        this.marcaMob = marcaMob;
-        this.serieMob = serieMob;
-        this.cantiMob = cantiMob;
-        this.estadoMob = estadoMob;
-        this.fechaMob = fechaMob;
-        this.comentaMob = comentaMob;
+    public mobiliario(String nombre_Mob, String marca_Mob, String serie_Mob, String cantidad, String estado, String fechaReg_Mob, String comentario) {
+        this.nombre_Mob = nombre_Mob;
+        this.marca_Mob = marca_Mob;
+        this.serie_Mob = serie_Mob;
+        this.cantidad = cantidad;
+        this.estado = estado;
+        this.fechaReg_Mob = fechaReg_Mob;
+        this.comentario = comentario;
     }
 
-    public mobiliario(int idMob, int idCate, int idMob2, String nombreMob, String marcaMob, String serieMob, String cantiMob, String estadoMob, String fechaMob, String comentaMob) {
-        this.idMob = idMob;
-        this.idCate = idCate;
-        this.idMob2 = idMob2;
-        this.nombreMob = nombreMob;
-        this.marcaMob = marcaMob;
-        this.serieMob = serieMob;
-        this.cantiMob = cantiMob;
-        this.estadoMob = estadoMob;
-        this.fechaMob = fechaMob;
-        this.comentaMob = comentaMob;
+    public mobiliario(int idMobiliario, int idCategoria, int idMobiliario2, String nombre_Mob, String marca_Mob, String serie_Mob, String cantidad, String estado, String fechaReg_Mob, String comentario) {
+        this.idMobiliario = idMobiliario;
+        this.idCategoria = idCategoria;
+        this.idMobiliario2 = idMobiliario2;
+        this.nombre_Mob = nombre_Mob;
+        this.marca_Mob = marca_Mob;
+        this.serie_Mob = serie_Mob;
+        this.cantidad = cantidad;
+        this.estado = estado;
+        this.fechaReg_Mob = fechaReg_Mob;
+        this.comentario = comentario;
     }
 
-    public int getIdMob() {
-        return idMob;
+    public int getIdMobiliario() {
+        return idMobiliario;
     }
 
-    public void setIdMob(int idMob) {
-        this.idMob = idMob;
+    public void setIdMobiliario(int idMobiliario) {
+        this.idMobiliario = idMobiliario;
     }
 
-    public int getIdCate() {
-        return idCate;
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdCate(int idCate) {
-        this.idCate = idCate;
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
-    public int getIdMob2() {
-        return idMob2;
+    public int getIdMobiliario2() {
+        return idMobiliario2;
     }
 
-    public void setIdMob2(int idMob2) {
-        this.idMob2 = idMob2;
+    public void setIdMobiliario2(int idMobiliario2) {
+        this.idMobiliario2 = idMobiliario2;
     }
 
-    public String getNombreMob() {
-        return nombreMob;
+    public String getNombre_Mob() {
+        return nombre_Mob;
     }
 
-    public void setNombreMob(String nombreMob) {
-        this.nombreMob = nombreMob;
+    public void setNombre_Mob(String nombre_Mob) {
+        this.nombre_Mob = nombre_Mob;
     }
 
-    public String getMarcaMob() {
-        return marcaMob;
+    public String getMarca_Mob() {
+        return marca_Mob;
     }
 
-    public void setMarcaMob(String marcaMob) {
-        this.marcaMob = marcaMob;
+    public void setMarca_Mob(String marca_Mob) {
+        this.marca_Mob = marca_Mob;
     }
 
-    public String getSerieMob() {
-        return serieMob;
+    public String getSerie_Mob() {
+        return serie_Mob;
     }
 
-    public void setSerieMob(String serieMob) {
-        this.serieMob = serieMob;
+    public void setSerie_Mob(String serie_Mob) {
+        this.serie_Mob = serie_Mob;
     }
 
-    public String getCantiMob() {
-        return cantiMob;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setCantiMob(String cantiMob) {
-        this.cantiMob = cantiMob;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
-    public String getEstadoMob() {
-        return estadoMob;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setEstadoMob(String estadoMob) {
-        this.estadoMob = estadoMob;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public String getFechaMob() {
-        return fechaMob;
+    public String getFechaReg_Mob() {
+        return fechaReg_Mob;
     }
 
-    public void setFechaMob(String fechaMob) {
-        this.fechaMob = fechaMob;
+    public void setFechaReg_Mob(String fechaReg_Mob) {
+        this.fechaReg_Mob = fechaReg_Mob;
     }
 
-    public String getComentaMob() {
-        return comentaMob;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setComentaMob(String comentaMob) {
-        this.comentaMob = comentaMob;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
 
-    private int idMob;
-    private int idCate;
-    private int idMob2;
-    private String nombreMob;
-    private String marcaMob;
-    private String serieMob;
-    private String cantiMob;
-    private String estadoMob;
-    private String fechaMob;
-    private String comentaMob;
+    private int idMobiliario;
+    private int idCategoria;
+    private int idMobiliario2;
+    private String nombre_Mob;
+    private String marca_Mob;
+    private String serie_Mob;
+    private String cantidad;
+    private String estado;
+    private String fechaReg_Mob;
+    private String comentario;
 }
