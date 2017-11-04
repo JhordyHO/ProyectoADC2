@@ -69,7 +69,7 @@
                                                     <h4 class="modal-title" id="myModalLabel">Agregar Nuevo Mobiliario</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="save" method="post" class="form-horizontal form-label-left" novalidate>
+                                                    <form method="post" class="form-horizontal form-label-left" novalidate>
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoría</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -82,11 +82,11 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div id="pai">
+                                                    <div id="pai">
                                                             <div id="3" class="item form-group"  style="display: none">
                                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres del Equipo</label>
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <select id="select" class="form-control">
+                                                                    <select id="select2" class="form-control">
                                                                         <option selected disabled>Escoje una Opcion</option>
                                                                         <option value="1">PC1</option>
                                                                         <option value="2">PC2</option>
@@ -99,34 +99,34 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input name="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Marca<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input name="marcaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="marcaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Serie<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input name="serieMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="serieMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Cantidad<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input name="cantiMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="cantiMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <select class="form-control">
+                                                                <select  id="select3" class="form-control">
                                                                     <option selected disabled>Escoja una Opcion</option>
                                                                     <option value="Bueno">Bueno</option>
                                                                     <option value="Regular">Regular</option>
@@ -138,7 +138,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Fecha_Registro<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input name="fechaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" selected disabled type="text" value="<%=currentDate%>">
+                                                                <input id="fechaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" selected disabled type="text" value="<%=currentDate%>">
                                                             </div>
                                                         </div>
 
@@ -146,14 +146,14 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Comentario<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input name="comentaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="comentaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
                                                         <div class="ln_solid"></div>
                                                         <div class="form-group">
                                                             <div class="col-md-6 col-md-offset-3">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                                <input type="submit" name="boton" value="Registrar" class="btn btn-primary">
+                                                                <input type="button" id="btnRegistro" value="Registrar" class="btn btn-primary">
                                                             </div>
                                                         </div>                                                    
                                                     </form>
@@ -219,7 +219,60 @@
                            
                            $('#pai').children('div').hide();
                            $('#pai').children(selectValor).show();
-                       }); 
+                       });
+                       $("#btnRegistro").click(function(){
+                           if($("#nombreMob").val().length !==0  && $("#select").val().length !==0 && $("#select3").val().length !==0){
+                               var categoria = $("#select").val();
+                               var equipo2 = $("#select2").val();
+                               var nombreMob = $("#nombreMob").val();
+                               var marcaMob = $("#marcaMob").val();
+                               var serieMob = $("#serieMob").val();
+                               var cantiMob = $("#cantiMob").val();
+                               var select3 = $("#select3").val();
+                               var fechaMob = $("#fechaMob").val();
+                               var comentaMob = $("#comentaMob").val();
+                               var opc = "1";
+                               
+                               $.ajax({
+                                   url:"regist",
+                                   type: 'POST',
+                                   async: true,
+                                   data: {
+                                       'categoria' : categoria,
+                                       'equipo2' : equipo2,
+                                       'nombreMob' : nombreMob,
+                                       'marcaMob' : marcaMob,
+                                       'serieMob' : serieMob,
+                                       'cantiMob' : cantiMob,
+                                       'select3' : select3,
+                                       'fechaMob' : fechaMob,
+                                       'comentaMob' : comentaMob,
+                                       'opc' : opc
+                                   },
+                                   success: function (data) {
+                                       
+
+                                    }                                    
+                               });
+                             console.log(categoria,equipo2,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
+       
+                                                 
+                              swal(
+                                         'Registrado!',
+                                         'Los datos han sido registrado correctamente!',
+                                         'success'
+                                          );  
+                           }else{
+                               swal(
+                              'Oops...',
+                              'Por favor rellene y seleccione todos los campos !',
+                              'error'
+                                   );
+                               
+                           }
+                               
+                                      
+                       });
                         
                     });
                 
