@@ -126,7 +126,7 @@
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th data-hide="phone">id</th>
+                                                   
                                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre</th>
                                                     <th data-hide="phone">Acciones</th> 
                                                 </tr>
@@ -134,10 +134,11 @@
                                             <tbody>
                                                 <c:forEach var="categoria" begin="0" items="${lista1}">
                                                     <tr>
-                                                        <td><c:out value="${categoria.idCategoria}"></c:out></td> 
+                                                       
                                                         <td><c:out value="${categoria.nombre_Categ}"></c:out></td> 
                                                             <td><a  class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Editar</a>
-                                                                <a class="delete btn btn-danger" href="delcat?idCategoria=<c:out value="${categoria.idCategoria}"></c:out>" >Eliminar</a></td>
+                                                            <!--    <a class="delete btn btn-danger"  href="delcat?idCategoria=" >Eliminar</a> -->
+                                                        <a class=" btn btn-danger" id="delete" data-id="${categoria.idCategoria}" href="javascript:void(0)">Eliminar</a></td>
                                                     </tr>
                                                 </c:forEach>
                                             </tbody>
@@ -156,8 +157,7 @@
                         <div class="clearfix"></div>
                     </footer>
                 </div>
-            </div>
-                <script src="<c:url value="recursos/js/jquery-3.0.0.min.js"/>" type="text/javascript"></script>
+            </div> 
                  <%@include file="../../META-INF/jdf/footer.jspf" %>
             
             <script>
@@ -166,17 +166,22 @@
                                                                         $("#nombre_Categ").val("");
                                                                     });
                                                                     $(".submitp").click(function () {
+                                                                        if($("#nombre_Categ").val().length !==0){
                                                                         $(".insert").submit(function (e) {
                                                                             e.preventDefault();
                                                                             var url = "add";
                                                                             $.post(url, $(".insert").serialize(), function (responseText) {
-                                                                                 $(location).attr('href', responseText);
-                                                                                    swal(
-                                                                                    'Good job!',
-                                                                                    'You clicked the button!',
-                                                                                    'success'
-                                                                                     ) 
-                                                                            //  
+                                                                                
+                                                                                   swal({
+  
+                                                                                    type: 'success',
+                                                                                    title: 'Los datos han sido registrado correctamente!',
+                                                                                    showConfirmButton: false,
+                                                                                    timer: 1500
+                                                                                  })
+                                                                              setTimeout(function(){
+                                                                             $(location).attr('href', responseText);
+                                                                             }, 1000);
                                                                             });
                                                                         }).validate({
                                                                             debug: false,
@@ -190,6 +195,13 @@
                                                                                 }
                                                                             }
                                                                         });
+                                                                        }else{
+                                                                               swal(
+                                                                                    'Oops...',
+                                                                                    'Por favor rellene el campo !',
+                                                                                    'error'
+                                                                                         );
+                                                                        }
                                                                     }); 
                                                                                                                                       /* Edit Item */
 $("body").on("click",".edit-cat",function(){
@@ -238,35 +250,89 @@ $(".upcate").click(function(e){
                                                                   
             </script>  
             <script>
-                   $(document).ready(function () {
-
-             $('.delete').click(function (event) {
-            // http://api.jquery.com/event.preventdefault/
-            event.preventDefault();
-            var url = $(this).attr("href");
-            swal({
-                title: "Seguro Desea Eliminar?",
-                text: "Confirma que deseas eliminar este registro",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Si ,Eliminar!",
-                closeOnConfirm: false
-            }, function (isConfirm) {
-                 if (isConfirm)
-                 {
-                      $('<iframe src="'+url+'" style="position:absolute;left=-1000em;"></iframe>').appendTo('body');
-                    // setTimeout(function(){
-                swal("Deleted!", "El Registro Se ha Eliminado.", "success");
-                // }, 1000);
-            }else{
-                 swal("Cancelled", "Your imaginary file is safe :)", "error"); 
-            }
+           $(document).on('click', '.delete', function (event) {
+    swal({
+        title: "¿Estás seguro?",
+        text: "Estás por borrar un proyecto, este no se podrá recuperar más adelante.",
+        type: "warning",
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Continuar",
+            closeOnConfirm: false
+        }, 
+        function (isConfirm) {
+            if(isConfirm){
+                swal({
+                    title: "Eliminado",
+                    text: "Eliminaste el registro del proyecto.",
+                    type: "success"
+                }, function(){
+                event.preventDefault();
+                $(this).closest('tr').remove();
             });
+            }
+            else{
+                swal("No se ha eliminado.","El registro NO ha sido eliminado.","error");
+                delay(2000);
+            }
         });
- });
+
+});
+
                 </script>
-           
+                <script>
+                    $(document).ready(function(){
+		
+		  /* it will load products when document loads */
+		
+		$(document).on('click', '#delete', function(e){
+			
+			var categoriadel = $(this).data('id');
+			SwalDelete(categoriadel);
+			e.preventDefault();
+		});
+		
+	});
+	
+	function SwalDelete(categoriadel){
+		
+		swal({
+			title: 'Are you sure?',
+			text: "It will be deleted permanently!",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!',
+			showLoaderOnConfirm: true,
+			  
+			preConfirm: function() {
+			  return new Promise(function(resolve) {
+			       
+			     $.ajax({
+			   		url: 'delcat',
+			    	type: 'POST',
+			       	data: 'delete='+categoriadel
+			   //    	dataType: 'json'
+			     })
+			     .done(function(response){
+			     	swal('Deleted!', response.message, response.status);
+					 
+			     })
+			     .fail(function(){
+			     	swal('Oops...', 'Something went wrong with ajax !', 'error');
+			     });
+			  });
+		    },
+			 			  
+		});	
+		
+	}
+	
+	 
+                    
+                </script>
 
     </body>
 </html>
