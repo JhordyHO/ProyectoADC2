@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 import pe.edu.upeu.spring.interfaces.Operaciones;
 import pe.edu.upeu.spring.model.mobiliario;
+import pe.edu.upeu.spring.model.mobiliariopartes;
 import pe.edu.upeu.spring.util.Conexion;
 
 /**
@@ -27,6 +28,11 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
     private final static String SQL_CREATE = "INSERT INTO mobiliario (idCategoria, idDepartamento, "
             + "nombre_Mob, marca_Mob, serie_Mob, cantidad, estado, fechaReg_Mob, comentario) "
             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    
+    private final static String SQL_CREATE2 = "INSERT INTO detallle_partes_mobiliario (idMobiliario, "
+            + "nombre_Mob2, marca_Mob2, serie_Mob2, cantidad2, estado, fechaReg_Mob2, comentario2) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
     private final static String SQL_SEARCH = "SELECT *FROM usuario WHERE user=?";
@@ -126,6 +132,28 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
         }
         return lista;
         
+    }
+    
+    public int create2(mobiliariopartes d){
+         int op = 0;
+        try {
+            conex = Conexion.getConexion();
+            ps =conex.prepareStatement(SQL_CREATE2);
+            ps.setInt(1, d.getIdMobiliario());
+            ps.setString(2, d.getNombre_Mob2());
+            ps.setString(3, d.getMarca_Mob2());
+            ps.setString(4, d.getSerie_Mob2());
+            ps.setString(5, d.getCantidad2());
+            ps.setString(6, d.getEstado());
+            ps.setString(7, d.getFechaReg_Mob2());
+            ps.setString(8, d.getComentario2());
+            op = ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error: "+e);
+        }
+        return op;        
+        
+   
     }
     
 }

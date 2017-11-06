@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.spring.dao.mobiliarioDAO;
 import pe.edu.upeu.spring.model.mobiliario;
+import pe.edu.upeu.spring.model.mobiliariopartes;
 
 /**
  *
@@ -25,6 +26,7 @@ import pe.edu.upeu.spring.model.mobiliario;
 public class RegistroController {
     private mobiliarioDAO mob = new mobiliarioDAO();
     private mobiliario mob2 = new mobiliario();
+    private mobiliariopartes mob3 = new mobiliariopartes();
     
     @RequestMapping(value = "/maper")
     public ModelAndView RedireccionRenuncia(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -54,7 +56,6 @@ public class RegistroController {
     
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public ModelAndView registroMob(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        PrintWriter out = response.getWriter();
         String opc = request.getParameter("opc");
         switch (opc) {
             case "1":
@@ -69,7 +70,6 @@ public class RegistroController {
                 mob2.setComentario(request.getParameter("comentaMob"));
                 try {
                     if(mob.create(mob2)>0){
-                    System.out.println("Se registro corectamente");
                     model2.addAttribute("lista",mob.readAll());
                     model.setViewName("fromMob");
                     }
@@ -78,6 +78,23 @@ public class RegistroController {
                 }
                 break;
             case "2":
+                mob3.setIdMobiliario(Integer.parseInt(request.getParameter("idmobiliario")));
+                mob3.setNombre_Mob2(request.getParameter("nombreMob"));
+                mob3.setMarca_Mob2(request.getParameter("marcaMob"));
+                mob3.setSerie_Mob2(request.getParameter("serieMob"));
+                mob3.setCantidad2(request.getParameter("cantiMob"));
+                mob3.setEstado(request.getParameter("select3"));
+                mob3.setFechaReg_Mob2(request.getParameter("fechaMob"));
+                mob3.setComentario2(request.getParameter("comentaMob"));
+                try {
+                    if(mob.create2(mob3)>0){
+                    model2.addAttribute("lista",mob.readAll());
+                    model.setViewName("fromMob");
+                    }
+                }catch (Exception e) {
+                    System.out.println("Error al registrar"+e);
+                }
+ 
                 model.setViewName("Rcate");
                 break;
             case "3":

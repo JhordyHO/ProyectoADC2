@@ -76,13 +76,13 @@
                                                                 <select id="selecionar" class="form-control">
                                                                     <option value="">Escoje una Opcion</option>
                                                                     <%ResultSet rs = cat.list();
-                                                                    while(rs.next()) {%>
+                                                                        while (rs.next()) {%>
                                                                     <option value="<%=rs.getInt("idCategoria")%>"><%=rs.getString("nombre_Categ")%></option>
                                                                     <%}%>
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                    <div id="pai">
+                                                        <div id="pai">
                                                             <div id="3" class="item form-group"  style="display: none">
                                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres del Equipo</label>
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -100,7 +100,7 @@
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                <input id="departamento" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
+                                                                <input id="departamento" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" value="<c:out value="${DEPARTAMENTO_ID}"/>" required="required" type="hidden">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
@@ -161,44 +161,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!--end modal -->
-                                    <div class="x_content">
-                                        <h1 class="text-muted font-13 m-b-30">
-                                            Lista de Mobiliarios
-                                        </h1>
-                                        <br>
-                                        <table id="datatable" class="table table-striped table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th data-hide="expand">Nombre Mobiliario</th>
-                                                    <th data-hide="phone">Marca Mobiliario</th>
-                                                    <th data-hide="phone">Numero de Serie Mobiliario</th>
-                                                    <th data-hide="phone">Cantidad</th>
-                                                    <th data-hide="phone">Estado</th>
-                                                    <th data-hide="phone">Fecha Registro</th>
-                                                    <th data-hide="phone">Comentario</th>
-                                                    <th data-hide="phone" colspan="2">OPCION</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <c:forEach var="datos" begin="0" items="${lista}">    
-                                                    <tr>
-                                                        <td><c:out value="${datos.nombre_Mob}"></c:out></td>
-                                                        <td><c:out value="${datos.marca_Mob}"></c:out></td>
-                                                        <td><c:out value="${datos.serie_Mob}"></c:out></td>
-                                                        <td><c:out value="${datos.cantidad}"></c:out></td>
-                                                        <td><c:out value="${datos.estado}"></c:out></td>
-                                                        <td><c:out value="${datos.fechaReg_Mob}"></c:out></td>
-                                                        <td><c:out value="${datos.comentario}"></c:out></td>
-                                                        <td><a href="edit?id=<c:out value="${datos.idMobiliario}"></c:out>" class="btn btn-success">Editar</a></td>
-                                                        <td><a href="x?id=<c:out value="${datos.idMobiliario}"></c:out>" class="btn btn-danger">eliminar</a></td>
-                                                        </tr>
-                                                </c:forEach>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- end main -->
+                                     </div>
+                                       <!--end modal -->
+                                       <div class="x_content">
+                                           <h1 class="text-muted font-13 m-b-30">
+                                               Lista de Mobiliarios
+                                           </h1>
+                                           <table id="datatable" class="table table-striped table-bordered">
+                                               <thead>
+                                                   <tr>
+                                                       <th data-hide="expand">Nombre Mobiliario</th>
+                                                       <th data-hide="phone">Marca Mobiliario</th>
+                                                       <th data-hide="phone">Numero de Serie Mobiliario</th>
+                                                       <th data-hide="phone">Cantidad</th>
+                                                       <th data-hide="phone">Estado</th>
+                                                       <th data-hide="phone">Fecha Registro</th>
+                                                       <th data-hide="phone">Comentario</th>
+                                                       <th data-hide="phone" colspan="2">OPCION</th>
+                                                   </tr>
+                                               </thead>
+                                               <tbody>
+
+                                               </tbody>
+                                           </table>
+                                       </div>
+                                  <!-- end main -->
                                 </div>
                             </div>
                         </div>
@@ -213,15 +200,25 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
-            <script type="text/javascript">
-                    $(document).ready(function () {
-                       $('#selecionar').on('change',function(){
+            <script>
+                    
+                      function cargarbox(){
+                          
+                          $('#selecionar').on('change',function(){
                            var selectValor = '#'+$(this).val();
                            
                            $('#pai').children('div').hide();
-                           $('#pai').children(selectValor).show();
+                           
+                           if (selectValor === '#3') {
+                               $('#pai').children(selectValor).show().append(prueba());         
+                            }
+                           //console.log(selectValor);
+     
                        });
+                          
+                      }  
+                      function registro(){
+                        //registro del mobiliario..
                        $("#btnRegistro").click(function(){
                                var categoria = $("#selecionar").val();
                                var departamento = $("#departamento").val();
@@ -230,11 +227,11 @@
                                var marcaMob = $("#marcaMob").val();
                                var serieMob = $("#serieMob").val();
                                var cantiMob = $("#cantiMob").val();
-                               var select3 = $("#select3").val();
+                               var select3 = $("#selecionar3").val();
                                var fechaMob = $("#fechaMob").val();
                                var comentaMob = $("#comentaMob").val();
                            
-                           if($($("#select").val().length !==0) && $("#nombreMob").val().length !==0){
+                            if($("#selecionar").val().length !==0 && $("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0){
                               var opc = "1";                               
                                 $.ajax({
                                    url:"regist",
@@ -273,8 +270,79 @@
                               'error'
                                    );
                                
+                           }
+                               $("#selecionar").val("");
+                               $("#departamento").val("");
+                               $("#selecionar2").val("");
+                               $("#nombreMob").val("");
+                               $("#marcaMob").val("");
+                               $("#serieMob").val("");
+                               $("#cantiMob").val("");
+                               $("#selecionar3").val("");
+                               $("#fechaMob").val("");
+                               $("#comentaMob").val("");
+                       });
+                          
+                      }
+                      function prueba(){
+                      //registro del mobiliario_partes_detalle..
+                       $("#btnRegistro").click(function(){
+                               var categoria = $("#selecionar").val();
+                               var idmobiliario = $("#selecionar2").val();
+                               var nombreMob = $("#nombreMob").val();
+                               var marcaMob = $("#marcaMob").val();
+                               var serieMob = $("#serieMob").val();
+                               var cantiMob = $("#cantiMob").val();
+                               var select3 = $("#selecionar3").val();
+                               var fechaMob = $("#fechaMob").val();
+                               var comentaMob = $("#comentaMob").val();
+                           
+                           if($("#selecionar").val().length !==0 && $("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0){
+                              var opc = "2";                               
+                                $.ajax({
+                                   url:"regist",
+                                   type: 'POST',
+                                   async: true,
+                                   data: {
+                                       'idmobiliario' : idmobiliario,
+                                       'nombreMob' : nombreMob,
+                                       'marcaMob' : marcaMob,
+                                       'serieMob' : serieMob,
+                                       'cantiMob' : cantiMob,
+                                       'select3' : select3,
+                                       'fechaMob' : fechaMob,
+                                       'comentaMob' : comentaMob,
+                                       'opc' : opc
+                                   },
+                                   success: function (data) {
+
+                                    }                                    
+                               });
+                             console.log(idmobiliario,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
+                             
+                                                 
+                              swal(
+                                         'Registrado!',
+                                         'Los datos han sido registrado correctamente!',
+                                         'success'
+                                          );  
+
+                           }else{
+                               swal(
+                              'Oops...',
+                              'Por favor ingrese los datos principales : Categoria, Nombre, Estado y Comentarios\n\
+                              .Si cuenta con todos los datos sería genial!!',
+                              'error'
+                                   );
+                               
                            }                                 
                        });
+                          
+                      }
+        
+                    $(document).ready(function () {
+                        cargarbox();
+                        registro();
                         
                     });
                 

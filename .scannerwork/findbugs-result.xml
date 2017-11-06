@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.1.0-RC6" sequence="0" timestamp="1509931521099" analysisTimestamp="1509940640039" release="">
+  <Project>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\controller\HomeController.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\controller\LoginController.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\controller\RegistroController.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\dao\categoriaDAO.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\dao\departamentoDAO.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\dao\mobiliarioDAO.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\dao\rolesDAO.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\dao\usuarioDAO.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\interfaces\Operaciones.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\model\categoria.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\model\departamento.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\model\mobiliario.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\model\persona.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\model\roles.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\model\usuarios.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\test\test.class</Jar>
+    <Jar>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build\web\WEB-INF\classes\pe\edu\upeu\spring\util\Conexion.class</Jar>
+    <AuxClasspathEntry>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\build</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\.scannerwork\findbugs\annotations.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\.scannerwork\findbugs\jsr305.jar</AuxClasspathEntry>
+    <WrkDir>C:\Users\Jose Rayo\Documents\NetBeansProjects\Proyectos clonados en Gihub\ProyectoADC2\ProyectoADC2\.scannerwork</WrkDir>
+  </Project>
+  <Errors errors="0" missingClasses="5">
+    <MissingClass>javax.servlet.http.HttpServletRequest</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletResponse</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSession</MissingClass>
+    <MissingClass>org.springframework.ui.Model</MissingClass>
+    <MissingClass>org.springframework.web.servlet.ModelAndView</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 5 Nov 2017 20:25:21 -0500" total_classes="17" referenced_classes="46" total_bugs="0" total_size="788" num_packages="6" java_version="1.8.0_121" vm_version="25.121-b13" cpu_seconds="18.56" clock_seconds="7.06" peak_mbytes="392.36" alloc_mbytes="1799.50" gc_seconds="0.22">
+    <FileStats path="pe/edu/upeu/spring/controller/HomeController.java" bugCount="0" size="68"/>
+    <FileStats path="pe/edu/upeu/spring/controller/LoginController.java" bugCount="0" size="54"/>
+    <FileStats path="pe/edu/upeu/spring/controller/RegistroController.java" bugCount="0" size="51"/>
+    <FileStats path="pe/edu/upeu/spring/dao/categoriaDAO.java" bugCount="0" size="87"/>
+    <FileStats path="pe/edu/upeu/spring/dao/departamentoDAO.java" bugCount="0" size="3"/>
+    <FileStats path="pe/edu/upeu/spring/dao/mobiliarioDAO.java" bugCount="0" size="81"/>
+    <FileStats path="pe/edu/upeu/spring/dao/rolesDAO.java" bugCount="0" size="40"/>
+    <FileStats path="pe/edu/upeu/spring/dao/usuarioDAO.java" bugCount="0" size="52"/>
+    <FileStats path="pe/edu/upeu/spring/interfaces/Operaciones.java" bugCount="0" size="7"/>
+    <FileStats path="pe/edu/upeu/spring/model/categoria.java" bugCount="0" size="25"/>
+    <FileStats path="pe/edu/upeu/spring/model/departamento.java" bugCount="0" size="21"/>
+    <FileStats path="pe/edu/upeu/spring/model/mobiliario.java" bugCount="0" size="87"/>
+    <FileStats path="pe/edu/upeu/spring/model/persona.java" bugCount="0" size="102"/>
+    <FileStats path="pe/edu/upeu/spring/model/roles.java" bugCount="0" size="21"/>
+    <FileStats path="pe/edu/upeu/spring/model/usuarios.java" bugCount="0" size="33"/>
+    <FileStats path="pe/edu/upeu/spring/test/test.java" bugCount="0" size="25"/>
+    <FileStats path="pe/edu/upeu/spring/util/Conexion.java" bugCount="0" size="31"/>
+    <PackageStats package="pe.edu.upeu.spring.controller" total_bugs="0" total_types="3" total_size="173">
+      <ClassStats class="pe.edu.upeu.spring.controller.HomeController" sourceFile="HomeController.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.controller.LoginController" sourceFile="LoginController.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.controller.RegistroController" sourceFile="RegistroController.java" interface="false" size="51" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="pe.edu.upeu.spring.dao" total_bugs="0" total_types="5" total_size="263">
+      <ClassStats class="pe.edu.upeu.spring.dao.categoriaDAO" sourceFile="categoriaDAO.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.dao.departamentoDAO" sourceFile="departamentoDAO.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.dao.mobiliarioDAO" sourceFile="mobiliarioDAO.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.dao.rolesDAO" sourceFile="rolesDAO.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.dao.usuarioDAO" sourceFile="usuarioDAO.java" interface="false" size="52" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="pe.edu.upeu.spring.interfaces" total_bugs="0" total_types="1" total_size="7">
+      <ClassStats class="pe.edu.upeu.spring.interfaces.Operaciones" sourceFile="Operaciones.java" interface="true" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="pe.edu.upeu.spring.model" total_bugs="0" total_types="6" total_size="289">
+      <ClassStats class="pe.edu.upeu.spring.model.categoria" sourceFile="categoria.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.model.departamento" sourceFile="departamento.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.model.mobiliario" sourceFile="mobiliario.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.model.persona" sourceFile="persona.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.model.roles" sourceFile="roles.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="pe.edu.upeu.spring.model.usuarios" sourceFile="usuarios.java" interface="false" size="33" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="pe.edu.upeu.spring.test" total_bugs="0" total_types="1" total_size="25">
+      <ClassStats class="pe.edu.upeu.spring.test.test" sourceFile="test.java" interface="false" size="25" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="pe.edu.upeu.spring.util" total_bugs="0" total_types="1" total_size="31">
+      <ClassStats class="pe.edu.upeu.spring.util.Conexion" sourceFile="Conexion.java" interface="false" size="31" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="626" invocations="445" avgMicrosecondsPerInvocation="1408" maxMicrosecondsPerInvocation="34621" standardDeviationMicrosecondsPerInvocation="2766"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="326" invocations="444" avgMicrosecondsPerInvocation="735" maxMicrosecondsPerInvocation="34084" standardDeviationMicrosecondsPerInvocation="2382"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="267" invocations="163" avgMicrosecondsPerInvocation="1641" maxMicrosecondsPerInvocation="241740" standardDeviationMicrosecondsPerInvocation="18867"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="143" invocations="46" avgMicrosecondsPerInvocation="3128" maxMicrosecondsPerInvocation="31172" standardDeviationMicrosecondsPerInvocation="5678"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="119" invocations="157" avgMicrosecondsPerInvocation="762" maxMicrosecondsPerInvocation="16667" standardDeviationMicrosecondsPerInvocation="2167"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="119" invocations="160" avgMicrosecondsPerInvocation="745" maxMicrosecondsPerInvocation="28317" standardDeviationMicrosecondsPerInvocation="2614"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="116" invocations="263" avgMicrosecondsPerInvocation="444" maxMicrosecondsPerInvocation="18249" standardDeviationMicrosecondsPerInvocation="1247"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="111" invocations="149" avgMicrosecondsPerInvocation="746" maxMicrosecondsPerInvocation="10025" standardDeviationMicrosecondsPerInvocation="1629"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="108" invocations="157" avgMicrosecondsPerInvocation="689" maxMicrosecondsPerInvocation="13277" standardDeviationMicrosecondsPerInvocation="1770"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="95" invocations="46" avgMicrosecondsPerInvocation="2084" maxMicrosecondsPerInvocation="15048" standardDeviationMicrosecondsPerInvocation="2933"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="91" invocations="163" avgMicrosecondsPerInvocation="561" maxMicrosecondsPerInvocation="32525" standardDeviationMicrosecondsPerInvocation="2582"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="90" invocations="160" avgMicrosecondsPerInvocation="566" maxMicrosecondsPerInvocation="17054" standardDeviationMicrosecondsPerInvocation="1689"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="77" invocations="157" avgMicrosecondsPerInvocation="491" maxMicrosecondsPerInvocation="6215" standardDeviationMicrosecondsPerInvocation="1023"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="63" invocations="102" avgMicrosecondsPerInvocation="626" maxMicrosecondsPerInvocation="37809" standardDeviationMicrosecondsPerInvocation="3747"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="61" invocations="76" avgMicrosecondsPerInvocation="807" maxMicrosecondsPerInvocation="9956" standardDeviationMicrosecondsPerInvocation="1727"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="54" invocations="17" avgMicrosecondsPerInvocation="3223" maxMicrosecondsPerInvocation="42298" standardDeviationMicrosecondsPerInvocation="9811"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="49" invocations="404" avgMicrosecondsPerInvocation="122" maxMicrosecondsPerInvocation="2251" standardDeviationMicrosecondsPerInvocation="198"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="48" invocations="46" avgMicrosecondsPerInvocation="1058" maxMicrosecondsPerInvocation="7890" standardDeviationMicrosecondsPerInvocation="1726"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="43" invocations="17" avgMicrosecondsPerInvocation="2552" maxMicrosecondsPerInvocation="13138" standardDeviationMicrosecondsPerInvocation="3529"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="39" invocations="46" avgMicrosecondsPerInvocation="856" maxMicrosecondsPerInvocation="6914" standardDeviationMicrosecondsPerInvocation="1369"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="32" invocations="46" avgMicrosecondsPerInvocation="697" maxMicrosecondsPerInvocation="8845" standardDeviationMicrosecondsPerInvocation="1443"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="31" invocations="46" avgMicrosecondsPerInvocation="676" maxMicrosecondsPerInvocation="4996" standardDeviationMicrosecondsPerInvocation="1115"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="30" invocations="46" avgMicrosecondsPerInvocation="670" maxMicrosecondsPerInvocation="9534" standardDeviationMicrosecondsPerInvocation="1502"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="27" invocations="46" avgMicrosecondsPerInvocation="595" maxMicrosecondsPerInvocation="4015" standardDeviationMicrosecondsPerInvocation="924"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="26" invocations="48" avgMicrosecondsPerInvocation="546" maxMicrosecondsPerInvocation="2944" standardDeviationMicrosecondsPerInvocation="793"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="25" invocations="17" avgMicrosecondsPerInvocation="1511" maxMicrosecondsPerInvocation="4609" standardDeviationMicrosecondsPerInvocation="1426"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="25" invocations="34" avgMicrosecondsPerInvocation="740" maxMicrosecondsPerInvocation="1841" standardDeviationMicrosecondsPerInvocation="613"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="23" invocations="2354" avgMicrosecondsPerInvocation="9" maxMicrosecondsPerInvocation="2405" standardDeviationMicrosecondsPerInvocation="62"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="22" invocations="157" avgMicrosecondsPerInvocation="140" maxMicrosecondsPerInvocation="2295" standardDeviationMicrosecondsPerInvocation="286"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="21" invocations="17" avgMicrosecondsPerInvocation="1267" maxMicrosecondsPerInvocation="4459" standardDeviationMicrosecondsPerInvocation="1172"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="20" invocations="149" avgMicrosecondsPerInvocation="140" maxMicrosecondsPerInvocation="2194" standardDeviationMicrosecondsPerInvocation="330"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="19" invocations="46" avgMicrosecondsPerInvocation="431" maxMicrosecondsPerInvocation="10447" standardDeviationMicrosecondsPerInvocation="1760"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBugsSummaryStats" totalMilliseconds="19" invocations="46" avgMicrosecondsPerInvocation="422" maxMicrosecondsPerInvocation="18027" standardDeviationMicrosecondsPerInvocation="2624"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantPoolGenFactory" totalMilliseconds="19" invocations="17" avgMicrosecondsPerInvocation="1125" maxMicrosecondsPerInvocation="15425" standardDeviationMicrosecondsPerInvocation="3586"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="18" invocations="17" avgMicrosecondsPerInvocation="1110" maxMicrosecondsPerInvocation="9096" standardDeviationMicrosecondsPerInvocation="2155"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="17" invocations="3674" avgMicrosecondsPerInvocation="4" maxMicrosecondsPerInvocation="638" standardDeviationMicrosecondsPerInvocation="11"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.endpoint.ServletEndpointDetector" totalMilliseconds="17" invocations="17" avgMicrosecondsPerInvocation="1036" maxMicrosecondsPerInvocation="11446" standardDeviationMicrosecondsPerInvocation="2623"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.file.PathTraversalDetector" totalMilliseconds="17" invocations="17" avgMicrosecondsPerInvocation="1029" maxMicrosecondsPerInvocation="3750" standardDeviationMicrosecondsPerInvocation="987"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="16" invocations="17" avgMicrosecondsPerInvocation="978" maxMicrosecondsPerInvocation="2223" standardDeviationMicrosecondsPerInvocation="627"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

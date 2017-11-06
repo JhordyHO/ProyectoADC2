@@ -10,6 +10,7 @@ import pe.edu.upeu.spring.dao.mobiliarioDAO;
 import pe.edu.upeu.spring.dao.rolesDAO;
 import pe.edu.upeu.spring.dao.usuarioDAO;
 import pe.edu.upeu.spring.model.mobiliario;
+import pe.edu.upeu.spring.model.mobiliariopartes;
 
 /**
  *
@@ -19,6 +20,7 @@ public class test {
    public static usuarioDAO us= new usuarioDAO();
    public static rolesDAO rol= new rolesDAO();
    public static mobiliarioDAO mob = new mobiliarioDAO();
+   
 
     /**
      * @param args the command line arguments
@@ -27,7 +29,8 @@ public class test {
         // TODO code application logic here
         //validar("jose", "123");
 //        roles(1);
-          reg();
+          //reg();
+          reg2();
     }
     
     public static void validar(String u, String p) {
@@ -42,6 +45,14 @@ public class test {
     public static void reg(){
          mobiliario p = new mobiliario(9,1,1,"gfchgfc","iuygiyug","uytfuyt","uytcuytu","uytcuty","trcxutyvbh","uytgykuyg");
         if(mob.create(p)>0){
+            System.out.println("si");
+        }else{
+            System.out.println("no");
+        }
+    }
+        public static void reg2(){
+         mobiliariopartes p = new mobiliariopartes(1,1,"gfchgfc","iuygiyug","uytfuyt","uytcuytu","uytcuty","trcxutyvbh","uytgykuyg");
+        if(mob.create2(p)>0){
             System.out.println("si");
         }else{
             System.out.println("no");

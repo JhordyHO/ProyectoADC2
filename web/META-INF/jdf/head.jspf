@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="recursos/css/sweetalert2.css" rel="stylesheet" type="text/css"/>
     <!--<link rel="stylesheet"  type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.2.2/sweetalert2.min.css"> -->
+    <link type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
  <!-- Bootstrap -->
     <link href="recursos/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- Font Awesome -->
@@ -15,6 +17,7 @@
     <link href="recursos/vendors/animate.css/animate.min.css" rel="stylesheet" type="text/css"/>
     <!-- Custom Theme Style -->
     <link href="recursos/build/css/custom.min.css" rel="stylesheet" type="text/css"/>
+    
     <!-- iCheck -->
     <link href="recursos/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
@@ -23,7 +26,7 @@
     <!-- JQVMap -->
     <link href="recursos/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="recursos/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">  
+    <link href="recursos/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
      <!-- Datatables -->
     <link href="recursos/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="recursos/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
@@ -33,4 +36,19 @@
     <!-- #FAVICONS-->
     <link rel="shortcut icon" href="recursos/img/favicon/favicon2.ico" type="image/x-icon">
     <link rel="icon" href="recursos/img/favicon/favicon2.ico" type="image/x-icon">
- <!--   <link href="recursos/css/sweetalert2.css" rel="stylesheet" type="text/css"/>  -->
+     <!-- bootstra    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+p-daterangepicker -->
+    <link href="recursos/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href="recursos/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="recursos/vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="recursos/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="recursos/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+     <!-- Bootstrap Colorpicker -->
+    <link href="recursos/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+    <link href="recursos/vendors/cropper/dist/cropper.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="recursos/build/css/custom.min.css" rel="stylesheet">
