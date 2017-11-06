@@ -51,7 +51,7 @@ public class categoriaDAO implements Operaciones<categoria>{
             conex = Conexion.getConexion();
             ps = conex.prepareStatement(SQL_UPDATE);
             ps.setString(1, d.getNombre_Categ()); 
-            ps.setInt(4, d.getIdCategoria());
+            ps.setInt(2, d.getIdCategoria());
             op = ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error: " + e);
@@ -102,8 +102,8 @@ public class categoriaDAO implements Operaciones<categoria>{
             rs = ps.executeQuery();
             while (rs.next()) {
                 categoria x = new categoria();
-                x.setIdCategoria(rs.getInt("idproducto"));
-                x.setNombre_Categ(rs.getString("nombre")); 
+                x.setIdCategoria(rs.getInt("idCategoria"));
+                x.setNombre_Categ(rs.getString("nombre_Categ")); 
                 lista.add(x);
             }
         } catch (Exception e) {

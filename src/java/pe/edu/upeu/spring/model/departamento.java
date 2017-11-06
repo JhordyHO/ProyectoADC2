@@ -11,7 +11,14 @@ package pe.edu.upeu.spring.model;
  */
 public class departamento {
 
+    private int idDepartamento;
+    private String nombre_depar;
+
     public departamento() {
+    }
+
+    public departamento(String nombre_depar) {
+        this.nombre_depar = nombre_depar;
     }
 
     public departamento(int idDepartamento, String nombre_depar) {
@@ -34,6 +41,6 @@ public class departamento {
     public void setNombre_depar(String nombre_depar) {
         this.nombre_depar = nombre_depar;
     }
-    private int idDepartamento;
-    private String nombre_depar;
+    
+    
 }

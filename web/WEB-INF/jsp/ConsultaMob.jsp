@@ -1,14 +1,14 @@
 <%-- 
-    Document   : Rcate
-    Created on : 05/10/2017, 02:30:38 PM
+    Document   : consultaMob
+    Created on : 06/11/2017, 03:05:05 PM
     Author     : LENOVO
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
- <html lang="en">
+<html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
     </head>
@@ -21,7 +21,7 @@
                     <div class="">
                         <div class="page-title">
                             <div class="title_left">
-                                <h3>Resgistrar Categorias</h3>
+                                <h3>Consultar Mobiliario</h3>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -47,53 +47,17 @@
                                         </ul>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <!-- main -->
-                                    <!-- modal -->
-                                    <button  class="btn btn-success" id="addnew" data-toggle="modal" data-target=".bs-example-modal-lg12"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
-                                    <div class="modal fade bs-example-modal-lg12"  tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                                    </button>
-                                                    <h4 class="modal-title" id="myModalLabel">Agregar Nueva Categoria</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class=" insert" >
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_Categ">Nombre<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="nombre_Categ" class="form-control col-md-7 col-xs-12"  name="nombre_Categ" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                        <br>
-                                                        <div class="modal-footer">
-                                                            <input type="hidden" value="" name="op">
-                                                            <button class="submitp btn btn-primary ">Guardar</button>
-                                                            <button class="canceladd btn btn-default " data-dismiss="modal">Cancelar</button>                                                    
-                                                        </div>
-                                                    </form>
-                                                </div>                                           
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-                                    <!--end modal -->
+                                    <!-- main --> 
                                     <div class="x_content">
                                         <h1 class="text-muted font-13 m-b-30">
-                                            Lista de Categorias
+                                            Lista de Mobiliarios
                                         </h1>
                                         <br>
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
                                                    
-                                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre</th>
+                                                    <th data-class="expand"> Nombre del Mobiliario</th>
                                                     <th data-hide="phone">Acciones</th> 
                                                 </tr>
                                             </thead>

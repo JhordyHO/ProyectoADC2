@@ -95,7 +95,7 @@ public class RegistroController {
                     System.out.println("Error al registrar"+e);
                 }
  
-                model.setViewName("Rcate");
+          //      model.setViewName("Rcate");
                 break;
             case "3":
                 model.setViewName("vistas/renuncia/Rautorizar");

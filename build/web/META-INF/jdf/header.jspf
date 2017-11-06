@@ -36,9 +36,9 @@
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="maper?opc=1">Responsables</a></li>
-                      <li><a href="maper?opc=2">Departamentos</a></li>                      
+                      <li><a href="Rdepar">Departamentos</a></li>                      
                       <li><a href="maper?opc=3">Mobiliarios</a></li>                     
-                      <li><a href="maper?opc=4">Categorias</a></li>
+                      <li><a href="Rcate">Categorias</a></li>
                       <li><a href="maper?opc=5">Roles</a></li>
                     </ul>
                   </li>     
@@ -58,9 +58,9 @@
                  </li>
                   </c:if>
                   <c:if test="${IDROL==1 || IDROL==2}">
-                   <li><a><i class   ="fa fa-desktop"></i> Consultar Mobiliarios <span class="fa fa-chevron-down"></span></a>
+                   <li><a><i class="fa fa-desktop"></i> Consultar Mobiliarios <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                          <li><a href="Rmobiliario">Mobiliarios en Baja</a></li>
+                          <li><a href="ConsultaMob">Mobiliarios en Baja</a></li>
                       </ul>
                   </li>      
                   </c:if>                 

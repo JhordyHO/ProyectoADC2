@@ -49,7 +49,7 @@
                                     </div>
                                     <!-- main -->
                                     <!-- modal -->
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
+                                    <button type="button" class="btn btn-success" id="addepa"  data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
                                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -60,21 +60,24 @@
                                                     <h4 class="modal-title" id="myModalLabel">Agregar Nuevo Departamento</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form class="form-horizontal form-label-left" novalidate>
+                                                    <form class="insert" novalidate>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="nombre_depar" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nombre_depar" required="required" type="text">
                                                             </div>
                                                         </div>
-
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <div class="modal-footer">
+                                                    <button   class="cancelar btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                    <button  class="submitp btn btn-primary">Guardar</button>
+                                                </div>
                                                     </form>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                                    <button type="button" class="btn btn-primary">Guardar</button>
-                                                </div>
+                                                
 
                                             </div>
                                         </div>
@@ -88,35 +91,78 @@
                                         <br>
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
-                                                <tr>
-                                                    <th data-hide="phone">ID</th>
+                                                <tr> 
                                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre</th>
-                                                    <th data-hide="phone">Editar</th>
-                                                    <th data-hide="phone">Borrar</th>
+                                                    <td >Acciones</td>
                                                 </tr>
                                             </thead>
 
 
                                             <tbody>
+                                                <c:forEach var="departamento" begin="0" items="${lista2}">  
+                                                <tr>
+                                                       
+                                                        <td><c:out value="${departamento.nombre_depar}"></c:out></td> 
+                                                            <td><a  class="btn btn-success" data-toggle="modal"  href="#myModal1_${departamento.idDepartamento}" >Editar</a>
+                                                               <a class=" btn btn-danger"  href="#myModal_${departamento.idDepartamento}" role="button" data-toggle="modal" >Eliminar</a> 
+                                                    </tr>
+                                                    <!--  eliminar -->
+                                                  <div id="myModal_${departamento.idDepartamento}" class="modal fade">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                <h4 class="modal-title">Confirmar Eliminacion..</h4>
+                                                            </div>
 
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Inicial</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Primer Grado</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Primaria</td>
-                                                    <td><button type="button" class="btn btn-success">Editar</button></td>
-                                                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-                                                </tr>
+                                                            <div class="modal-body">
+                                                                <p>Esta Seguro de Eliminar el Departamento..? </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                                <a class=" btn btn-danger" href="${pageContext.request.contextPath}/deldepa?idDepartamento=${departamento.idDepartamento}" >Eliminar</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                                 <!-- end  eliminar -->
+                                                  <!-- editar -->
+                                                  <div class="modal "  id="myModal1_${departamento.idDepartamento}" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar Categoria</h4>
+                                                </div>
+                                                <div class="modal-body"> 
+                                                    <form   method="post" action="updatedepa"  >
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_Categ">Nombre<span >*</span>
+                                                                </label>
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input id="nombre_Categ" class="form-control col-md-7 col-xs-12"  name="nombre_depar" value="<c:out value='${departamento.nombre_depar}'/>"  type="text"  >
+                                                                    <input type="hidden" name="idDepartamento" value="<c:out value='${departamento.idDepartamento}'/>"  >
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            <br>
+                                                            <br>
+                                                            <div class="modal-footer">
+                                                                <input type="hidden" value="" name="op">
+                                                                <button class=" btn btn-primary "  type="submit" >Guardar</button>
+                                                                <button class="cancelar btn btn-default ">Cancelar</button>                                                    
+                                                            </div>
+                                                        </form> 
+                                                </div>                                           
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                                  <!-- end  editar -->
+                                                 </c:forEach>
                                             </tbody>
                                         </table>
                                     </div>
@@ -135,6 +181,50 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
+            <script>
+                                                                     $(document).ready(function () {
+                                                                    $(".cancelar").click(function () {
+                                                                        $("#nombre_depar").val("");
+                                                                    });
+                                                                    $(".submitp").click(function () {
+                                                                        if($("#nombre_depar").val().length !==0){
+                                                                        $(".insert").submit(function (e) {
+                                                                            e.preventDefault();
+                                                                            var url = "adddepa";
+                                                                            $.post(url, $(".insert").serialize(), function (responseText) {                                                                                
+                                                                                   swal({
+  
+                                                                                    type: 'success',
+                                                                                    title: 'Los datos han sido registrado correctamente!',
+                                                                                    showConfirmButton: false,
+                                                                                    timer: 1500
+                                                                                  })
+                                                                              setTimeout(function(){
+                                                                             $(location).attr('href', responseText);
+                                                                             }, 1000);
+                                                                            });
+                                                                        }).validate({
+                                                                            debug: false,
+                                                                            rules: {
+                                                                                "nombre_depar": {
+                                                                                    required: true
+                                                                                }
+                                                                            }, messages: {
+                                                                                "nombre_depar": {
+                                                                                    required: ""
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                        }else{
+                                                                               swal(
+                                                                                    'Oops...',
+                                                                                    'Por favor rellene el campo !',
+                                                                                    'error'
+                                                                                         )
+                                                                        }
+                                                                    });   
+                                                                });                        
+                
+            </script>
     </body>
 </html>
-
