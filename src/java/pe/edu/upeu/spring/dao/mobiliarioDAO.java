@@ -24,7 +24,7 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
     private PreparedStatement ps;
     private ResultSet rs;
     private Connection conex;
-    private final static String SQL_CREATE = "INSERT INTO mobiliario (idCategoria, idMobiliario2, "
+    private final static String SQL_CREATE = "INSERT INTO mobiliario (idCategoria, idDepartamento, "
             + "nombre_Mob, marca_Mob, serie_Mob, cantidad, estado, fechaReg_Mob, comentario) "
             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
@@ -42,7 +42,7 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
             conex = Conexion.getConexion();
             ps =conex.prepareStatement(SQL_CREATE);
             ps.setInt(1, d.getIdCategoria());
-            ps.setInt(2, d.getIdMobiliario2());
+            ps.setInt(2, d.getIdDepartamento());
             ps.setString(3, d.getNombre_Mob());
             ps.setString(4, d.getMarca_Mob());
             ps.setString(5, d.getSerie_Mob());

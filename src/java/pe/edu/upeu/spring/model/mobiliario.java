@@ -24,10 +24,10 @@ public class mobiliario {
         this.comentario = comentario;
     }
 
-    public mobiliario(int idMobiliario, int idCategoria, int idMobiliario2, String nombre_Mob, String marca_Mob, String serie_Mob, String cantidad, String estado, String fechaReg_Mob, String comentario) {
+    public mobiliario(int idMobiliario, int idCategoria, int idDepartamento, String nombre_Mob, String marca_Mob, String serie_Mob, String cantidad, String estado, String fechaReg_Mob, String comentario) {
         this.idMobiliario = idMobiliario;
         this.idCategoria = idCategoria;
-        this.idMobiliario2 = idMobiliario2;
+        this.idDepartamento = idDepartamento;
         this.nombre_Mob = nombre_Mob;
         this.marca_Mob = marca_Mob;
         this.serie_Mob = serie_Mob;
@@ -53,12 +53,12 @@ public class mobiliario {
         this.idCategoria = idCategoria;
     }
 
-    public int getIdMobiliario2() {
-        return idMobiliario2;
+    public int getIdDepartamento() {
+        return idDepartamento;
     }
 
-    public void setIdMobiliario2(int idMobiliario2) {
-        this.idMobiliario2 = idMobiliario2;
+    public void setIdDepartamento(int idDepartamento) {
+        this.idDepartamento = idDepartamento;
     }
 
     public String getNombre_Mob() {
@@ -117,10 +117,9 @@ public class mobiliario {
         this.comentario = comentario;
     }
 
-
     private int idMobiliario;
     private int idCategoria;
-    private int idMobiliario2;
+    private int idDepartamento;
     private String nombre_Mob;
     private String marca_Mob;
     private String serie_Mob;

@@ -73,8 +73,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoría</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <select id="select" class="form-control">
-                                                                    <option selected disabled>Escoje una Opcion</option>
+                                                                <select id="selecionar" class="form-control">
+                                                                    <option value="">Escoje una Opcion</option>
                                                                     <%ResultSet rs = cat.list();
                                                                     while(rs.next()) {%>
                                                                     <option value="<%=rs.getInt("idCategoria")%>"><%=rs.getString("nombre_Categ")%></option>
@@ -86,8 +86,8 @@
                                                             <div id="3" class="item form-group"  style="display: none">
                                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres del Equipo</label>
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <select id="select2" class="form-control">
-                                                                        <option selected disabled>Escoje una Opcion</option>
+                                                                    <select id="selecionar2" class="form-control">
+                                                                        <option value="">Escoje una Opcion</option>
                                                                         <option value="1">PC1</option>
                                                                         <option value="2">PC2</option>
                                                                         <option value="3">Mouse</option>
@@ -100,6 +100,7 @@
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="departamento" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
@@ -126,7 +127,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <select  id="select3" class="form-control">
+                                                                <select  id="selecionar3" class="form-control">
                                                                     <option selected disabled>Escoja una Opcion</option>
                                                                     <option value="Bueno">Bueno</option>
                                                                     <option value="Regular">Regular</option>
@@ -212,18 +213,19 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
-            <script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+            <script type="text/javascript">
                     $(document).ready(function () {
-                       $('#select').on('change',function(){
+                       $('#selecionar').on('change',function(){
                            var selectValor = '#'+$(this).val();
                            
                            $('#pai').children('div').hide();
                            $('#pai').children(selectValor).show();
                        });
                        $("#btnRegistro").click(function(){
-                           if($("#nombreMob").val().length !==0  && $("#select").val().length !==0 && $("#select3").val().length !==0){
-                               var categoria = $("#select").val();
-                               var equipo2 = $("#select2").val();
+                               var categoria = $("#selecionar").val();
+                               var departamento = $("#departamento").val();
+                               var nombreMob2 = $("#selecionar2").val();
                                var nombreMob = $("#nombreMob").val();
                                var marcaMob = $("#marcaMob").val();
                                var serieMob = $("#serieMob").val();
@@ -231,15 +233,16 @@
                                var select3 = $("#select3").val();
                                var fechaMob = $("#fechaMob").val();
                                var comentaMob = $("#comentaMob").val();
-                               var opc = "1";
-                               
-                               $.ajax({
+                           
+                           if($($("#select").val().length !==0) && $("#nombreMob").val().length !==0){
+                              var opc = "1";                               
+                                $.ajax({
                                    url:"regist",
                                    type: 'POST',
                                    async: true,
                                    data: {
-                                       'categoria' : categoria,
-                                       'equipo2' : equipo2,
+                                       'categoria' : categoria, 
+                                       'departamento' : departamento,
                                        'nombreMob' : nombreMob,
                                        'marcaMob' : marcaMob,
                                        'serieMob' : serieMob,
@@ -250,28 +253,27 @@
                                        'opc' : opc
                                    },
                                    success: function (data) {
-                                       
 
                                     }                                    
                                });
-                             console.log(categoria,equipo2,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
-       
+                             console.log(categoria,departamento, nombreMob2,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
+                             
                                                  
                               swal(
                                          'Registrado!',
                                          'Los datos han sido registrado correctamente!',
                                          'success'
                                           );  
+
                            }else{
                                swal(
                               'Oops...',
-                              'Por favor rellene y seleccione todos los campos !',
+                              'Por favor ingrese los datos principales : Categoria, Nombre, Estado y Comentarios\n\
+                              .Si cuenta con todos los datos sería genial!!',
                               'error'
                                    );
                                
-                           }
-                               
-                                      
+                           }                                 
                        });
                         
                     });

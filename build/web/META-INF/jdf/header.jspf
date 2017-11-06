@@ -35,18 +35,18 @@
                   <c:if test="${IDROL==1}">
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="Rresponsable">Responsables</a></li>
-                      <li><a href="Rdepar">Departamentos</a></li>                      
-                      <li><a href="maper?opc=1">Mobiliarios</a></li>                     
-                      <li><a href="Rcate">Categorias</a></li>
-                      <li><a href="roles">Roles</a></li>
+                      <li><a href="maper?opc=1">Responsables</a></li>
+                      <li><a href="maper?opc=2">Departamentos</a></li>                      
+                      <li><a href="maper?opc=3">Mobiliarios</a></li>                     
+                      <li><a href="maper?opc=4">Categorias</a></li>
+                      <li><a href="maper?opc=5">Roles</a></li>
                     </ul>
                   </li>     
                   </c:if>
                   <c:if test="${IDROL==2}">
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">                  
-                      <li><a href="fromMob">Mobiliarios</a></li>                     
+                      <li><a href="maper?opc=3">Mobiliarios</a></li>                     
                     </ul>
                   </li>                     
                   </c:if>

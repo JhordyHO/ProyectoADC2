@@ -32,20 +32,21 @@ public class RegistroController {
         String opc = request.getParameter("opc");
         switch (opc) {
             case "1":
-                model.setViewName("fromMob");
-                model2.addAttribute("lista",mob.readAll());
+                model.setViewName("Rresponsable");
                 break;
             case "2":
-                model.setViewName("Rcate");
+                model.setViewName("Rdepar");
                 break;
             case "3":
-                model.setViewName("vistas/renuncia/Rautorizar");
+                model.setViewName("fromMob");
+                model2.addAttribute("lista",mob.readAll());
+                
                 break;
             case "4":
-                model.setViewName("vistas/renuncia/Aautorizar");
+                model.setViewName("Rcate");
                 break;
             case "5":
-                model.setViewName("vistas/renuncia/ejemplo");
+                model.setViewName("roles");
                 break;
         }
         return model;
@@ -58,7 +59,7 @@ public class RegistroController {
         switch (opc) {
             case "1":
                 mob2.setIdCategoria(Integer.parseInt(request.getParameter("categoria")));
-                mob2.setIdMobiliario2(Integer.parseInt(request.getParameter("equipo2")));
+                mob2.setIdDepartamento(Integer.parseInt(request.getParameter("departamento")));
                 mob2.setNombre_Mob(request.getParameter("nombreMob"));
                 mob2.setMarca_Mob(request.getParameter("marcaMob"));
                 mob2.setSerie_Mob(request.getParameter("serieMob"));

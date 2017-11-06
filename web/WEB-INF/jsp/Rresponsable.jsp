@@ -3,7 +3,7 @@
     Created on : 06/10/2017, 11:44:12 AM
     Author     : LENOVO
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
