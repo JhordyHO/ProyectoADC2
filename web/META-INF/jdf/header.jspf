@@ -35,7 +35,7 @@
                   <c:if test="${IDROL==1}">
                   <li><a><i class="fa fa-edit"></i> Registrar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="maper?opc=1">Responsables</a></li>
+                      <li><a href="Rresponsable">Responsables</a></li>
                       <li><a href="Rdepar">Departamentos</a></li>                      
                       <li><a href="maper?opc=3">Mobiliarios</a></li>                     
                       <li><a href="Rcate">Categorias</a></li>

@@ -14,6 +14,25 @@ public class usuarios {
     public usuarios() {
     }
 
+   
+    private int idusuario;
+    private String user;
+    private String pass;
+    private String idPersona;
+
+    public usuarios(String user, String pass, String idPersona) {
+        this.user = user;
+        this.pass = pass;
+        this.idPersona = idPersona;
+    }
+
+    public usuarios(int idusuario, String user, String pass, String idPersona) {
+        this.idusuario = idusuario;
+        this.user = user;
+        this.pass = pass;
+        this.idPersona = idPersona;
+    }
+
     public int getIdusuario() {
         return idusuario;
     }
@@ -21,6 +40,7 @@ public class usuarios {
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
     }
+
     public String getUser() {
         return user;
     }
@@ -37,17 +57,12 @@ public class usuarios {
         this.pass = pass;
     }
 
-    public usuarios(String user, String pass) {
-        this.user = user;
-        this.pass = pass;
+    public String getIdPersona() {
+        return idPersona;
     }
 
-    public usuarios(int idusuario, String user, String pass) {
-        this.idusuario = idusuario;
-        this.user = user;
-        this.pass = pass;
+    public void setIdPersona(String idPersona) {
+        this.idPersona = idPersona;
     }
-    private int idusuario;
-    private String user;
-    private String pass;
+   
 }

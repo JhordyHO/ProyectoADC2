@@ -29,6 +29,7 @@ public class departamentoDAO implements Operaciones<departamento>{
     private final static String SQL_DELETE = "DELETE FROM departamento WHERE idDepartamento=?";
     private final static String SQL_SEARCH = "SELECT *FROM departamento WHERE nombre_depar=?";
     private final static String SQL_READALL = "SELECT *FROM departamento";
+        private final static String SQL_READALL1 = "SELECT *FROM departamento";
     private final static String SQL_BUSCAR = "SELECT nombre_depar FROM departamento WHERE idDepartamento=?";
     @Override
     public int create(departamento d) {
@@ -116,6 +117,20 @@ public class departamentoDAO implements Operaciones<departamento>{
     public ArrayList<Map<String, Object>> listar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public ResultSet lista6(){
+        ResultSet rm=null;
+
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_READALL1);
+            rm = ps.executeQuery();
+        } catch (Exception e) {
+            System.out.println("Error al listar categoria por ResultSet "+e);
+        }
+        return rm;
+    }
+    
     
 }
 

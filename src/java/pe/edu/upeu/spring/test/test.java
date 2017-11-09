@@ -27,7 +27,7 @@ public class test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //validar("jose", "123");
+        validar("dayana", "1234");
 //        roles(1);
           //reg();
           reg2();

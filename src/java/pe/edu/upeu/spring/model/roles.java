@@ -11,20 +11,28 @@ package pe.edu.upeu.spring.model;
  */
 public class roles {
 
+   
+   private int idRol;
+   private String nombre_Rol;
+
     public roles() {
     }
 
-    public roles(int idRoles, String nombre_Rol) {
-        this.idRoles = idRoles;
+    public roles(String nombre_Rol) {
         this.nombre_Rol = nombre_Rol;
     }
 
-    public int getIdRoles() {
-        return idRoles;
+    public roles(int idRol, String nombre_Rol) {
+        this.idRol = idRol;
+        this.nombre_Rol = nombre_Rol;
     }
 
-    public void setIdRoles(int idRoles) {
-        this.idRoles = idRoles;
+    public int getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(int idRol) {
+        this.idRol = idRol;
     }
 
     public String getNombre_Rol() {
@@ -34,6 +42,4 @@ public class roles {
     public void setNombre_Rol(String nombre_Rol) {
         this.nombre_Rol = nombre_Rol;
     }
-   private int idRoles;
-   private String nombre_Rol;
 }

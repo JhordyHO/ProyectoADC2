@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import pe.edu.upeu.spring.interfaces.Operaciones;
-import pe.edu.upeu.spring.model.persona;
+import pe.edu.upeu.spring.model.Persona;
 import pe.edu.upeu.spring.model.usuarios;
 import pe.edu.upeu.spring.util.Conexion;
 
@@ -27,7 +27,7 @@ public class usuarioDAO implements Operaciones<usuarios>{
     private ResultSet rs;
     private Connection conex;
 
-    private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRoles, P.idDepartamento,P.nombre_Per,"
+    private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRol, P.idDepartamento,P.nombre_Per,"
             + "P.apellidoPater_Per,P.apellidoMater_Per,P.fechaCumpl_Date,P.dni_Per,P.telefono_Per,P.correo_Per,"
             + "P.sexo_Per FROM usuario U,persona P WHERE U.user=? AND U.pass=? AND P.idPersona = U.idPersona";
     private final static String SQL_CREATE = "INSERT INTO usuario (user, clave) VALUES (?, ?)";
@@ -48,7 +48,7 @@ public class usuarioDAO implements Operaciones<usuarios>{
             rs = ps.executeQuery();
             while(rs.next()){
                 m.put("idPersona",rs.getInt("idPersona"));
-                m.put("idRoles", rs.getInt("idRoles"));
+                m.put("idRoles", rs.getInt("idRol"));
                 m.put("idDepartamento", rs.getInt("idDepartamento")); 
                 m.put("nombre_Per", rs.getString("nombre_Per"));
                 m.put("apellidoPater_Per", rs.getString("apellidoPater_Per"));

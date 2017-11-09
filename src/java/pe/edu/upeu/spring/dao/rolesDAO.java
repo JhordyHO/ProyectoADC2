@@ -29,7 +29,7 @@ public class rolesDAO implements Operaciones<roles>{
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
     private final static String SQL_SEARCH = "SELECT *FROM usuario WHERE user=?";
-    private final static String SQL_READALL = "SELECT *FROM usuario";
+      private final static String SQL_READALL = "SELECT *FROM roles";
     private final static String SQL_BUSCAR = "SELECT nombre_Rol FROM roles WHERE idRoles=?";
 
     @Override
@@ -78,6 +78,19 @@ public class rolesDAO implements Operaciones<roles>{
             System.out.println("Error al listar roles "+ex);
         }
         return lista;
+    }
+    
+     public ResultSet lista(){
+        ResultSet rm=null;
+
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_READALL);
+            rm = ps.executeQuery();
+        } catch (Exception e) {
+            System.out.println("Error al listar categoria por ResultSet "+e);
+        }
+        return rm;
     }
     
 }
