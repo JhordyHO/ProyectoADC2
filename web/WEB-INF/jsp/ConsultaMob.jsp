@@ -57,74 +57,31 @@
                                             <thead>
                                                 <tr>
                                                    
-                                                    <th data-class="expand"> Nombre del Mobiliario</th>
-                                                    <th data-hide="phone">Acciones</th> 
+                                                    <th data-hide="expand"> Nombre del Mobiliario</th>
+                                                    <th data-hide="expand"> Marca Mobiliario</th>
+                                                    <th data-hide="expand"> Numero de Serie Mobiliario</th>
+                                                    <th data-hide="expand"> Camtidad </th>
+                                                    <th data-hide="expand"> Estado</th>
+                                                    <th data-hide="expand"> Fecha de Registro</th>
+                                                    <th data-hide="expand"> Comentario</th>
+                                                    <th data-hide="expand">Acciones</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <c:forEach var="categoria" begin="0" items="${lista1}">
+                                                <c:forEach var="con" begin="0" items="${lista}">
                                                     <tr>
                                                        
-                                                        <td><c:out value="${categoria.nombre_Categ}"></c:out></td> 
-                                                            <td><a  class="btn btn-success" data-toggle="modal"  href="#myModal1_${categoria.idCategoria}" >Editar</a>
-                                                               <a class=" btn btn-danger"  href="#myModal_${categoria.idCategoria}" role="button" data-toggle="modal" >Eliminar</a> 
+                                                        <td><c:out value="${con.nombre_Mob}"></c:out></td> 
+                                                        <td><c:out value="${con.marca_Mob}"></c:out></td> 
+                                                        <td><c:out value="${con.serie_Mob}"></c:out></td> 
+                                                        <td><c:out value="${con.cantidad}"></c:out></td> 
+                                                        <td><c:out value="${con.estado}"></c:out></td> 
+                                                        <td><c:out value="${con.fechaReg_Mob}"></c:out></td> 
+                                                        <td><c:out value="${con.comentario}"></c:out></td> 
+                                                            <td><a  class="btn btn-success" data-toggle="modal"  href="#myModal1_${con.idMobiliario}" >Bueno</a>
+                                                               <a class=" btn btn-danger"  href="#myModal_${con.idMobiliario}" role="button" data-toggle="modal" >Regular</a> 
+                                                               <a class=" btn btn-danger"  href="#myModal_${con.idMobiliario}" role="button" data-toggle="modal" >Malo</a> 
                                                     </tr>
-                                                    
-                                                    <div id="myModal_${categoria.idCategoria}" class="modal fade">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                <h4 class="modal-title">Confirmar Eliminacion..</h4>
-                                                            </div>
-
-                                                            <div class="modal-body">
-                                                                <p>Esta Seguro de Eliminar la Categoria..? </p>
-                                                            </div>
-                                                            <div class="modal-footer">
-
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                                                <a class=" btn btn-danger" href="${pageContext.request.contextPath}/delcat?idCategoria=${categoria.idCategoria}" >Eliminar</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>  
-                                                
-                                                 <!--editar-->
-                                    <div class="modal fade bs-example-modal-lg"  id="myModal1_${categoria.idCategoria}" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                                    </button>
-                                                    <h4 class="modal-title" id="myModalLabel">Editar Categoria</h4>
-                                                </div>
-                                                <div class="modal-body"> 
-                                                    <form   method="post" action="updatecat"  >
-                                                            <div class="item form-group">
-                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_Categ">Nombre<span >*</span>
-                                                                </label>
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input id="nombre_Categ" class="form-control col-md-7 col-xs-12"  name="nombre_Categ" value="<c:out value='${categoria.nombre_Categ}'/>"  type="text"  >
-                                                                    <input type="hidden" name="idCategoria" value="<c:out value='${categoria.idCategoria}'/>"  >
-                                                                </div>
-                                                            </div>
-                                                            <br>
-                                                            <br>
-                                                            <br>
-                                                            <div class="modal-footer">
-                                                                <input type="hidden" value="" name="op">
-                                                                <button class=" btn btn-primary " type="submit"   >Guardar</button>
-                                                                <button class="canceladd btn btn-default ">Cancelar</button>                                                    
-                                                            </div>
-                                                        </form> 
-                                                </div>                                           
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end editar-->
                                                 </c:forEach>
                                             </tbody>
                                         </table>

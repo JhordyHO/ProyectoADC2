@@ -36,9 +36,9 @@ public class HomeController {
     public String Rtesorera(){  
         return "Rtesorera";
     }
-    @RequestMapping("/Cpass")
-    public String Cpass(){  
-        return "Cpass";
+    @RequestMapping("/ConsultaMob2")
+    public String ConsultaMob2(){  
+        return "ConsultaMob2";
     }
     @RequestMapping("/Rresponsable")
     public String Rresponsable(){  

@@ -53,7 +53,7 @@
                   <c:if test="${IDROL==2}">
                  <li><a><i class="fa fa-file-text-o"></i> Inventario Mobiliarios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="Rmobiliario2">Generar Inventario</a></li>
+                      <li><a href="ConsultaMob2">Generar Inventario</a></li>
                     </ul>
                  </li>
                   </c:if>
