@@ -36,6 +36,7 @@ public class HomeControlerPer {
     private final usuarioDAO da= new usuarioDAO();
     usuarios sa= new usuarios();
     Persona pa = new Persona();
+    
     @RequestMapping("/lista")
     public void listame(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");

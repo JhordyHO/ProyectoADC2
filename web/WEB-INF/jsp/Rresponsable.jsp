@@ -145,7 +145,7 @@
                                                                     <option>Eliga una Opcion</option>
                                                                     <%ResultSet rs = cat.lista();
                                                                         while (rs.next()) {%>
-                                                                    <option value="<%=rs.getInt("idRol")%>"><%=rs.getString("nombre_Rol")%> </option>
+                                                                    <option value="<%=rs.getInt("idRoles")%>"><%=rs.getString("nombre_Rol")%> </option>
                                                                     <%}%>
                                                                 </select>
                                                                 

@@ -5,8 +5,11 @@
  */
 package pe.edu.upeu.spring.controller;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
@@ -27,6 +30,7 @@ public class RegistroController {
     private mobiliarioDAO mob = new mobiliarioDAO();
     private mobiliario mob2 = new mobiliario();
     private mobiliariopartes mob3 = new mobiliariopartes();
+    Map<String, Object> mp = new HashMap<>();
     
     @RequestMapping(value = "/maper")
     public ModelAndView RedireccionRenuncia(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -40,9 +44,7 @@ public class RegistroController {
                 model.setViewName("Rdepar");
                 break;
             case "3":
-                model.setViewName("fromMob");
-                model2.addAttribute("lista",mob.readAll());
-                
+                model.setViewName("fromMob");      
                 break;
             case "4":
                 model.setViewName("Rcate");
@@ -58,7 +60,7 @@ public class RegistroController {
     public ModelAndView registroMob(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String opc = request.getParameter("opc");
         switch (opc) {
-            case "1":
+            case "1":///registrarMobiliario
                 mob2.setIdCategoria(Integer.parseInt(request.getParameter("categoria")));
                 mob2.setIdDepartamento(Integer.parseInt(request.getParameter("departamento")));
                 mob2.setNombre_Mob(request.getParameter("nombreMob"));
@@ -71,35 +73,33 @@ public class RegistroController {
                 try {
                     if(mob.create(mob2)>0){
                     model2.addAttribute("lista",mob.readAll());
-                    model.setViewName("fromMob");
                     }
                 }catch (Exception e) {
                     System.out.println("Error al registrar"+e);
                 }
                 break;
-            case "2":
+            case "2":///registrar detable_partes_del mobilairio
                 mob3.setIdMobiliario(Integer.parseInt(request.getParameter("idmobiliario")));
-                mob3.setNombre_Mob2(request.getParameter("nombreMob"));
-                mob3.setMarca_Mob2(request.getParameter("marcaMob"));
-                mob3.setSerie_Mob2(request.getParameter("serieMob"));
-                mob3.setCantidad2(request.getParameter("cantiMob"));
+                mob3.setNombre_Mob2(request.getParameter("nombreMob2"));
+                mob3.setMarca_Mob2(request.getParameter("marcaMob2"));
+                mob3.setSerie_Mob2(request.getParameter("serieMob2"));
+                mob3.setCantidad2(request.getParameter("cantiMob2"));
                 mob3.setEstado(request.getParameter("select3"));
-                mob3.setFechaReg_Mob2(request.getParameter("fechaMob"));
-                mob3.setComentario2(request.getParameter("comentaMob"));
+                mob3.setFechaReg_Mob2(request.getParameter("fechaMob2"));
+                mob3.setComentario2(request.getParameter("comentaMob2"));
                 try {
                     if(mob.create2(mob3)>0){
                     model2.addAttribute("lista",mob.readAll());
-                    model.setViewName("fromMob");
+                    response.getWriter().write("list_mob");
                     }
                 }catch (Exception e) {
                     System.out.println("Error al registrar"+e);
                 }
- 
-          //      model.setViewName("Rcate");
                 break;
             case "3":
-                model.setViewName("vistas/renuncia/Rautorizar");
+
                 break;
+                
             case "4":
                 model.setViewName("vistas/renuncia/Aautorizar");
                 break;
@@ -109,5 +109,17 @@ public class RegistroController {
         }
         return model;
     }
-
+    
+   @RequestMapping("/list_mob")
+    public void list_mob(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        try {
+            mp.put("list", mob.listar2());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Gson gson = new Gson();
+        out.println(gson.toJson(mp));
+    }
 }

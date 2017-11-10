@@ -32,7 +32,7 @@ public class PersonaDAO implements Operaciones<Persona> {
     private ResultSet rs;
     private Connection conex;
     private final String sql_Create = "{CALL PERSONAASD (?,?, ?, ?,?,?,?,?,?,?,?,?)}";
-    private final String sql_READALL = "SELECT nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRol=roles.idRol INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona";
+    private final String sql_READALL = "SELECT nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona";
     private final String sql_Update = "update persona p, usuario us set us.idPersona=p.idPersona, p.idRol=?, p.idDepartamento=?,p.nombre_Per=?,p.apellidoPater_Per=?,p.apellidoMater_Per=?, p.fechaCumpl_Date=?,p.dni_Per=?,p.telefono_Per=?,p.correo_Per=?,p.sexo_Per=?, us.user=?,us.pass=?  WHERE p.idPersona=us.idPersona and p.idPersona=?";
 
     @Override
@@ -62,7 +62,7 @@ public class PersonaDAO implements Operaciones<Persona> {
             while (rs.next()) {
                 Persona p = new Persona();
 
-                p.setIdRol(rs.getInt("idRol"));
+                p.setIdRol(rs.getInt("idRoles"));
                 p.setNombre_Per(rs.getString("nombre_Per"));
                 p.setApellidoPater_Per(rs.getString("apellidoPater_Per"));
                 p.setApellidoMater_Per(rs.getString("apellidoMater_Per"));

@@ -6,6 +6,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="cat" class="pe.edu.upeu.spring.dao.categoriaDAO"/>
+<jsp:useBean id="mob" class="pe.edu.upeu.spring.dao.mobiliarioDAO"/>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.util.*" %>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -16,7 +17,7 @@
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
     </head>
-    <%
+   <%
    Date dNow = new Date();
    SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/yyyy");
    String currentDate = ft.format(dNow);
@@ -88,9 +89,10 @@
                                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                                     <select id="selecionar2" class="form-control">
                                                                         <option value="">Escoje una Opcion</option>
-                                                                        <option value="1">PC1</option>
-                                                                        <option value="2">PC2</option>
-                                                                        <option value="3">Mouse</option>
+                                                                        <%ResultSet rst= mob.listMob();
+                                                                                while(rst.next()){%>
+                                                                                <option value=<%=rst.getInt("idMobiliario")%>><%=rst.getString("nombre_Mob")%></option>
+                                                                        <%}%>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -99,7 +101,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" style="text-transform:uppercase;">
                                                                 <input id="departamento" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" value="<c:out value="${DEPARTAMENTO_ID}"/>" required="required" type="hidden">
                                                             </div>
                                                         </div>
@@ -107,28 +109,28 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Marca<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="marcaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="marcaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" style="text-transform:uppercase;">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Serie<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Modelo / Serie<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="serieMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="serieMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" style="text-transform:uppercase;">
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Cantidad<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="cantiMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="cantiMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="number">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select  id="selecionar3" class="form-control">
-                                                                    <option selected disabled>Escoja una Opcion</option>
+                                                                    <option value="">Escoja una Opcion</option>
                                                                     <option value="Bueno">Bueno</option>
                                                                     <option value="Regular">Regular</option>
                                                                     <option value="Defectuoso">Defectuoso</option>
@@ -147,7 +149,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Comentario<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="comentaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="comentaMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" style="text-transform:uppercase;">
                                                             </div>
                                                         </div>
                                                         <div class="ln_solid"></div>
@@ -167,23 +169,7 @@
                                            <h1 class="text-muted font-13 m-b-30">
                                                Lista de Mobiliarios
                                            </h1>
-                                           <table id="datatable" class="table table-striped table-bordered">
-                                               <thead>
-                                                   <tr>
-                                                       <th data-hide="expand">Nombre Mobiliario</th>
-                                                       <th data-hide="phone">Marca Mobiliario</th>
-                                                       <th data-hide="phone">Numero de Serie Mobiliario</th>
-                                                       <th data-hide="phone">Cantidad</th>
-                                                       <th data-hide="phone">Estado</th>
-                                                       <th data-hide="phone">Fecha Registro</th>
-                                                       <th data-hide="phone">Comentario</th>
-                                                       <th data-hide="phone" colspan="2">OPCION</th>
-                                                   </tr>
-                                               </thead>
-                                               <tbody>
-
-                                               </tbody>
-                                           </table>
+                                         <div class="conTable"></div>
                                        </div>
                                   <!-- end main -->
                                 </div>
@@ -200,152 +186,65 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
-            <script>
-                    
-                      function cargarbox(){
-                          
-                          $('#selecionar').on('change',function(){
-                           var selectValor = '#'+$(this).val();
-                           
-                           $('#pai').children('div').hide();
-                           
-                           if (selectValor === '#3') {
-                               $('#pai').children(selectValor).show().append(prueba());         
-                            }
-                           //console.log(selectValor);
-     
-                       });
-                          
-                      }  
-                      function registro(){
-                        //registro del mobiliario..
-                       $("#btnRegistro").click(function(){
-                               var categoria = $("#selecionar").val();
-                               var departamento = $("#departamento").val();
-                               var nombreMob2 = $("#selecionar2").val();
-                               var nombreMob = $("#nombreMob").val();
-                               var marcaMob = $("#marcaMob").val();
-                               var serieMob = $("#serieMob").val();
-                               var cantiMob = $("#cantiMob").val();
-                               var select3 = $("#selecionar3").val();
-                               var fechaMob = $("#fechaMob").val();
-                               var comentaMob = $("#comentaMob").val();
-                           
-                            if($("#selecionar").val().length !==0 && $("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0){
-                              var opc = "1";                               
-                                $.ajax({
-                                   url:"regist",
-                                   type: 'POST',
-                                   async: true,
-                                   data: {
-                                       'categoria' : categoria, 
-                                       'departamento' : departamento,
-                                       'nombreMob' : nombreMob,
-                                       'marcaMob' : marcaMob,
-                                       'serieMob' : serieMob,
-                                       'cantiMob' : cantiMob,
-                                       'select3' : select3,
-                                       'fechaMob' : fechaMob,
-                                       'comentaMob' : comentaMob,
-                                       'opc' : opc
-                                   },
-                                   success: function (data) {
+            <script src="recursos/build/js/registro.js" type="text/javascript"></script>
+            
+        <script>
+            
+            
+           $(document).ready(function () {
+              listTable();
+            });
 
-                                    }                                    
-                               });
-                             console.log(categoria,departamento, nombreMob2,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
-                             
-                                                 
-                              swal(
-                                         'Registrado!',
-                                         'Los datos han sido registrado correctamente!',
-                                         'success'
-                                          );  
-
-                           }else{
-                               swal(
-                              'Oops...',
-                              'Por favor ingrese los datos principales : Categoria, Nombre, Estado y Comentarios\n\
-                              .Si cuenta con todos los datos sería genial!!',
-                              'error'
-                                   );
-                               
-                           }
-                               $("#selecionar").val("");
-                               $("#departamento").val("");
-                               $("#selecionar2").val("");
-                               $("#nombreMob").val("");
-                               $("#marcaMob").val("");
-                               $("#serieMob").val("");
-                               $("#cantiMob").val("");
-                               $("#selecionar3").val("");
-                               $("#fechaMob").val("");
-                               $("#comentaMob").val("");
-                       });
+            function listTable() {
+                $.post("<%=request.getContextPath()%>/list_mob", function (a) {
+                    var lista = a.list;
+                    if (lista.length > 0) {
+                        var s = '';
+                        for (var i = 0; i < lista.length; i++) {
+                            s += '<tr>';
+                            s += '<td>'+lista[i].nombre_Mob+'</td>';
+                            s += '<td>'+lista[i].marca_Mob+'</td>';
+                            s += '<td>'+lista[i].serie_Mob+'</td>';
+                            s += '<td> '+lista[i].cantidad+'</td>';
+                            s += '<td>'+lista[i].estado+'</td>';
+                            s += '<td>'+lista[i].fechaReg_Mob+'</td>';
+                            s += '<td>'+lista[i].comentario+'</td>';
+                            s += '<td><a class="btn btn-success" id="capturar" data-toggle="modal" href="#Mmodal">Editar</a>';
+                             s += '<td><a class="btn btn-danger" data-toggle="modal" data-target="#myModal1_${lista.Rol}">Eliminar</a>';
                           
-                      }
-                      function prueba(){
-                      //registro del mobiliario_partes_detalle..
-                       $("#btnRegistro").click(function(){
-                               var categoria = $("#selecionar").val();
-                               var idmobiliario = $("#selecionar2").val();
-                               var nombreMob = $("#nombreMob").val();
-                               var marcaMob = $("#marcaMob").val();
-                               var serieMob = $("#serieMob").val();
-                               var cantiMob = $("#cantiMob").val();
-                               var select3 = $("#selecionar3").val();
-                               var fechaMob = $("#fechaMob").val();
-                               var comentaMob = $("#comentaMob").val();
-                           
-                           if($("#selecionar").val().length !==0 && $("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0){
-                              var opc = "2";                               
-                                $.ajax({
-                                   url:"regist",
-                                   type: 'POST',
-                                   async: true,
-                                   data: {
-                                       'idmobiliario' : idmobiliario,
-                                       'nombreMob' : nombreMob,
-                                       'marcaMob' : marcaMob,
-                                       'serieMob' : serieMob,
-                                       'cantiMob' : cantiMob,
-                                       'select3' : select3,
-                                       'fechaMob' : fechaMob,
-                                       'comentaMob' : comentaMob,
-                                       'opc' : opc
-                                   },
-                                   success: function (data) {
+                            s += '</tr>';
+                        }
+                        $(".conTable").empty();
+                        $(".conTable").append(createTable());
+                        $(".mbody").empty();
+                        $(".mbody").append(s);
+                        $("#datatable").dataTable();
+                    } else {
+                        alert("No hay datos");
+                    }
+                });
+            }
 
-                                    }                                    
-                               });
-                             console.log(idmobiliario,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
-                             
-                                                 
-                              swal(
-                                         'Registrado!',
-                                         'Los datos han sido registrado correctamente!',
-                                         'success'
-                                          );  
 
-                           }else{
-                               swal(
-                              'Oops...',
-                              'Por favor ingrese los datos principales : Categoria, Nombre, Estado y Comentarios\n\
-                              .Si cuenta con todos los datos sería genial!!',
-                              'error'
-                                   );
-                               
-                           }                                 
-                       });
-                          
-                      }
-        
-                    $(document).ready(function () {
-                        cargarbox();
-                        registro();
-                        
-                    });
-                
-            </script>
+            function createTable() {
+                var s = '<table id="datatable" class="table table-striped table-bordered">';
+                s += '<thead>';
+                s += '<tr>';
+                s += '<th>Nombre</th>';
+                s += '<th>Marca</th>';
+                s += '<th>Serie</th>';
+                s += '<th>Cantidad</th>';
+                s += '<th data-hide="phone">Estado</th>';
+                s += '<th data-hide="phone">Fecha de Registro</th>';
+                s += '<th data-hide="phone">Comentario</th>';
+                s += '</tr>';
+                s += '</thead>';
+                s += '<tbody class="mbody"></tbody>';
+                s += '</table>';
+                return s;
+            }
+            
+            
+        </script>
     </body>
 </html>
