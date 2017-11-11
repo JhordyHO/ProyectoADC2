@@ -67,7 +67,7 @@
                   <c:if test="${IDROL==1}">
                       <li><a><i class="fa fa-file-text-o"></i> Reporte General <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                          <li><a href="tables.html">Generar Reportes</a></li>
+                          <li><a href="reporteAdmin">Generar Reportes</a></li>
                           <li><a href="tables_dynamic.html">Reportes Realizados</a></li>
                       </ul>
                   </li>                        

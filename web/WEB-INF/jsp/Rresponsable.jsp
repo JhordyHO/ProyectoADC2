@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
         <%@include file="../../META-INF/jdf/head.jspf" %>
-        <title>InstituciÃ³n Educativa El Buen Pastor</title>
+        <title>Institución Educativa El Buen Pastor</title>
     </head>
     <body class="nav-md">
         <div class="container body"> 

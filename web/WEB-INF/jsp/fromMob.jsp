@@ -185,8 +185,8 @@
                     </footer>
                 </div>
             </div>
-            <%@include file="../../META-INF/jdf/footer.jspf" %>
-            <script src="recursos/build/js/registro.js" type="text/javascript"></script>
+            <%@include file="../../META-INF/jdf/footer.jspf" %> -->
+           <!-- <script src="recursos/build/js/registro.js" type="text/javascript"></script> -->
             
         <script>
             
@@ -242,9 +242,7 @@
                 s += '<tbody class="mbody"></tbody>';
                 s += '</table>';
                 return s;
-            }
-            
-            
+            }      
         </script>
     </body>
 </html>

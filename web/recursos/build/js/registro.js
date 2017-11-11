@@ -46,6 +46,7 @@
                                        'opc' : opc
                                    },
                                    success: function (data) {
+                               $(".conTable").append(createTable());   
                                $("#selecionar2").val("");
                                $("#nombreMob").val("");
                                $("#marcaMob").val("");
@@ -95,6 +96,7 @@
                                        'opc' : opc
                                    },
                                    success: function (data) {
+                               $(".conTable").append(createTable());
                                $("#selecionar2").val("");
                                $("#nombreMob").val("");
                                $("#marcaMob").val("");

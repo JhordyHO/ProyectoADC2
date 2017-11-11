@@ -32,6 +32,10 @@ public class HomeController {
     public String index(){  
         return "principal";
     }
+    @RequestMapping("/reporteAdmin")
+    public String reporteAdmin(){  
+        return "reporteAdmin";
+    }
     @RequestMapping("/Rtesorera")
     public String Rtesorera(){  
         return "Rtesorera";
