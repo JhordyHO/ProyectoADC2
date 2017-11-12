@@ -185,18 +185,15 @@
                     </footer>
                 </div>
             </div>
-            <%@include file="../../META-INF/jdf/footer.jspf" %> -->
-           <!-- <script src="recursos/build/js/registro.js" type="text/javascript"></script> -->
-            
-        <script>
-            
-            
-           $(document).ready(function () {
+            <%@include file="../../META-INF/jdf/footer.jspf" %>
+           <script src="recursos/build/js/registro.js" type="text/javascript"></script>
+           <script>   
+       $(document).ready(function () {
               listTable();
             });
 
             function listTable() {
-                $.post("<%=request.getContextPath()%>/list_mob", function (a) {
+                $.post("<%=request.getContextPath()%>/lis_mobi", function (a) {
                     var lista = a.list;
                     if (lista.length > 0) {
                         var s = '';
@@ -210,8 +207,7 @@
                             s += '<td>'+lista[i].fechaReg_Mob+'</td>';
                             s += '<td>'+lista[i].comentario+'</td>';
                             s += '<td><a class="btn btn-success" id="capturar" data-toggle="modal" href="#Mmodal">Editar</a>';
-                             s += '<td><a class="btn btn-danger" data-toggle="modal" data-target="#myModal1_${lista.Rol}">Eliminar</a>';
-                          
+                            s += '<td><a class="btn btn-primary" data-toggle="modal" data-target="#myModal1_">Eliminar</a>';
                             s += '</tr>';
                         }
                         $(".conTable").empty();
@@ -230,19 +226,22 @@
                 var s = '<table id="datatable" class="table table-striped table-bordered">';
                 s += '<thead>';
                 s += '<tr>';
-                s += '<th>Nombre</th>';
+                s += '<th>Nombre Mobiliario</th>';
                 s += '<th>Marca</th>';
                 s += '<th>Serie</th>';
                 s += '<th>Cantidad</th>';
                 s += '<th data-hide="phone">Estado</th>';
-                s += '<th data-hide="phone">Fecha de Registro</th>';
+                s += '<th data-hide="phone">Fecha registro</th>';
                 s += '<th data-hide="phone">Comentario</th>';
+                s += '<th data-hide="phone">Editar</th>';
+                s += '<th data-hide="phone">Eliminar</th>';
                 s += '</tr>';
                 s += '</thead>';
                 s += '<tbody class="mbody"></tbody>';
                 s += '</table>';
                 return s;
-            }      
+            }
+ 
         </script>
     </body>
 </html>

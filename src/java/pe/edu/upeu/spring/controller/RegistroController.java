@@ -58,6 +58,8 @@ public class RegistroController {
     
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public ModelAndView registroMob(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
         String opc = request.getParameter("opc");
         switch (opc) {
             case "1":///registrarMobiliario
@@ -72,7 +74,7 @@ public class RegistroController {
                 mob2.setComentario(request.getParameter("comentaMob"));
                 try {
                     if(mob.create(mob2)>0){
-                    model2.addAttribute("lista",mob.readAll());
+                    model.setViewName("fromMob");
                     }
                 }catch (Exception e) {
                     System.out.println("Error al registrar"+e);
@@ -89,8 +91,7 @@ public class RegistroController {
                 mob3.setComentario2(request.getParameter("comentaMob2"));
                 try {
                     if(mob.create2(mob3)>0){
-                    model2.addAttribute("lista",mob.readAll());
-                    response.getWriter().write("list_mob");
+                    model.setViewName("fromMob");
                     }
                 }catch (Exception e) {
                     System.out.println("Error al registrar"+e);
@@ -110,16 +111,20 @@ public class RegistroController {
         return model;
     }
     
-   @RequestMapping("/list_mob")
-    public void list_mob(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/lis_mobi", method = RequestMethod.POST)
+    public void List_empleados(HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         try {
             mp.put("list", mob.listar2());
+
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error al listar empleados : " + e);
         }
         Gson gson = new Gson();
         out.println(gson.toJson(mp));
+        out.flush();
+        out.close();
     }
+
 }

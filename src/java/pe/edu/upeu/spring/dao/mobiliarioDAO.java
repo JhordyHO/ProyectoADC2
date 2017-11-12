@@ -50,6 +50,7 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
     
     private final static String SQL_BUSCAR = "SELECT *FROM usuario WHERE idusuario=?";
     private final static String SQL_listar = "SELECT *FROM mobiliario";
+    
     @Override
     public int create(mobiliario d) {
         int op = 0;
@@ -85,29 +86,7 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
 
     @Override
     public List<mobiliario> readAll() {
-          List<mobiliario> lista = new ArrayList<>();
-        try {
-            conex = Conexion.getConexion();
-            ps = conex.prepareStatement(SQL_listar);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                mobiliario x = new mobiliario();
-                x.setIdMobiliario(rs.getInt("idMobiliario"));
-                x.setNombre_Mob(rs.getString("nombre_Mob"));
-                x.setMarca_Mob(rs.getString("marca_Mob"));
-                x.setSerie_Mob(rs.getString("serie_Mob"));
-                x.setCantidad(rs.getString("cantidad"));
-                x.setEstado(rs.getString("estado"));
-                x.setFechaReg_Mob(rs.getString("fechaReg_Mob"));
-                x.setComentario(rs.getString("comentario"));
-
-                lista.add(x);
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e);
-        }
-        return lista;
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -117,30 +96,7 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
 
     @Override
     public ArrayList<Map<String, Object>> listar() {
-         Map<String, Object> m = new HashMap<>();
-         ArrayList<Map<String, Object>> lista = new ArrayList<>();
-                 try {
-            conex = Conexion.getConexion();
-            ps = conex.prepareStatement(SQL_READALL);
-            rs = ps.executeQuery();
-            while(rs.next()){
-                m.put("idMobiliario",rs.getInt("idMobiliario"));
-                m.put("nombre_Mob", rs.getString("nombre_Mob"));
-                m.put("marca_Mob", rs.getString("marca_Mob"));
-                m.put("serie_Mob", rs.getString("serie_Mob"));
-                m.put("cantidad", rs.getString("cantidad"));
-                m.put("estado",rs.getString("estado"));
-                m.put("fechaReg_Mob", rs.getString("fechaReg_Mob"));   
-                m.put("comentario", rs.getString("comentario"));
-                m.put("nombre_Categ", rs.getString("nombre_Categ"));   
-                lista.add(m);
-
-            }
-        } catch (Exception e) {
-            System.out.println("Error: "+e);
-        }
-        return lista;
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public int create2(mobiliariopartes d){
@@ -164,26 +120,6 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
         
    
     }
-    ///lista de los mobiliarios y de los comboboz segun a su departamento
-        public List<mobiliario> read2(int departamento) {
-          List<mobiliario> lista = new ArrayList<>();
-        try {
-            conex = Conexion.getConexion();
-            ps = conex.prepareStatement(SQL_READALL2);
-            ps.setInt(1, departamento);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                mobiliario x = new mobiliario();
-                x.setIdMobiliario(rs.getInt("idMobiliario"));
-                x.setNombre_Mob(rs.getString("nombre_Mob"));
-                lista.add(x);
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e);
-        }
-        return lista;
-        
-    }
    ///fin de la esta función
        public ResultSet listMob(){
         ResultSet rm=null;
@@ -197,6 +133,7 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
         }
         return rm;
     }
+       //utilizando para listar mobiliarios en la tabal mobiliario
        public List<Map<String, Object>> listar2() {
         List<Map<String, Object>> l = new ArrayList<>();
         try {
@@ -223,4 +160,5 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
 
         return l;
     }
+      //----------------------------------------------------------------
 }
