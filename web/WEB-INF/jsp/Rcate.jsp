@@ -94,7 +94,8 @@
                                                 <tr>
                                                    
                                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre</th>
-                                                    <th data-hide="phone">Acciones</th> 
+                                                    <td>Editar</td>
+                                                    <td>Eliminar</td> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -102,8 +103,8 @@
                                                     <tr>
                                                        
                                                         <td><c:out value="${categoria.nombre_Categ}"></c:out></td> 
-                                                            <td><a  class="btn btn-success" data-toggle="modal"  href="#myModal1_${categoria.idCategoria}" >Editar</a>
-                                                               <a class=" btn btn-danger"  href="#myModal_${categoria.idCategoria}" role="button" data-toggle="modal" >Eliminar</a> 
+                                                        <td><a  class="btn btn-info btn-xs" data-toggle="modal"  href="#myModal1_${categoria.idCategoria}" ><i class="fa fa-pencil"></i> Editar </a></td>
+                                                        <td><a class="btn btn-danger btn-xs"  href="#myModal_${categoria.idCategoria}" role="button" data-toggle="modal" ><i class="fa fa-trash-o"></i> Eliminar </a></td>
                                                     </tr>
                                                     
                                                     <div id="myModal_${categoria.idCategoria}" class="modal fade">

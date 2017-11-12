@@ -29,7 +29,8 @@ public class usuarioDAO implements Operaciones<usuarios>{
 
     private final static String SQL_VALIDA = "SELECT P.idPersona, P.idRoles, P.idDepartamento,P.nombre_Per,"
             + "P.apellidoPater_Per,P.apellidoMater_Per,P.fechaCumpl_Date,P.dni_Per,P.telefono_Per,P.correo_Per,"
-            + "P.sexo_Per FROM usuario U,persona P WHERE U.user=? AND U.pass=? AND P.idPersona = U.idPersona";
+            + "P.sexo_Per,R.nombre_Rol FROM usuario U,persona P,roles R WHERE U.user=? AND U.pass=? AND P.idPersona = U.idPersona "
+            + "AND R.idRoles=P.IdRoles";
     private final static String SQL_CREATE = "INSERT INTO usuario (user, clave) VALUES (?, ?)";
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
@@ -57,7 +58,8 @@ public class usuarioDAO implements Operaciones<usuarios>{
                 m.put("dni_Per",rs.getString("dni_Per"));
                 m.put("telefono_Per", rs.getString("telefono_Per"));   
                 m.put("correo_Per", rs.getString("correo_Per"));
-                m.put("sexo_Per", rs.getString("sexo_Per"));   
+                m.put("sexo_Per", rs.getString("sexo_Per"));
+                m.put("nombre_Rol", rs.getString("nombre_Rol"));
                 lista.add(m);
 
             }

@@ -21,6 +21,8 @@ public class Conexion {
     private static final String USER = "root";
     private static final String PASS = "";
     private static Connection cx = null;
+    private static Statement st;
+    private static ResultSet rs = null;
     
     public static Connection getConexion(){
         try {
@@ -34,9 +36,6 @@ public class Conexion {
         return cx;
     }
      public ResultSet query(String sql) {
-
-        Statement st;
-        ResultSet rs = null;
         try {
             Connection conexion = this.getConexion();
             st = conexion.createStatement();

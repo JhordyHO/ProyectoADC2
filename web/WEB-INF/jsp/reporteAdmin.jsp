@@ -120,7 +120,7 @@
           <script>
             
             
-         <!--  $(document).ready(function () {
+         <!--$(document).ready(function () {
               listTable();
             });
 
@@ -167,7 +167,7 @@
                 s += '</table>';
                 return s;
             }
-            -->
+           
         </script>
     </body>
 </html>

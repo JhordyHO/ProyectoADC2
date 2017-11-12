@@ -169,8 +169,8 @@
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <select id="sexo" class="form-control">
                                                                     <option>Eliga una Opcion</option>
-                                                                    <option>M</option>
-                                                                    <option>F</option>
+                                                                    <option value="M">Maculino</option>
+                                                                    <option value="F">Femenino</option>
 
                                                                 </select>
                                                                
@@ -373,8 +373,8 @@ $(document).ready(function () {
                             s += '<td>'+lista[i].contra+'</td>';
                             s += '<td>'+lista[i].rol+'</td>';
                             s += '<td>'+lista[i].depar+'</td>';
-                            s += '<td><a class="btn btn-success" id="capturar" data-toggle="modal" href="#Mmodal">Editar</a>';
-                             s += '<td><a class="btn btn-primary" data-toggle="modal" data-target="#myModal1_${lista.Rol}">Eliminar</a>';
+                            s += '<td><a class="btn btn-info btn-xs" id="capturar" data-toggle="modal" href="#Mmodal"><i class="fa fa-pencil"></i> Editar </a>';
+                             s += '<td><a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal1_${lista.Rol}"><i class="fa fa-trash-o"></i> Eliminar</a>';
                           
                             s += '</tr>';
                         }
@@ -395,12 +395,12 @@ $(document).ready(function () {
                 s += '<thead>';
                 s += '<tr>';
                 s += '<th>Nombre Apellido</th>';
-                s += '<th>Fecha CumpleaÃ±os</th>';
+                s += '<th>Fecha Cumpleaños</th>';
                 s += '<th>DNI</th>';
                 s += '<th>Telefono</th>';
                 s += '<th data-hide="phone">Correo Electronico</th>';
                 s += '<th data-hide="phone">Nombre Usuario</th>';
-                s += '<th data-hide="phone">ContraseÃ±a</th>';
+                s += '<th data-hide="phone">Contraseña</th>';
                 s += '<th data-hide="phone">Rol</th>';
                 s += '<th data-hide="phone">Departamento</th>';
                 s += '<th data-hide="phone">Editar</th>';

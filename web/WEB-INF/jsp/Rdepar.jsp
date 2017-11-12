@@ -93,7 +93,8 @@
                                             <thead>
                                                 <tr> 
                                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombre</th>
-                                                    <td >Acciones</td>
+                                                    <td>Editar</td>
+                                                    <td>Eliminar</td>
                                                 </tr>
                                             </thead>
 
@@ -103,8 +104,8 @@
                                                 <tr>
                                                        
                                                         <td><c:out value="${departamento.nombre_depar}"></c:out></td> 
-                                                            <td><a  class="btn btn-success" data-toggle="modal"  href="#myModal1_${departamento.idDepartamento}" >Editar</a>
-                                                               <a class=" btn btn-danger"  href="#myModal_${departamento.idDepartamento}" role="button" data-toggle="modal" >Eliminar</a> 
+                                                        <td><a class="btn btn-info btn-xs" data-toggle="modal"  href="#myModal1_${departamento.idDepartamento}" ><i class="fa fa-pencil"></i> Editar </a></td>
+                                                        <td><a class="btn btn-danger btn-xs"  href="#myModal_${departamento.idDepartamento}" role="button" data-toggle="modal" ><i class="fa fa-trash-o"></i> Eliminar </a></td> 
                                                     </tr>
                                                     <!--  eliminar -->
                                                   <div id="myModal_${departamento.idDepartamento}" class="modal fade">

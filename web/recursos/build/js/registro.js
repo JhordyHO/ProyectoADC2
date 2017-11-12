@@ -45,7 +45,8 @@
                                        'comentaMob' : comentaMob,
                                        'opc' : opc
                                    },
-                                   success: function (data) { 
+                                   success: function (data) {
+                               listTable();
                                $("#selecionar2").val("");
                                $("#nombreMob").val("");
                                $("#marcaMob").val("");
@@ -53,8 +54,6 @@
                                $("#cantiMob").val("");
                                $("#selecionar3").val("");
                                $("#comentaMob").val("");
-
-
                                     }                                    
                                });
                              console.log(categoria,departamento,nombreMob,marcaMob,serieMob,cantiMob,select3,fechaMob,comentaMob);
@@ -95,6 +94,7 @@
                                        'opc' : opc
                                    },
                                    success: function (data) {
+                               listTable();
                                $("#selecionar2").val("");
                                $("#nombreMob").val("");
                                $("#marcaMob").val("");
@@ -139,7 +139,6 @@
                           
                       }
                 //fin de registro----------------------------------
-        
                     $(document).ready(function () {
                         cargarbox();
                         registro();

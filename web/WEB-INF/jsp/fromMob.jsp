@@ -60,7 +60,7 @@
                                     <!-- main -->
                                     <!-- modal -->
                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i>Agregar</button>
-                                                                   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
 
@@ -186,7 +186,7 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
-           <script src="recursos/build/js/registro.js" type="text/javascript"></script>
+                       <script src="recursos/build/js/registro.js" type="text/javascript"></script>
            <script>   
        $(document).ready(function () {
               listTable();
@@ -206,8 +206,9 @@
                             s += '<td>'+lista[i].estado+'</td>';
                             s += '<td>'+lista[i].fechaReg_Mob+'</td>';
                             s += '<td>'+lista[i].comentario+'</td>';
-                            s += '<td><a class="btn btn-success" id="capturar" data-toggle="modal" href="#Mmodal">Editar</a>';
-                            s += '<td><a class="btn btn-primary" data-toggle="modal" data-target="#myModal1_">Eliminar</a>';
+                            s += '<td><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Ver</a>';
+                            s += '<td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>';
+                            s += '<td><a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>';
                             s += '</tr>';
                         }
                         $(".conTable").empty();
@@ -233,6 +234,7 @@
                 s += '<th data-hide="phone">Estado</th>';
                 s += '<th data-hide="phone">Fecha registro</th>';
                 s += '<th data-hide="phone">Comentario</th>';
+                s += '<th data-hide="phone">Ver</th>';
                 s += '<th data-hide="phone">Editar</th>';
                 s += '<th data-hide="phone">Eliminar</th>';
                 s += '</tr>';

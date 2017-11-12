@@ -82,7 +82,7 @@
                                                           <div class="modal-header">
                                                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                               </button>
-                                                              <h4 class="modal-title" id="myModalLabel">Registrar</h4>
+                                                              <h4 class="modal-title" id="myModalLabel">Actualizar Usuario y Contraseña</h4>
                                                           </div>
                                                           <div class="modal-body">
                                                               <form class="form-horizontal form-label-left" novalidate>
@@ -90,7 +90,7 @@
                                                                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Usuario<span class="required">*</span>
                                                                       </label> 
                                                                       <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="<c:out value="${USER}"/>">
                                                                       </div>
                                                                   </div>
                                                                   <div class="item form-group">
@@ -118,7 +118,7 @@
                                                           <div class="modal-header">
                                                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                               </button>
-                                                              <h4 class="modal-title" id="myModalLabel">Actualizar</h4>
+                                                              <h4 class="modal-title" id="myModalLabel">Actualizar Datos Personales</h4>
                                                           </div>
                                                           <!--modal de actualizar-->
                                                           <div class="modal-body">

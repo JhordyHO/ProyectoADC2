@@ -63,7 +63,7 @@ public class LoginController {
              if (Usuario.equals("") && Clave.equals("")) {
                 url="login";
             } else if (user.size() == 1) {
-                session.setAttribute("user",Usuario);
+                session.setAttribute("USER",Usuario);
                 session.setAttribute("IDPER", user.get(0).get("idPersona"));
                 session.setAttribute("IDROL", user.get(0).get("idRoles"));
                 session.setAttribute("DEPARTAMENTO_ID", user.get(0).get("idDepartamento"));
@@ -77,7 +77,7 @@ public class LoginController {
                 session.setAttribute("CORREO", user.get(0).get("correo_Per"));
                 session.setAttribute("SEXO", user.get(0).get("sexo_Per"));
                 session.setAttribute("NOMBRE_AP", user.get(0).get("nombre_Per") + " " + user.get(0).get("apellidoPater_Per"));
-                session.setAttribute("LIST_MODULO", rol.validar_roles(user.get(0).get("idRoles")));
+                session.setAttribute("NOMBRE_ROL", user.get(0).get("nombre_Rol"));
                 mp.put("rpta", true);
                 url="principal";
             }
