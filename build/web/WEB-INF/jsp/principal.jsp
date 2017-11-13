@@ -9,14 +9,13 @@
 <%
     HttpSession sesion = request.getSession();
 %>
-
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
     </head>
-  <body class="nav-md">
+  <body onload="nobackbutton()" class="nav-md">
       <div class="container body"> 
           <div class="main_container">
             <%@include file="../../META-INF/jdf/header.jspf" %>
@@ -260,5 +259,14 @@
           </div>
       </div>  
       <%@include file="../../META-INF/jdf/footer.jspf" %>
+      <script>
+                                                                   function nobackbutton() {
+                                                                       window.location.hash = "no-back-button";
+                                                                       window.location.hash = "Again-No-back-button";
+                                                                       window.onhashchange = function () {
+                                                                           window.location.hash = "";
+                                                                       };
+                                                                   }
+        </script>
     </body>
 </html>

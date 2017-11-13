@@ -13,7 +13,7 @@
     <title>Institución Educativa El Buen Pastor</title> 
   </head>
 
-  <body class="login">
+  <body onload="nobackbutton()" class="login">
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
@@ -56,5 +56,14 @@
         </div>
       </div>
     </div>
+            <script>
+                                                                   function nobackbutton() {
+                                                                       window.location.hash = "no-back-button";
+                                                                       window.location.hash = "Again-No-back-button";
+                                                                       window.onhashchange = function () {
+                                                                           window.location.hash = "";
+                                                                       };
+                                                                   }
+        </script>
   </body>
 </html>
