@@ -148,9 +148,10 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
                 lista.put("serie_Mob", rs.getString("serie_Mob"));
                 lista.put("cantidad", rs.getString("cantidad"));
                 lista.put("estado",rs.getString("estado"));
-                lista.put("fechaReg_Mob", rs.getString("fechaReg_Mob"));   
-                lista.put("comentario", rs.getString("nombre_depar"));
-                lista.put("comentario", rs.getString("nombre_Categ"));
+                lista.put("fechaReg_Mob", rs.getString("fechaReg_Mob"));
+                lista.put("comentario", rs.getString("comentario"));
+                lista.put("nombre_depar", rs.getString("nombre_depar"));
+                lista.put("nombre_Categ", rs.getString("nombre_Categ"));
                 l.add(lista);
             }
         } catch (Exception e) {
