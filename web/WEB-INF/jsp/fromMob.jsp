@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="cat" class="pe.edu.upeu.spring.dao.categoriaDAO"/>
 <jsp:useBean id="mob" class="pe.edu.upeu.spring.dao.mobiliarioDAO"/>
+<jsp:useBean id="dep" class="pe.edu.upeu.spring.dao.departamentoDAO"/>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.util.*" %>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -83,6 +84,18 @@
                                                                 </select>
                                                             </div>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Departamento</label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select  id="departamento" class="form-control">
+                                                                    <option value="">Escoja una Opcion</option>
+                                                                    <%ResultSet rsp = dep.lista6();
+                                                                    while (rsp.next()){%>
+                                                                    <option value="<%=rsp.getInt("idDepartamento")%>"><%=rsp.getString("nombre_depar")%></option>
+                                                                    <%}%>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                         <div id="pai">
                                                             <div id="3" class="item form-group"  style="display: none">
                                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombres del Equipo</label>
@@ -102,7 +115,7 @@
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="nombreMob" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" style="text-transform:uppercase;">
-                                                                <input id="departamento" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" value="<c:out value="${DEPARTAMENTO_ID}"/>" required="required" type="hidden">
+                                                            <!--    <input id="departamento" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" value="<c:out value="${DEPARTAMENTO_ID}"/>" required="required" type="hidden"> --->
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
