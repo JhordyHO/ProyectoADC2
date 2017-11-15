@@ -34,6 +34,13 @@
                             <div class="title_left">
                                 <h3>Resgistrar Mobiliario</h3>
                             </div>
+                            <div class="title_right">
+                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group alignright">
+                                        <button id="info2" type="button" class="btn btn-round btn-info" style="border: 1px solid #d0d0d0;"><i class="fa fa-exclamation-circle"></i>Información!!</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="row">
@@ -254,7 +261,8 @@
                 </div>
             </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %>
-                       <script src="recursos/build/js/registro.js" type="text/javascript"></script>
+            <script src="recursos/build/js/registro.js" type="text/javascript"></script>
+            <script src="recursos/build/js/botonoprueba.js" type="text/javascript"></script>
            <script>   
        $(document).ready(function () {
               listTable();

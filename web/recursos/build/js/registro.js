@@ -27,7 +27,9 @@
                                var select3 = $("#selecionar3").val();
                                var fechaMob = $("#fechaMob").val();
                                var comentaMob = $("#comentaMob").val();
-                      if($("#selecionar").val().length !==0 && $("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0 && $("#selecionar3").val().length !==0 && $("#selecionar2").val().length ===0){
+                      if($("#selecionar").val().length !==0 && $("#nombreMob").val().length !==0 && 
+                         $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0 && 
+                         $("#selecionar3").val().length !==0 && $("#departamento").val().length !==0 && $("#selecionar2").val().length ===0){
                               var opc = "1";                               
                                 $.ajax({
                                    url:"regist",
@@ -76,7 +78,8 @@
                                var select32 = $("#selecionar3").val();
                                var fechaMob2 = $("#fechaMob").val();
                                var comentaMob2 = $("#comentaMob").val();
-                             if($("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && $("#comentaMob").val().length !==0 && $("#selecionar3").val().length !==0){ 
+                             if($("#departamento").val().length !==0 && $("#nombreMob").val().length !==0 && $("#cantiMob").val().length !==0 && 
+                                $("#comentaMob").val().length !==0 && $("#selecionar3").val().length !==0){ 
                                var opc = "2";                               
                                 $.ajax({
                                    url:"regist",
@@ -114,8 +117,8 @@
                              }else{
                                swal(
                               'Oops...',
-                              'Por favor ingrese los datos principales : Categoria, Nombre, Estado y Comentarios\n\
-                              .Si cuenta con todos los datos seria genial!!',
+                              'Por favor ingrese todos los datos. Para mas informacion pulse\n\
+                               el boton informacion',
                               'error'
                                    );
                                
@@ -125,8 +128,8 @@
                            }else{
                                swal(
                               'Oops...',
-                              'Por favor ingrese los datos principales : Categoria, Nombre, Estado y Comentarios\n\
-                              .Si cuenta con todos los datos seria genial!!',
+                              'Por favor ingrese todos los datos. Para una informacion detallada pulse\n\
+                               el boton informacion',
                               'error'
                                    );
                                
