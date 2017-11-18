@@ -186,56 +186,33 @@
                                      </div>
                                        <!--end modal -->
                                        <!------INICIO DEL MODAL DE VER--------->
-                                     <div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
+                                       <div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-hidden="true">
+                                           <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
 
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                                    </button>
-                                                    <h4 class="modal-title" id="myModalLabel">Vista del Mobiliario:</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class="form-horizontal form-label-left" novalidate>
-                                                        <section class="main row">
-                                                            <article class="col-md-6">
-                                                                <h4>Mobiliario Principal</h4>
-                                                                <div class="ln_solid"></div>
-                                                                <!-----Muestra el formulario de ver mobiliario------>
-                                                                <div class="item form-group">
-                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombres del Mobiliario<span class="required">*</span>
-                                                                    </label>
-                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                        <p class="form-control-static"></p>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-----FIN Muestra el formulario de ver mobiliario------>
-                                                            </article>
-
-                                                            <anside class="col-md-6">
-                                                                <h4>Partes del Mobiliario</h4>
-                                                                <div class="ln_solid"></div>
-                                                                <!-----Muestra el formulario para ver las partes del mobiliario------>
-                                                                <div class="item form-group">
-                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombres del Mobiliario<span class="required">*</span>
-                                                                    </label>
-                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                        <p class="form-control-static"></p>
-                                                                    </div>
-                                                                </div>
-
-                                                            </anside>
-                                                            
-                                                        </section>
-                                                        <div class="ln_solid"></div>
-                                                        <div class="form-group">
-                                                            <div class="col-md-6 col-md-offset-3">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                            </div>
-                                                        </div>                                                    
-                                                    </form>
-                                                </div>
+                                                   <div class="modal-header">
+                                                       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                       </button>
+                                                       <h4 class="modal-title" id="myModalLabel">Vista de las Partes del Mobiliario:</h4>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                       <form class="form-horizontal form-label-left" novalidate>
+                                                           
+                                                           <div class="x_content">
+                                                               <div class="conTable2">
+                                                               </div>		
+                                                           </div>
+                                                           <div class="callout callout-warning advice2 hidden">
+                                                               <center><h4>Ups...No hay partes del mobiliario Registrado asegurese que sean equipos Informatico</h4></center>
+                                                           </div>
+                                                           <div class="ln_solid"></div>
+                                                           <div class="form-group">
+                                                               <div class="col-md-6 col-md-offset-3">
+                                                                   <center><button type="button" id="cancelarMob" class="btn btn-default" data-dismiss="modal">Cancel</button></center>
+                                                               </div>
+                                                           </div>                                                    
+                                                       </form>
+                                                   </div>
                                             </div>
                                         </div>
                                      </div>
@@ -244,9 +221,10 @@
                                            <h1 class="text-muted font-13 m-b-30">
                                                Lista de Mobiliarios
                                            </h1>
-                                         <div class="conTable"></div>
+                                           <div class="conTable">
+                                           </div>
                                        </div>
-                                  <!-- end main -->
+                                       <!-- end main -->
                                 </div>
                             </div>
                         </div>
@@ -263,6 +241,7 @@
             <%@include file="../../META-INF/jdf/footer.jspf" %>
             <script src="recursos/build/js/registro.js" type="text/javascript"></script>
             <script src="recursos/build/js/botonoprueba.js" type="text/javascript"></script>
+            <script src="recursos/build/js/listaDetamob.js" type="text/javascript"></script>
            <script>   
        $(document).ready(function () {
               listTable();
@@ -282,8 +261,10 @@
                             s += '<td>'+lista[i].estado+'</td>';
                             s += '<td>'+lista[i].fechaReg_Mob+'</td>';
                             s += '<td>'+lista[i].comentario+'</td>';
-                            s += '<td><a href="listar?id='+lista[i].idMobiliario+'" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg2"><i class="fa fa-folder"></i> Ver</a>';
-                            s += '<td><a href="listar?id='+lista[i].idMobiliario+'" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>';
+                            s += '<td>'+lista[i].nombre_depar+'</td>';
+                            s += '<td>'+lista[i].nombre_Categ+'</td>';
+                            s += '<td><a id='+ lista[i].idMobiliario +' onclick="getData(this.id);" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg2"><i class="fa fa-folder"></i> Ver</a>';
+                            s += '<td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>';
                             s += '<td><a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>';
                             s += '</tr>';
                         }
@@ -305,11 +286,13 @@
                 s += '<tr>';
                 s += '<th>Nombre Mobiliario</th>';
                 s += '<th>Marca</th>';
-                s += '<th>Serie</th>';
+                s += '<th>Modelo/Serie</th>';
                 s += '<th>Cantidad</th>';
                 s += '<th data-hide="phone">Estado</th>';
                 s += '<th data-hide="phone">Fecha registro</th>';
                 s += '<th data-hide="phone">Comentario</th>';
+                s += '<th data-hide="phone">Departamento</th>';
+                s += '<th data-hide="phone">Categoria</th>';
                 s += '<th data-hide="phone">Ver</th>';
                 s += '<th data-hide="phone">Editar</th>';
                 s += '<th data-hide="phone">Eliminar</th>';
@@ -317,9 +300,9 @@
                 s += '</thead>';
                 s += '<tbody class="mbody"></tbody>';
                 s += '</table>';
+
                 return s;
             }
- 
         </script>
     </body>
 </html>

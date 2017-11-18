@@ -35,7 +35,10 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
     
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
-    private final static String SQL_SEARCH = "SELECT *FROM usuario WHERE user=?";
+    //utilizando
+    private final static String SQL_SEARCHMOB = "SELECT iddetallle_partes_mobiliario,nombre_Mob2,marca_Mob2, serie_Mob2, cantidad2,estado,fechaReg_Mob2, comentario2 "
+            + "FROM detallle_partes_mobiliario WHERE idMobiliario=?";
+    //fin 
     private final static String SQL_READALL = "SELECT  m.idMobiliario, m.nombre_Mob, m.marca_Mob, "
             + "m.serie_Mob, m.cantidad, m.estado, m.fechaReg_Mob, m.comentario, c.nombre_Categ "
             + "FROM mobiliario m , categoria c WHERE c.idCategoria = m.idCategoria ORDER BY m.idMobiliario";
@@ -162,4 +165,30 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
         return l;
     }
       //----------------------------------------------------------------
+        public List<Map<String, Object>> listaPrMob(String idMob) {
+        List<Map<String, Object>> p = new ArrayList<>();
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_SEARCHMOB);
+            ps.setString(1, idMob);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Map<String, Object> lista = new HashMap<>();
+                lista.put("idMobPartes",rs.getInt("iddetallle_partes_mobiliario"));
+                lista.put("nombre_Mob2", rs.getString("nombre_Mob2"));
+                lista.put("marca_Mob2", rs.getString("marca_Mob2"));
+                lista.put("serie_Mob2", rs.getString("serie_Mob2"));
+                lista.put("cantidad2", rs.getString("cantidad2"));
+                lista.put("estado",rs.getString("estado"));
+                lista.put("fechaReg_Mob2", rs.getString("fechaReg_Mob2"));
+                lista.put("comentario2", rs.getString("comentario2"));
+                p.add(lista);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("error : " + e);
+        }
+
+        return p;
+    }
 }

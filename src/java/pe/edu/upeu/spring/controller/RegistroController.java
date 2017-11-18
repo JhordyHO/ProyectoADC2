@@ -97,7 +97,7 @@ public class RegistroController {
                     System.out.println("Error al registrar"+e);
                 }
                 break;
-            case "3":
+            case "3": 
 
                 break;
                 
@@ -118,6 +118,21 @@ public class RegistroController {
         try {
             mp.put("list", mob.listar2());
 
+        } catch (Exception e) {
+            System.out.println("Error al listar empleados : " + e);
+        }
+        Gson gson = new Gson();
+        out.println(gson.toJson(mp));
+        out.flush();
+        out.close();
+    }
+        @RequestMapping(value = "/vistaMob", method = RequestMethod.POST)
+        public void vistaMob(HttpServletResponse response, HttpServletRequest request) throws IOException {
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+       String idMob = request.getParameter("idMob").toString();
+        try {           
+            mp.put("ls", mob.listaPrMob(idMob));
         } catch (Exception e) {
             System.out.println("Error al listar empleados : " + e);
         }
