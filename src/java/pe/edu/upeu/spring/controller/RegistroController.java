@@ -102,9 +102,26 @@ public class RegistroController {
                 break;
                 
             case "4":
-                model.setViewName("vistas/renuncia/Aautorizar");
+                int id = Integer.parseInt(request.getParameter("idMob"));
+                try {
+                    if(mob.delete(id)>0){
+                       model.setViewName("fromMob");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Error al eliminar"+ e);
+                }
+
                 break;
             case "5":
+                String id2 = request.getParameter("idMob2");
+                try {
+                    if (mob.delete2(id2)>0) {
+                        model.setViewName("fromMob");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Error al eliminar"+e);
+                }
+                
                 model.setViewName("vistas/renuncia/ejemplo");
                 break;
         }
@@ -130,7 +147,7 @@ public class RegistroController {
         public void vistaMob(HttpServletResponse response, HttpServletRequest request) throws IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-       String idMob = request.getParameter("idMob").toString();
+       String idMob = request.getParameter("idMob");
         try {           
             mp.put("ls", mob.listaPrMob(idMob));
         } catch (Exception e) {

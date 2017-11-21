@@ -32,7 +32,7 @@
                     <div class="">
                         <div class="page-title">
                             <div class="title_left">
-                                <h3>Resgistrar Mobiliario</h3>
+                                <h3>Resgistrar Mobiliarios</h3>
                             </div>
                             <div class="title_right">
                                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -185,7 +185,7 @@
                                         </div>
                                      </div>
                                        <!--end modal -->
-                                       <!------INICIO DEL MODAL DE VER--------->
+                                       <!------INICIO DEL MODAL DE VER
                                        <div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-hidden="true">
                                            <div class="modal-dialog modal-lg">
                                                <div class="modal-content">
@@ -202,9 +202,6 @@
                                                                <div class="conTable2">
                                                                </div>		
                                                            </div>
-                                                           <div class="callout callout-warning advice2 hidden">
-                                                               <center><h4>Ups...No hay partes del mobiliario Registrado asegurese que sean equipos Informatico</h4></center>
-                                                           </div>
                                                            <div class="ln_solid"></div>
                                                            <div class="form-group">
                                                                <div class="col-md-6 col-md-offset-3">
@@ -215,8 +212,8 @@
                                                    </div>
                                             </div>
                                         </div>
-                                     </div>
-                                       <!--end modal -->
+                                     </div>--------->
+                                       <!--Muestro el modal principal de lista -->
                                        <div class="x_content">
                                            <h1 class="text-muted font-13 m-b-30">
                                                Lista de Mobiliarios
@@ -224,12 +221,58 @@
                                            <div class="conTable">
                                            </div>
                                        </div>
+                                       <!-- fin de la lista principal -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------FIN DEL PRIMER MODELO------->
+
+                    <!------INICIO DEL MODELO VER------->
+                    <div class="" id="verMobi">
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!-- main 
+                                    <a class="btn" ><i class="fa fa-reply"></i></a>-->
+                                    <button type="button" onclick="volver();" class="btn btn-default">Volver</button>
+                                    
+                                    <div class="x_content">
+                                        <h1 class="text-muted font-13 m-b-30">
+                                            Lista de Partes del Mobiliario
+                                        </h1>
+                                        <div class="conTable2">
+                                        </div>
+                                        <div  id="myalert" class="alert alert-danger collapse" role="alert">
+                                            <strong>Advertencia!</strong> Este mobiliario no cuentas con partes registradas!!.
+                                        </div>
+                                    </div>
                                        <!-- end main -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- /page content -->
+                    <!------INICIO DEL MODELO VER------->
+                    
                     <footer>
                         <div class="pull-right">
                             Ingenieria de Sistemas Upeu © 2017 <a href="#">Svep Desing 1.0</a>
@@ -245,8 +288,9 @@
            <script>   
        $(document).ready(function () {
               listTable();
+              ocultar();
             });
-
+            
             function listTable() {
                 $.post("<%=request.getContextPath()%>/lis_mobi", function (a) {
                     var lista = a.list;
@@ -263,7 +307,7 @@
                             s += '<td>'+lista[i].comentario+'</td>';
                             s += '<td>'+lista[i].nombre_depar+'</td>';
                             s += '<td>'+lista[i].nombre_Categ+'</td>';
-                            s += '<td><a id='+ lista[i].idMobiliario +' onclick="getData(this.id);" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg2"><i class="fa fa-folder"></i> Ver</a>';
+                            s += '<td><a id='+ lista[i].idMobiliario +' onclick="getData(this.id);" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Ver</a>';
                             s += '<td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>';
                             s += '<td><a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>';
                             s += '</tr>';
@@ -274,12 +318,17 @@
                         $(".mbody").append(s);
                         $("#datatable").dataTable();
                     } else {
-                        alert("No hay datos");
                     }
                 });
             }
-
-
+            
+            function volver(){
+            $("#verMobi").hide(); 
+            $(".conTable2").animatescroll();
+            }
+            function ocultar(){
+               $("#verMobi").hide();
+            }
             function createTable() {
                 var s = '<table id="datatable" class="table table-striped table-bordered">';
                 s += '<thead>';
@@ -303,6 +352,8 @@
 
                 return s;
             }
+
         </script>
+        </div>
     </body>
 </html>

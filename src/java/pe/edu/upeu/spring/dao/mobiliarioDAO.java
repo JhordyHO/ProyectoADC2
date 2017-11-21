@@ -34,7 +34,9 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     
     private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
-    private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
+    //utilzando
+    private final static String SQL_DELETE = "DELETE FROM mobiliario WHERE idMobiliario =?;";
+    private final static String SQL_DELETE2 = "DELETE FROM detallle_partes_mobiliario WHERE iddetallle_partes_mobiliario =?;";
     //utilizando
     private final static String SQL_SEARCHMOB = "SELECT iddetallle_partes_mobiliario,nombre_Mob2,marca_Mob2, serie_Mob2, cantidad2,estado,fechaReg_Mob2, comentario2 "
             + "FROM detallle_partes_mobiliario WHERE idMobiliario=?";
@@ -81,10 +83,30 @@ public class mobiliarioDAO implements Operaciones<mobiliario>{
     public int update(mobiliario d) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
+     @Override
     public int delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int op=0;
+        try{
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_DELETE);
+            ps.setInt(1, id);
+            op = ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error: "+e);
+        }
+        return op; 
+    }
+    public int delete2(String id2){
+        int op=0;
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_DELETE2);
+            ps.setString(1, id2);
+            op = ps.executeUpdate();           
+        } catch (Exception e) {
+            System.out.println("Error:"+ e);
+        }
+       return op;
     }
 
     @Override

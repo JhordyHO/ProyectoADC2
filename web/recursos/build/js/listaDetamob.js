@@ -1,11 +1,14 @@
 
    function getData(id) {
+            $("#verMobi").show(); 
+            $("#verMobi").animatescroll();
             var url = 'vistaMob';
             var data = 'idMob=' + id;//datos a enviar
             try {
                  $.post(url, data, function (obj) {
                     var listaD = obj.ls;
                     if (listaD.length > 0) {
+                        $("#myalert").hide('fade');
                         var l = "";
                         for (var i = 0; i < listaD.length; i++) {
                             l += '<tr>';
@@ -16,30 +19,26 @@
                             l += '<td>'+listaD[i].estado+'</td>';
                             l += '<td>'+listaD[i].fechaReg_Mob2+'</td>';
                             l += '<td>'+listaD[i].comentario2+'</td>';
-                            l += '<td><a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>';
-                            l += '<td><a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>';
+                            l += '<td><a class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>';
+                            l += '<td><a id='+listaD[i].idMobPartes+' onclick="deleteData(this.id)"; class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>';
                             l += '</tr>';
                         }
                         $(".conTable2").empty();
                         $(".conTable2").append(createTable2());
                         $(".mbody2").empty();
                         $(".mbody2").append(l);
-                        $("#datatable2-responsive").dataTable();        
-            } else {
-                $(".advice2").attr("class", "callout callout-warning advice2");
-                $('#cancelarMob').click(function () {
-                    $("#datatable2-responsive").empty();
-                });
+                        $("#datatable2-responsive").dataTable();
+            } else {               
+                $("#myalert").show('fade');
+                $("#datatable2-responsive").empty();
                     }
                 });
 
             } catch (e) {
                 console.error("Error al listar : " + e);
-            }
-
-                }
-                
-
+                        }
+         }
+               
             function createTable2() {
             var l = '<table id="datatable2-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">';
                 l += '<thead>';
@@ -62,5 +61,6 @@
         $('#cancelarMob').click(function() {
 	$("#datatable2-responsive").empty();
              });
+
  
  
