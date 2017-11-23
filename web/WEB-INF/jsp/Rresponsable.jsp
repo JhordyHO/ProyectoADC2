@@ -56,9 +56,8 @@
                                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
-
-                                                <div class="modal-header bg-blue">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">Ã—</span>
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                     </button>
                                                     <h4 class="modal-title" id="myModalLabel">Agregar Nuevo Responsable</h4>
                                                 </div>
@@ -82,25 +81,14 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Apellido Materno<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="apellidoM" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="apellidoM"  class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
                                                             </div>
                                                         </div>
-                                                        <div class="item form-group ">
-                                                            <div class="daterangepicker dropdown-menu ltr single opensright show-calendar picker_1 xdisplay"><div class="calendar left single" style="display: block;"><div class="daterangepicker_input"><input class="input-mini form-control active" type="text" name="daterangepicker_start" value="" style="display: none;"><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none;"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-chevron-left glyphicon glyphicon-chevron-left"></i></th><th colspan="5" class="month">Oct 2016</th><th class="next available"><i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">25</td><td class="off available" data-title="r0c1">26</td><td class="off available" data-title="r0c2">27</td><td class="off available" data-title="r0c3">28</td><td class="off available" data-title="r0c4">29</td><td class="off available" data-title="r0c5">30</td><td class="weekend available" data-title="r0c6">1</td></tr><tr><td class="weekend available" data-title="r1c0">2</td><td class="available" data-title="r1c1">3</td><td class="available" data-title="r1c2">4</td><td class="available" data-title="r1c3">5</td><td class="available" data-title="r1c4">6</td><td class="available" data-title="r1c5">7</td><td class="weekend available" data-title="r1c6">8</td></tr><tr><td class="weekend available" data-title="r2c0">9</td><td class="available" data-title="r2c1">10</td><td class="available" data-title="r2c2">11</td><td class="available" data-title="r2c3">12</td><td class="available" data-title="r2c4">13</td><td class="available" data-title="r2c5">14</td><td class="weekend available" data-title="r2c6">15</td></tr><tr><td class="weekend available" data-title="r3c0">16</td><td class="available" data-title="r3c1">17</td><td class="today active start-date active end-date available" data-title="r3c2">18</td><td class="available" data-title="r3c3">19</td><td class="available" data-title="r3c4">20</td><td class="available" data-title="r3c5">21</td><td class="weekend available" data-title="r3c6">22</td></tr><tr><td class="weekend available" data-title="r4c0">23</td><td class="available" data-title="r4c1">24</td><td class="available" data-title="r4c2">25</td><td class="available" data-title="r4c3">26</td><td class="available" data-title="r4c4">27</td><td class="available" data-title="r4c5">28</td><td class="weekend available" data-title="r4c6">29</td></tr><tr><td class="weekend available" data-title="r5c0">30</td><td class="available" data-title="r5c1">31</td><td class="off available" data-title="r5c2">1</td><td class="off available" data-title="r5c3">2</td><td class="off available" data-title="r5c4">3</td><td class="off available" data-title="r5c5">4</td><td class="weekend off available" data-title="r5c6">5</td></tr></tbody></table></div></div><div class="calendar right" style="display: none;"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value="" style="display: none;"><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none;"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"><table class="table-condensed"><thead><tr><th></th><th colspan="5" class="month">Nov 2016</th><th class="next available"><i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">30</td><td class="off available" data-title="r0c1">31</td><td class="available" data-title="r0c2">1</td><td class="available" data-title="r0c3">2</td><td class="available" data-title="r0c4">3</td><td class="available" data-title="r0c5">4</td><td class="weekend available" data-title="r0c6">5</td></tr><tr><td class="weekend available" data-title="r1c0">6</td><td class="available" data-title="r1c1">7</td><td class="available" data-title="r1c2">8</td><td class="available" data-title="r1c3">9</td><td class="available" data-title="r1c4">10</td><td class="available" data-title="r1c5">11</td><td class="weekend available" data-title="r1c6">12</td></tr><tr><td class="weekend available" data-title="r2c0">13</td><td class="available" data-title="r2c1">14</td><td class="available" data-title="r2c2">15</td><td class="available" data-title="r2c3">16</td><td class="available" data-title="r2c4">17</td><td class="available" data-title="r2c5">18</td><td class="weekend available" data-title="r2c6">19</td></tr><tr><td class="weekend available" data-title="r3c0">20</td><td class="available" data-title="r3c1">21</td><td class="available" data-title="r3c2">22</td><td class="available" data-title="r3c3">23</td><td class="available" data-title="r3c4">24</td><td class="available" data-title="r3c5">25</td><td class="weekend available" data-title="r3c6">26</td></tr><tr><td class="weekend available" data-title="r4c0">27</td><td class="available" data-title="r4c1">28</td><td class="available" data-title="r4c2">29</td><td class="available" data-title="r4c3">30</td><td class="off available" data-title="r4c4">1</td><td class="off available" data-title="r4c5">2</td><td class="weekend off available" data-title="r4c6">3</td></tr><tr><td class="weekend off available" data-title="r5c0">4</td><td class="off available" data-title="r5c1">5</td><td class="off available" data-title="r5c2">6</td><td class="off available" data-title="r5c3">7</td><td class="off available" data-title="r5c4">8</td><td class="off available" data-title="r5c5">9</td><td class="weekend off available" data-title="r5c6">10</td></tr></tbody></table></div></div><div class="ranges" style="display: none;"><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div>
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Fecha CumpleaÃ±os<span class="required">*</span>
-                                                            </label>
-                                                            <fieldset>
-                                                                <div class="control-group col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="controls">
-                                                                        <div class="col-md-11 xdisplay_inputx form-group has-feedback">
-                                                                            <input type="text" class="form-control has-feedback-left" id="single_cal1" id="fecha" placeholder="First Name" aria-describedby="inputSuccess2Status" name="name" >
-                                                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                                                            <span id="inputSuccess2Status" class="sr-only">(success)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </fieldset>
-
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha_Cumpleaños</label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input id="fecha" type="text" class="form-control col-md-7 col-xs-12" data-inputmask="'mask': '99/99/9999'">
+                                                            </div>
                                                         </div>
                                                         <div class="item form-group">
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">DNI<span class="required">*</span>
@@ -110,10 +98,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Telefono<span class="required">*</span>
-                                                            </label>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono</label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="telefono" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                                <input id="telefono" type="text" class="form-control" data-inputmask="'mask' : '(999) 999-999'">
                                                             </div>
                                                         </div>
 
@@ -132,7 +119,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">ContraseÃ±a<span class="required">*</span>
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Contraseña<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                                 <input id="pass" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="password">
@@ -160,8 +147,7 @@
                                                                         while (rst.next()) {%>
                                                                     <option value="<%=rst.getInt("idDepartamento")%>"><%=rst.getString("nombre_depar")%></option>
                                                                     <%}%>
-                                                                </select>
-                                                                
+                                                                </select> 
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -171,154 +157,36 @@
                                                                     <option>Eliga una Opcion</option>
                                                                     <option value="M">Maculino</option>
                                                                     <option value="F">Femenino</option>
-
                                                                 </select>
-                                                               
                                                             </div>
                                                         </div>    
 
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
-                                                   
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                                     <input type="button" id="registrar1" value="registrar" class="btn btn-primary">
                                                 </div>
 
                                             </div>
                                         </div>
-                                    </div>
-                                                       
-                                          <div class="modal fade bs-example-modal-lg12" id="Mmodal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    </div>              
+                                        <div class="modal fade bs-example-modal-lg12" id="Mmodal" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-lg12">
                                             <div class="modal-content">
-                                                
                                                 <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">Ã—</span>
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                     </button>
-                                                    
                                                     <h4 class="modal-title" id="myModalLabel">Actualizar  Responsable</h4>
                                                 </div>
-                                               
                                                 <div class="modal-body">
-                                                   
-                                                    <form  method="post" class="form-horizontal form-label-left" novalidate>
-                                                         
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="nombrexd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name=""  required="required" type="text">
-                                                                <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Apellido Paterno<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                 <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="apellidoxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Apellido Materno<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                 <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="apellidoxd1" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group ">
-                                                            <div class="daterangepicker dropdown-menu ltr single opensright show-calendar picker_1 xdisplay"><div class="calendar left single" style="display: block;"><div class="daterangepicker_input"><input class="input-mini form-control active" type="text" name="daterangepicker_start" value="" style="display: none;"><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none;"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-chevron-left glyphicon glyphicon-chevron-left"></i></th><th colspan="5" class="month">Oct 2016</th><th class="next available"><i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">25</td><td class="off available" data-title="r0c1">26</td><td class="off available" data-title="r0c2">27</td><td class="off available" data-title="r0c3">28</td><td class="off available" data-title="r0c4">29</td><td class="off available" data-title="r0c5">30</td><td class="weekend available" data-title="r0c6">1</td></tr><tr><td class="weekend available" data-title="r1c0">2</td><td class="available" data-title="r1c1">3</td><td class="available" data-title="r1c2">4</td><td class="available" data-title="r1c3">5</td><td class="available" data-title="r1c4">6</td><td class="available" data-title="r1c5">7</td><td class="weekend available" data-title="r1c6">8</td></tr><tr><td class="weekend available" data-title="r2c0">9</td><td class="available" data-title="r2c1">10</td><td class="available" data-title="r2c2">11</td><td class="available" data-title="r2c3">12</td><td class="available" data-title="r2c4">13</td><td class="available" data-title="r2c5">14</td><td class="weekend available" data-title="r2c6">15</td></tr><tr><td class="weekend available" data-title="r3c0">16</td><td class="available" data-title="r3c1">17</td><td class="today active start-date active end-date available" data-title="r3c2">18</td><td class="available" data-title="r3c3">19</td><td class="available" data-title="r3c4">20</td><td class="available" data-title="r3c5">21</td><td class="weekend available" data-title="r3c6">22</td></tr><tr><td class="weekend available" data-title="r4c0">23</td><td class="available" data-title="r4c1">24</td><td class="available" data-title="r4c2">25</td><td class="available" data-title="r4c3">26</td><td class="available" data-title="r4c4">27</td><td class="available" data-title="r4c5">28</td><td class="weekend available" data-title="r4c6">29</td></tr><tr><td class="weekend available" data-title="r5c0">30</td><td class="available" data-title="r5c1">31</td><td class="off available" data-title="r5c2">1</td><td class="off available" data-title="r5c3">2</td><td class="off available" data-title="r5c4">3</td><td class="off available" data-title="r5c5">4</td><td class="weekend off available" data-title="r5c6">5</td></tr></tbody></table></div></div><div class="calendar right" style="display: none;"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value="" style="display: none;"><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none;"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"><table class="table-condensed"><thead><tr><th></th><th colspan="5" class="month">Nov 2016</th><th class="next available"><i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">30</td><td class="off available" data-title="r0c1">31</td><td class="available" data-title="r0c2">1</td><td class="available" data-title="r0c3">2</td><td class="available" data-title="r0c4">3</td><td class="available" data-title="r0c5">4</td><td class="weekend available" data-title="r0c6">5</td></tr><tr><td class="weekend available" data-title="r1c0">6</td><td class="available" data-title="r1c1">7</td><td class="available" data-title="r1c2">8</td><td class="available" data-title="r1c3">9</td><td class="available" data-title="r1c4">10</td><td class="available" data-title="r1c5">11</td><td class="weekend available" data-title="r1c6">12</td></tr><tr><td class="weekend available" data-title="r2c0">13</td><td class="available" data-title="r2c1">14</td><td class="available" data-title="r2c2">15</td><td class="available" data-title="r2c3">16</td><td class="available" data-title="r2c4">17</td><td class="available" data-title="r2c5">18</td><td class="weekend available" data-title="r2c6">19</td></tr><tr><td class="weekend available" data-title="r3c0">20</td><td class="available" data-title="r3c1">21</td><td class="available" data-title="r3c2">22</td><td class="available" data-title="r3c3">23</td><td class="available" data-title="r3c4">24</td><td class="available" data-title="r3c5">25</td><td class="weekend available" data-title="r3c6">26</td></tr><tr><td class="weekend available" data-title="r4c0">27</td><td class="available" data-title="r4c1">28</td><td class="available" data-title="r4c2">29</td><td class="available" data-title="r4c3">30</td><td class="off available" data-title="r4c4">1</td><td class="off available" data-title="r4c5">2</td><td class="weekend off available" data-title="r4c6">3</td></tr><tr><td class="weekend off available" data-title="r5c0">4</td><td class="off available" data-title="r5c1">5</td><td class="off available" data-title="r5c2">6</td><td class="off available" data-title="r5c3">7</td><td class="off available" data-title="r5c4">8</td><td class="off available" data-title="r5c5">9</td><td class="weekend off available" data-title="r5c6">10</td></tr></tbody></table></div></div><div class="ranges" style="display: none;"><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div>
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Fecha CumpleaÃ±os<span class="required">*</span>
-                                                            </label>
-                                                            <fieldset>
-                                                                <div class="control-group col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="controls">
-                                                                        <div class="col-md-11 xdisplay_inputx form-group has-feedback">
-                                                                             <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                            <input type="text" class="form-control has-feedback-left" id="single_cal1" id="fechaxd" placeholder="First Name" aria-describedby="inputSuccess2Status" name="name" >
-                                                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                                                            <span id="inputSuccess2Status" class="sr-only">(success)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </fieldset>
-
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">DNI<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                 <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="dnixd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Telefono<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                 <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="telefonoxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Correo Electronico<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                               <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="correoxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre Usuario<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="userxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="item form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">ContraseÃ±a<span class="required">*</span>
-                                                            </label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="passxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="password">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Rol</label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                 <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="rolxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Departamento</label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="deparxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                 <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">sexo</label>
-                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="idpersonaxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden">
-                                                                <input id="sexoxd" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                               
-                                                            </div>
-                                                        </div>    
-                                                      
+                                                    <form class="form-horizontal form-label-left" novalidate>
+                                                        <div class="model5"></div>
                                                     </form>
-                                                 
-                                                   
                                                 </div>
                                                 <div class="modal-footer">
-                                                   
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                                    <input type="button" id="registrar1" value="registrar" class="btn btn-primary">
+                                                    <button type="submit"  onclick="updateAll();" class="btn btn-primary">Actualizar</button>
                                                 </div>
 
                                             </div>
@@ -349,11 +217,11 @@
             </div>
         </div>
         <%@include file="../../META-INF/jdf/footer.jspf" %>
-
+        <script src="recursos/build/js/script.js" type="text/javascript"></script>
         <script>
             
             
-$(document).ready(function () {
+     $(document).ready(function () {
               listTable();
             });
 
@@ -373,8 +241,8 @@ $(document).ready(function () {
                             s += '<td>'+lista[i].contra+'</td>';
                             s += '<td>'+lista[i].rol+'</td>';
                             s += '<td>'+lista[i].depar+'</td>';
-                            s += '<td><a class="btn btn-info btn-xs" id="capturar" data-toggle="modal" href="#Mmodal"><i class="fa fa-pencil"></i> Editar </a>';
-                             s += '<td><a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal1_${lista.Rol}"><i class="fa fa-trash-o"></i> Eliminar</a>';
+                            s += '<td><a id='+ lista[i].idPersona +' onclick="getper1(this.id);"  class="btn btn-info btn-xs" data-toggle="modal" href="#Mmodal"><i class="fa fa-pencil"></i> Editar </a>';
+                             s += '<td><a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal1"><i class="fa fa-trash-o"></i> Eliminar</a>';
                           
                             s += '</tr>';
                         }
@@ -411,10 +279,200 @@ $(document).ready(function () {
                 s += '</table>';
                 return s;
             }
-            
-            
+            function getper1(id){
+                var url = 'BuscarPer';
+                var data = 'idper='+id; 
+                
+                 $.post(url,data, function(obj){
+                     var listR = obj.ls;
+                           var f='';
+                           if (listR.length > 0) {
+                              for(var i = 0; i< listR.length ; i++){
+
+                             f +=   '<div class="principal item form-group">';
+                             f +=      '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>';
+                             f +=      '</label>';
+                             f +=       '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=          '<input id="nombreper2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name=""  required="required" type="text" value="'+listR[i].nombre_Per+'">';
+                             f +=          '<input id="idper2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name=""  required="required" type="hidden" value="'+listR[i].idPersona+'">';
+                             f +=       '</div>';
+                             f +=   '</div>';
+                             f +=   '<div class="item form-group">';
+                             f +=       '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Apellido Paterno<span class="required">*</span>';
+                             f +=       '</label>';
+                             f +=       '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=           '<input id="apellP2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listR[i].apellidoPater_Per+'">';
+                             f +=       '</div>';
+                             f +=   '</div>';
+                             f +=   '<div class="item form-group">';
+                             f +=       '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Apellido Materno<span class="required">*</span>';
+                             f +=       '</label>';
+                             f +=       '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=            '<input id="apellM2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listR[i].apellidoMater_Per+'">';
+                             f +=        '</div>';
+                             f +=    '</div>';
+                             f +=    '<div class="item form-group">';
+                             f +=        '<label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha_Cumpleaños</label>';
+                             f +=        '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=            '<input id="fecha2" type="text" class="form-control col-md-7 col-xs-12" value="'+listR[i].fechaCumpl_Date+'">';
+                             f +=       ' </div>';
+                             f +=   ' </div>';
+                             f +=   ' <div class="item form-group">';
+                             f +=       ' <label class="control-label col-md-3 col-sm-3 col-xs-12">DNI</label>';
+                             f +=       ' <div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=            '<input id="dni2" type="text" class="form-control col-md-7 col-xs-12" value="'+listR[i].dni_Per+'">';
+                             f +=        '</div>';
+                             f +=    '</div>';
+                             f +=    '<div class="item form-group">';
+                             f +=       ' <label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono</label>';
+                             f +=       ' <div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=           ' <input id="telef2" type="text" class="form-control" value="'+listR[i].telefono_Per+'">';
+                             f +=        '</div>';
+                             f +=   ' </div>';
+                             f +=   ' <div class="item form-group">';
+                             f +=        '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Correo Electronico<span class="required">*</span>';
+                             f +=        '</label>';
+                             f +=        '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=            '<input id="corre2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listR[i].correo_Per+'">';
+                             f +=       ' </div>';
+                             f +=   ' </div>';
+                             f +=   ' <div class="item form-group">';
+                             f +=       ' <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre Usuario<span class="required">*</span>';
+                             f +=       ' </label>';
+                             f +=       ' <div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=            '<input id="user2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listR[i].usuario+'">';
+                             f +=        '</div>';
+                             f +=    '</div>';
+                             f +=    '<div class="item form-group">';
+                             f +=        '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Contraseña<span class="required">*</span>';
+                             f +=        '</label>';
+                             f +=        '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=            '<input id="pass2" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="password" value="'+listR[i].contra+'">';
+                             f +=        '</div>';
+                             f +=    '</div>';
+                             f +=        '<div class="form-group">';
+                             f +=           ' <label class="control-label col-md-3 col-sm-3 col-xs-12">Rol</label>';
+                             f +=            '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=                '<select id="rol2" class="form-control">';
+                             f +=                   ' <option value="">Eliga una Opcion</option>'; 
+                             f +=                   ' <option value="1">Administrador</option>';
+                             f +=                   ' <option value="2">Docente</option>';
+                             f +=               ' </select>';
+                             f +=           ' </div>';
+                             f +=       ' </div>   ';
+                             f +=        '<div class="form-group">';
+                             f +=           ' <label class="control-label col-md-3 col-sm-3 col-xs-12">Departamento</label>';
+                             f +=            '<div class="col-md-6 col-sm-6 col-xs-12">';
+                             f +=                '<select id="depar2" class="form-control">';
+                             f +=                   ' <option value="">Eliga una Opcion</option>';
+                             f +=                   ' <option value="1">Dirección</option>';
+                             f +=                   ' <option value="2">Secretaría</option>';
+                             f +=                   ' <option value="3">Tesorería</option>';
+                             f +=                   ' <option value="4">Caja</option>';
+                             f +=                   ' <option value="5">Dirección Académica</option>';
+                             f +=                   ' <option value="6">Sala Profesores</option>';
+                             f +=                   ' <option value="7">Capellanía</option>';
+                             f +=                   ' <option value="8">Psicología</option>';
+                             f +=                   ' <option value="9">Regencia</option>';
+                             f +=                   ' <option value="10">Lab.Computo</option>';
+                             f +=                   ' <option value="11">Lab.Fisica y Quimica</option>';
+                             f +=                   ' <option value="12">Almacen-Limpiez</option>';
+                             f +=                   ' <option value="13">Almacen general</option>';
+                             f +=                   ' <option value="14">Almacen-Educación Física</option>';
+                             f +=                   ' <option value="15">Inicial 3 años</option>';
+                             f +=                   ' <option value="16">Inicial 4 años</option>';
+                             f +=                   ' <option value="17">Inicial 5 años</option>';
+                             f +=                   ' <option value="18">Primer grado</option>';
+                             f +=                   ' <option value="19">Segundo grado</option>';
+                             f +=                   ' <option value="20">Tercer grado</option>';
+                             f +=                   ' <option value="21">Cuarto grado</option>';
+                             f +=                   ' <option value="22">Quinto grado</option>';
+                             f +=                   ' <option value="23">Sexto Grado</option>';
+                             f +=                   ' <option value="24">Primer año</option>';
+                             f +=                   ' <option value="25">Segundo año</option>';
+                             f +=                   ' <option value="26">Tercer año</option>';
+                             f +=                   ' <option value="27">Cuarto año</option>';
+                             f +=                   ' <option value="28">Quinto año</option>';
+                             f +=               ' </select>';
+                             f +=           ' </div>';
+                             f +=       ' </div>   ';     
+                             
+                              }
+                              $(".model5").empty();
+                              $(".model5").append(f);
+
+                           }
+                 });     
+            }
+            function updateAll(){
+              var idper2 =$("#idper2").val();
+              var nombreper2 = $("#nombreper2").val();
+              var apellP2 =$("#apellP2").val();
+              var apellM2 =$("#apellM2").val();
+              var fecha2 =$("#fecha2").val();
+              var dni2 = $("#dni2").val();
+              var telef2 =$("#telef2").val();
+              var corre2 =$("#corre2").val();
+              var user2 =$("#user2").val();
+              var pass2 =$("#pass2").val();
+              var rol2 =$("#rol2").val();
+              var depar2 =$("#depar2").val();
+            if($("#nombreper2").val().length !==0 && $("#apellP2").val().length !==0 && $("#apellM2").val().length !==0 &&
+               $("#user2").val().length !==0 && $("#pass2").val().length !==0 && $("#rol2").val().length !==0 && $("#depar2").val().length !==0 ){
+                      var opc = "4";                      
+                                $.ajax({
+                                   url:"guardar",
+                                   type: 'POST',
+                                   async: true,
+                                   data: {
+                                       'idper2' : idper2, 
+                                       'nombreper2' : nombreper2,
+                                       'apellP2': apellP2,
+                                       'apellM2': apellM2,
+                                       'fecha2': fecha2,
+                                       'dni2': dni2,
+                                       'telef2': telef2,
+                                       'corre2': corre2,
+                                       'user2': user2,
+                                       'pass2': pass2,
+                                       'rol2': rol2,
+                                       'depar2': depar2,
+                                       'opc': opc  
+                                   },
+                                   success: function (data) {
+                                       
+                                    }                                    
+                               });
+                swal({
+                  title: 'Actualizado!',
+                  text: "Tus datos fueron actualizado!",
+                  type: 'success',
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  showLoaderOnconfirm: true,
+                  
+                    preConfirm: function(){
+                    return new Promise(function(resolve){                    
+                         refresh();
+                      });  
+                    },
+                   allowOutsideClick:  false
+                });
+                
+                   }else{
+                    swal(
+                      'Oops...',
+                      'Por favor ingrese todos los datos!!',
+                      'error'
+                           );
+                       
+                   }                      
+            }
+             function refresh(){
+               location.reload(true);
+            } 
+
         </script>
- <script src="recursos/build/js/script.js" type="text/javascript"></script>
     </body>
-    <script src="recursos/js/moment/sweetalert2.js" type="text/javascript"></script>
 </html>

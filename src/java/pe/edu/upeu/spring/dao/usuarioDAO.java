@@ -8,6 +8,7 @@ package pe.edu.upeu.spring.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,11 +33,11 @@ public class usuarioDAO implements Operaciones<usuarios>{
             + "P.sexo_Per,R.nombre_Rol FROM usuario U,persona P,roles R WHERE U.user=? AND U.pass=? AND P.idPersona = U.idPersona "
             + "AND R.idRoles=P.IdRoles";
     private final static String SQL_CREATE = "INSERT INTO usuario (user, clave) VALUES (?, ?)";
-    private final static String SQL_UPDATE = "UPDATE usuario SET clave=? WHERE idusuario=?";
+    private final static String SQL_UPDATE = "UPDATE usuario SET user = ?, pass = ? WHERE idusuario = ?";
     private final static String SQL_DELETE = "DELETE FROM usuario WHERE idusuario=?";
     private final static String SQL_SEARCH = "SELECT *FROM usuario WHERE user=?";
     private final static String SQL_READALL = "SELECT *FROM usuario";
-    private final static String SQL_BUSCAR = "SELECT *FROM usuario WHERE idusuario=?";
+    private final static String SQL_BUSCAR = "SELECT idusuario, user, pass FROM usuario WHERE idPersona=?";
     
    public ArrayList<Map<String, Object>> validar(String Usuario, String Clave){
        Map<String, Object> m = new HashMap<>();
@@ -76,7 +77,18 @@ public class usuarioDAO implements Operaciones<usuarios>{
 
     @Override
     public int update(usuarios d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    int op = 0;
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_UPDATE);
+            ps.setString(1, d.getUser());
+            ps.setString(2, d.getPass());
+            ps.setInt(3, d.getIdusuario());
+            op = ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("error:"+ex);
+        }
+        return op;
     }
 
     @Override
@@ -98,11 +110,29 @@ public class usuarioDAO implements Operaciones<usuarios>{
     public ArrayList<Map<String, Object>> listar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public List<Map<String, Object>> buscaridUser(String iduser) {
+        List<Map<String, Object>> l = new ArrayList<>();
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(SQL_BUSCAR);
+            ps.setString(1, iduser);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Map<String, Object> lista = new HashMap<>();
+                
+                lista.put("idusuario", rs.getString("idusuario"));
+                lista.put("user", rs.getString("user"));
+                lista.put("pass", rs.getString("pass"));
+                l.add(lista);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("error : " + e);
+        }
+        
+        return l;
+    }
 
-
-
-
-
-   
     
 }

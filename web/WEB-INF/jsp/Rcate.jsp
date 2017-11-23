@@ -65,7 +65,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_Categ">Nombre<span class="required">*</span>
                                                             </label>
                                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                <input id="nombre_Categ" class="form-control col-md-7 col-xs-12"  name="nombre_Categ" required="required" type="text">
+                                                                <input id="nombre_Categ" class="form-control col-md-7 col-xs-12"  name="nombre_Categ" type="text">
                                                             </div>
                                                         </div>
                                                         <br>
@@ -183,48 +183,48 @@
                  <%@include file="../../META-INF/jdf/footer.jspf" %>
             
             <script>
-                                                                $(document).ready(function () {
-                                                                    $(".canceladd").click(function () {
-                                                                        $("#nombre_Categ").val("");
-                                                                    });
-                                                                    $(".submitp").click(function () {
-                                                                        if($("#nombre_Categ").val().length !==0){
-                                                                        $(".insert").submit(function (e) {
-                                                                            e.preventDefault();
-                                                                            var url = "add";
-                                                                            $.post(url, $(".insert").serialize(), function (responseText) {                                                                                
-                                                                                   swal({
-  
-                                                                                    type: 'success',
-                                                                                    title: 'Los datos han sido registrado correctamente!',
-                                                                                    showConfirmButton: false,
-                                                                                    timer: 1500
-                                                                                  })
-                                                                              setTimeout(function(){
-                                                                             $(location).attr('href', responseText);
-                                                                             }, 1000);
-                                                                            });
-                                                                        }).validate({
-                                                                            debug: false,
-                                                                            rules: {
-                                                                                "nombre_Categ": {
-                                                                                    required: true
-                                                                                }
-                                                                            }, messages: {
-                                                                                "nombre_Categ": {
-                                                                                    required: ""
-                                                                                }
-                                                                            }
-                                                                        });
-                                                                        }else{
-                                                                               swal(
-                                                                                    'Oops...',
-                                                                                    'Por favor rellene el campo !',
-                                                                                    'error'
-                                                                                         );
-                                                                        }
-                                                                    });   
-                                                                });             
+            $(document).ready(function () {
+                $(".canceladd").click(function () {
+                    $("#nombre_Categ").val("");
+                });
+                $(".submitp").click(function () {
+                    if($("#nombre_Categ").val().length !==0){
+                    $(".insert").submit(function (e) {
+                        e.preventDefault();
+                        var url = "add";
+                        $.post(url, $(".insert").serialize(), function (responseText) {                                                                                
+                               swal({
+
+                                type: 'success',
+                                title: 'Los datos han sido registrado correctamente!',
+                                showConfirmButton: false,
+                                timer: 1500
+                              });
+                          setTimeout(function(){
+                         $(location).attr('href', responseText);
+                         }, 1000);
+                        });
+                    }).validate({
+                        debug: false,
+                        rules: {
+                            "nombre_Categ": {
+                                required: true
+                            }
+                        }, messages: {
+                            "nombre_Categ": {
+                                required: ""
+                            }
+                        }
+                    });
+                    }else{
+                           swal(
+                                'Oops...',
+                                'Por favor rellene el campo !',
+                                'error'
+                                     );
+                    }
+                });   
+            });             
             </script>  
             <script>
            $(document).on('click', '.delete', function (event) {
@@ -245,13 +245,13 @@
              ),function(){
               event.preventDefault();
                 $(this).closest('tr').remove();
-             }
+             };
             }else{
                 swal("No se ha eliminado.","El registro NO ha sido eliminado.","error");
             }
            });
 
-});
+          });
 
                 </script>
                  

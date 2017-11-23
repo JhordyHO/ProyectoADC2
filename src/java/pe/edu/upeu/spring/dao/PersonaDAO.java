@@ -32,9 +32,10 @@ public class PersonaDAO implements Operaciones<Persona> {
     private ResultSet rs;
     private Connection conex;
     private final String sql_Create = "{CALL PERSONAASD (?,?, ?, ?,?,?,?,?,?,?,?,?)}";
-    private final String sql_READALL = "SELECT nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona";
-    private final String sql_Update = "update persona p, usuario us set us.idPersona=p.idPersona, p.idRol=?, p.idDepartamento=?,p.nombre_Per=?,p.apellidoPater_Per=?,p.apellidoMater_Per=?, p.fechaCumpl_Date=?,p.dni_Per=?,p.telefono_Per=?,p.correo_Per=?,p.sexo_Per=?, us.user=?,us.pass=?  WHERE p.idPersona=us.idPersona and p.idPersona=?";
-
+    private final String sql_READALL = "SELECT persona.idPersona, nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona";
+    private final String sql_Update = "update persona p, usuario us set us.idPersona=p.idPersona, p.idRoles=?, p.idDepartamento=?,p.nombre_Per=?,p.apellidoPater_Per=?,p.apellidoMater_Per=?, p.fechaCumpl_Date=?,p.dni_Per=?,p.telefono_Per=?,p.correo_Per=?, us.user=?,us.pass=?  WHERE p.idPersona=us.idPersona and p.idPersona=?";
+    private final String sql_LISTAR = "SELECT persona.idPersona, nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona WHERE persona.idPersona=?";
+    private final String sql_UPDATE2 ="UPDATE persona SET nombre_Per = ?, apellidoPater_Per = ?, apellidoMater_Per = ?, fechaCumpl_Date = ?, dni_Per = ?, telefono_Per = ?, correo_Per = ? WHERE idPersona = ?";
     @Override
     public int create(Persona d) {
         return 0;
@@ -44,7 +45,23 @@ public class PersonaDAO implements Operaciones<Persona> {
 //To change body of generated methods, choose Tools | Templates.
     @Override
     public int update(Persona d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int op = 0;
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(sql_UPDATE2);
+            ps.setString(1, d.getNombre_Per());
+            ps.setString(2, d.getApellidoPater_Per());
+            ps.setString(3, d.getApellidoMater_Per());
+            ps.setString(4, d.getFechaCumpl_Date());
+            ps.setInt(5, d.getDni_Per());
+            ps.setInt(6, d.getTelefono_Per());
+            ps.setString(7, d.getCorreo_Per());
+            ps.setInt(8, d.getIdPersona());
+            op = ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("error:"+ex);
+        }
+        return op;
     }
 
     @Override
@@ -99,6 +116,7 @@ public class PersonaDAO implements Operaciones<Persona> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Map<String, Object> lista = new HashMap<>();
+                lista.put("idPersona", rs.getString("idPersona"));
                 lista.put("nombre", rs.getString("nombre_Per"));
                 lista.put("rol", rs.getString("nombre_Rol"));
                 lista.put("fecha", rs.getString("fechaCumpl_Date"));
@@ -147,9 +165,8 @@ public class PersonaDAO implements Operaciones<Persona> {
         return op;
 
     }
-
-    public int actualizar(Persona d, usuarios us) {
-
+    
+    public int actualizar(Persona d, usuarios us) {///actualizacion de los los datos de los responsables tabla persona/usuario
         int op = 0;
         try {
             conex = Conexion.getConexion();
@@ -164,15 +181,47 @@ public class PersonaDAO implements Operaciones<Persona> {
             ps.setInt(7, d.getDni_Per());
             ps.setInt(8, d.getTelefono_Per());
             ps.setString(9, d.getCorreo_Per());
-            ps.setString(10, d.getSexo_Per());
-            ps.setString(11, us.getUser());
-            ps.setString(12, us.getPass());
-             ps.setInt(13, d.getIdPersona());
+            ps.setString(10, us.getUser());
+            ps.setString(11, us.getPass());
+            ps.setInt(12, d.getIdPersona());
             op=ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("error:"+ex);
         }
         return op;
     }
+        public List<Map<String, Object>> buscaridPer(String idper) {
+        List<Map<String, Object>> l = new ArrayList<>();
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(sql_LISTAR);//sql_LISTAR
+            ps.setString(1, idper);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Map<String, Object> lista = new HashMap<>();
+                 lista.put("idPersona", rs.getString("idPersona"));
+                lista.put("nombre_Per", rs.getString("nombre_Per"));
+                lista.put("apellidoPater_Per", rs.getString("apellidoPater_Per"));
+                lista.put("apellidoMater_Per", rs.getString("apellidoMater_Per"));
+                lista.put("fechaCumpl_Date", rs.getString("fechaCumpl_Date"));
+                lista.put("dni_Per", rs.getString("dni_Per"));
+                lista.put("telefono_Per", rs.getString("telefono_Per"));
+                lista.put("correo_Per", rs.getString("correo_Per"));
+                lista.put("rol", rs.getString("nombre_Rol"));
+                lista.put("usuario", rs.getString("user"));
+                lista.put("contra", rs.getString("pass"));
+                lista.put("depar", rs.getString("nombre_depar"));
+                
+
+                l.add(lista);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("error : " + e);
+        }
+        
+        return l;
+    }
+
 
 }

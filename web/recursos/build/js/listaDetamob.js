@@ -61,6 +61,10 @@
         $('#cancelarMob').click(function() {
 	$("#datatable2-responsive").empty();
              });
+             
+
+                                                
+       
 
  
  

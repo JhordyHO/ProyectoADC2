@@ -15,9 +15,7 @@
                                     );
                         });
                      }
-
-                                                
-         function deleteData(id){
+                    function deleteData(id){
                  swal({
                   title: 'Are you sure?',
                   text: "You won't be able to revert this!",
@@ -45,7 +43,6 @@
                          
                              })
                        .fail(function(){
-                          getData();
                            swal(
                           'Deleted!',
                           'Your file has been deleted.',
@@ -58,3 +55,7 @@
                    allowOutsideClick:  false
                 });
          }
+
+                     
+                     
+ 

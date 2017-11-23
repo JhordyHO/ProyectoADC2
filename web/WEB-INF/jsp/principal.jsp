@@ -69,11 +69,13 @@
                                                           <i class="fa fa-briefcase user-profile-icon"></i> I.E El Buen Pastor
                                                       </li>
                                                   </ul>
-
-                                                  <button class="btn btn-success" data-toggle="modal" data-target="#modal1"><i class="fa fa-edit m-right-xs"></i>EditarDatos</button>
-                                                  <button class="btn btn-success" data-toggle="modal" data-target="#modal2"><i class="fa fa-edit m-right-xs"></i>EditarUser</button>
-                                                  <br />
+                                                  
+                                                  <!----Botonoes principal--->
+                                                  <button id="${IDPER}" onclick="getidper(this.id)" class="btn btn-success" data-toggle="modal" data-target="#modal1"><i class="fa fa-edit m-right-xs"></i>EditarDatos</button>
+                                                  <button id="${IDPER}" onclick="getiduser(this.id)" class="btn btn-success" data-toggle="modal" data-target="#modal2"><i class="fa fa-edit m-right-xs"></i>EditarUser</button>
+                                                  <br />         
                                               </div>
+                                                  
                                               <div class="modal fade bs-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
                                                   <div class="modal-dialog modal-lg">
                                                       <div class="modal-content">
@@ -85,35 +87,22 @@
                                                           </div>
                                                           <div class="modal-body">
                                                               <form class="form-horizontal form-label-left" novalidate>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Usuario<span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="<c:out value="${USER}"/>">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Contraseña <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
+                                                                 <div class="model2" >
+                                                                 </div>
                                                               </form>
                                                           </div>
                                                           <div class="modal-footer">
                                                               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                                              <button type="button" class="btn btn-primary">Guardar</button>
+                                                              <button type="submit" onclick="update2();" class="btn btn-primary">Actualizar</button>
                                                           </div>
 
                                                       </div>
                                                   </div>
                                               </div>
-                                              <!--modal 2-->
+                                              <!--modal 2-- donde actualiza los datos del usuario-->
                                               <div class="modal fade bs-example-modal-lg" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
                                                   <div class="modal-dialog modal-lg">
                                                       <div class="modal-content">
-
                                                           <div class="modal-header">
                                                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                               </button>
@@ -121,68 +110,16 @@
                                                           </div>
                                                           <!--modal de actualizar-->
                                                           <div class="modal-body">
-                                                              <form class="form-horizontal form-label-left" novalidate>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                              
+                                                                  <form class="form-horizontal form-label-left" novalidate>
+                                                                      <div class="model1" >
                                                                       </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Paterno <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Materno <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Fecha Cumpleaños <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Telefono <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Dirección <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="item form-group">
-                                                                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Email <span class="required">*</span>
-                                                                      </label> 
-                                                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
-                                                                      </div>
-                                                                  </div>
-                                                              </form>
+                                                                  </form>
+                                                              
                                                           </div>
                                                           <div class="modal-footer">
                                                               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                                              <button type="button" class="btn btn-primary">Guardar</button>
+                                                              <button type="submit" onclick="update();" class="btn btn-primary">Actualizar</button>
                                                           </div>
 
                                                       </div>
@@ -260,13 +197,224 @@
       </div>  
       <%@include file="../../META-INF/jdf/footer.jspf" %>
       <script>
-                                                                   function nobackbutton() {
-                                                                       window.location.hash = "no-back-button";
-                                                                       window.location.hash = "Again-No-back-button";
-                                                                       window.onhashchange = function () {
-                                                                           window.location.hash = "";
-                                                                       };
-                                                                   }
+               function nobackbutton() {
+                   window.location.hash = "no-back-button";
+                   window.location.hash = "Again-No-back-button";
+                   window.onhashchange = function () {
+                       window.location.hash = "";
+                   };
+               }
+               function getidper(id){
+                   var url = 'BuscarPer';
+                   var data = 'idper='+id;                  
+                   
+                       $.post(url,data, function(obj){
+                           var listP = obj.ls;
+                           var j='';
+                           if (listP.length > 0) {  
+                               for(var i = 0; i< listP.length ; i++){
+
+                                 j += '<div class="item form-group">';
+                                 j += '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre<span class="required">*</span>';
+                                 j += ' </label> ';
+                                 j +=  '<div class="col-md-6 col-sm-6 col-xs-12">';
+                                 j +=  '    <input id="nombrePer" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].nombre_Per+'">';
+                                 j +=  '    <input id="idper" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden" value="<c:out value="${IDPER}"/>">';
+                                 j +=  '  </div>';
+                                 j +='</div>';
+                                 j += '<div class="item form-group">';
+                                 j +=  '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Paterno <span class="required">*</span>';
+                                 j +=  '   </label> ';
+                                 j +=  '<div class="col-md-6 col-sm-6 col-xs-12">',
+                                 j +=        '<input id="apePat" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].apellidoPater_Per+'">';
+                                 j +=     '</div>';
+                                 j += '</div>';
+                                 j += '<div class="item form-group">';
+                                 j +=     '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Apellido Materno <span class="required">*</span>';
+                                 j +=    '</label>'; 
+                                 j +=    '<div class="col-md-6 col-sm-6 col-xs-12">';
+                                 j +=         '<input id="apeMat" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].apellidoMater_Per+'">';
+                                 j +=     '</div>';
+                                 j += '</div>';
+                                 j += '<div class="item form-group">';
+                                 j +=     '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Fecha Cumpleaños <span class="required">*</span>';
+                                 j +=     '</label> ';
+                                 j +=     '<div class="col-md-6 col-sm-6 col-xs-12">';
+                                 j +=        '<input id="fechaCump" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].fechaCumpl_Date+'">';
+                                 j +=      '</div>',
+                                 j +=  '</div>';
+                                 j +=  '<div class="item form-group">';
+                                 j +=     '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">DNI <span class="required">*</span>';
+                                 j +=     ' </label>', 
+                                 j +=     '<div class="col-md-6 col-sm-6 col-xs-12">';
+                                 j +=         '<input id="dniPer" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].dni_Per+'">';
+                                 j +=  '</div>';
+                                 j +=  '</div>';
+                                 j += '<div class="item form-group">';
+                                 j +=    '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Telefono <span class="required">*</span>';
+                                 j +=    ' </label> ';
+                                 j +=   ' <div class="col-md-6 col-sm-6 col-xs-12">';
+                                 j +=    ' <input id="telefPer" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].telefono_Per+'">';
+                                 j +=     ' </div>';
+                                 j += ' </div>';
+                                 j += '<div class="item form-group">';
+                                 j +=     ' <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Email <span class="required">*</span>';
+                                 j +=  '</label> ';
+                                 j +=  '<div class="col-md-6 col-sm-6 col-xs-12">';
+                                 j +=  '<input id="corrPer" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listP[i].correo_Per+'">';
+                                 j +=  '    </div>';
+                                 j +=  '</div>';
+                                   
+                               }
+                               $(".model1").empty();
+                               $(".model1").append(j);      
+                               
+                           }
+                       });                 
+               }
+               function getiduser(id){
+                   var url = 'BuscarUser';
+                   var data = 'iduser='+id;                  
+                $.post(url,data, function(obj){
+                   var listU = obj.lst;
+                   var p='';
+                   if (listU.length > 0) {
+                        for(var i = 0; i< listU.length ; i++){
+                       p +=   '<div class="item form-group">';
+                       p +=      '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Usuario<span class="required">*</span>';
+                       p +=      '</label> ';
+                       p +=   '<div class="col-md-6 col-sm-6 col-xs-12">';
+                       p +=           '<input id="userp" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text" value="'+listU[i].user+'">';
+                       p +=           '<input id="iduserp" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="hidden" value="'+listU[i].idusuario+'">';
+                       p +=           '</div>';
+                       p +=      '</div>';
+                       p +=       '<div class="item form-group">';
+                       p +=           '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Contraseña <span class="required">*</span>';
+                       p +=           '</label>'; 
+                       p +=           '<div class="col-md-6 col-sm-6 col-xs-12">';
+                       p +=              '<input id="passp" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="password" value="'+listU[i].pass+'">';
+                       p +=           '</div>';
+                       p +=       '</div>'; 
+                            
+                        }
+                        $(".model2").empty();
+                        $(".model2").append(p);
+                   }       
+                });             
+               }
+               function update2(){
+                   var user = $("#userp").val();
+                   var pass = $("#passp").val();
+                   var iduser = $("#iduserp").val();
+                   if($("#userp").val().length !==0 && $("#passp").val().length !==0){
+                      var opc = "3";                      
+                                $.ajax({
+                                   url:"guardar",
+                                   type: 'POST',
+                                   async: true,
+                                   data: {
+                                       'user' : user, 
+                                       'pass' : pass,
+                                       'iduser': iduser,
+                                       'opc': opc
+                                      
+                                   },
+                                   success: function (data) {
+                                       
+                                    }                                    
+                               });
+                swal({
+                  title: 'Actualizado!',
+                  text: "Tus datos fueron actualizado!",
+                  type: 'success',
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  showLoaderOnconfirm: true,
+                  
+                    preConfirm: function(){
+                    return new Promise(function(resolve){                    
+                          refresh();
+                      });  
+                    },
+                   allowOutsideClick:  false
+                });
+                
+                   }else{
+                    swal(
+                      'Oops...',
+                      'Por favor ingrese todos los datos!!',
+                      'error'
+                           );
+                       
+                   }
+                   
+                   console.log(user,pass,iduser);
+               }
+
+               function update(){                 
+                   var nombrePer = $("#nombrePer").val();
+                   var apePat = $("#apePat").val();
+                   var apeMat = $("#apeMat").val();
+                   var fechaCump = $("#fechaCump").val();
+                   var dniPer = $("#dniPer").val();
+                   var telefPer = $("#telefPer").val();
+                   var corrPer = $("#corrPer").val();
+                   var idPer = $("#idper").val();
+                   if ($("#nombrePer").val().length !==0 && $("#apePat").val().length !==0 && $("#apeMat").val().length !==0 && $("#fechaCump").val().length!==0 &&
+                       $("#dniPer").val().length !==0 && $("#telefPer").val().length !==0 && $("#corrPer").val().length !==0) {
+                           var opc = "2";                      
+                                $.ajax({
+                                   url:"guardar",
+                                   type: 'POST',
+                                   async: true,
+                                   data: {
+                                       'nombrePer' : nombrePer, 
+                                       'apePat' : apePat,
+                                       'apeMat' : apeMat,
+                                       'fechaCump' : fechaCump,
+                                       'dniPer' : dniPer,
+                                       'telefPer' : telefPer,
+                                       'corrPer' : corrPer,
+                                       'idper' : idPer,
+                                       'opc': opc
+                                      
+                                   },
+                                   success: function (data) {
+                                       
+                                    }                                    
+                               });
+                swal({
+                  title: 'Actualizado!',
+                  text: "Tus datos fueron actualizado!",
+                  type: 'success',
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  showLoaderOnconfirm: true,
+                  
+                    preConfirm: function(){
+                    return new Promise(function(resolve){                    
+                          refresh();
+                      });  
+                    },
+                   allowOutsideClick:  false
+                });
+
+
+                    }else{
+                       swal(
+                      'Oops...',
+                      'Por favor ingrese todos los datos!!',
+                      'error'
+                           );
+
+                   }
+                    
+               }
+        function refresh(){
+               location.reload(true);
+            }                                                
         </script>
     </body>
 </html>
