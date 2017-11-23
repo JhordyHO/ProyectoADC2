@@ -32,10 +32,12 @@ public class PersonaDAO implements Operaciones<Persona> {
     private ResultSet rs;
     private Connection conex;
     private final String sql_Create = "{CALL PERSONAASD (?,?, ?, ?,?,?,?,?,?,?,?,?)}";
-    private final String sql_READALL = "SELECT persona.idPersona, nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona";
+    private final String sql_READALL = "SELECT persona.idPersona, nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol,usuario.idusuario FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona";
     private final String sql_Update = "update persona p, usuario us set us.idPersona=p.idPersona, p.idRoles=?, p.idDepartamento=?,p.nombre_Per=?,p.apellidoPater_Per=?,p.apellidoMater_Per=?, p.fechaCumpl_Date=?,p.dni_Per=?,p.telefono_Per=?,p.correo_Per=?, us.user=?,us.pass=?  WHERE p.idPersona=us.idPersona and p.idPersona=?";
     private final String sql_LISTAR = "SELECT persona.idPersona, nombre_Per,apellidoPater_Per,apellidoMater_Per,fechaCumpl_Date,dni_Per,telefono_Per,correo_Per,user,pass, departamento.nombre_depar,roles.nombre_Rol FROM persona INNER JOIN roles ON persona.idRoles=roles.idRoles INNER JOIN departamento ON persona.idDepartamento= departamento.idDepartamento INNER JOIN usuario on usuario.idPersona=persona.idPersona WHERE persona.idPersona=?";
     private final String sql_UPDATE2 ="UPDATE persona SET nombre_Per = ?, apellidoPater_Per = ?, apellidoMater_Per = ?, fechaCumpl_Date = ?, dni_Per = ?, telefono_Per = ?, correo_Per = ? WHERE idPersona = ?";
+    private final String sql_delete = "DELETE u, p FROM usuario as u, persona as p WHERE u.idPersona = p.idPersona and u.idusuario=?";
+    
     @Override
     public int create(Persona d) {
         return 0;
@@ -66,7 +68,16 @@ public class PersonaDAO implements Operaciones<Persona> {
 
     @Override
     public int delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int op = 0;
+        try {
+            conex = Conexion.getConexion();
+            ps = conex.prepareStatement(sql_delete);
+            ps.setInt(1, id);
+            op = ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("error:"+ex);
+        }
+        return op;
     }
 
     @Override
@@ -121,13 +132,14 @@ public class PersonaDAO implements Operaciones<Persona> {
                 lista.put("rol", rs.getString("nombre_Rol"));
                 lista.put("fecha", rs.getString("fechaCumpl_Date"));
                 lista.put("dni", rs.getString("dni_Per"));
-                lista.put("telefono", rs.getString("dni_Per"));
+                lista.put("telefono", rs.getString("telefono_Per"));
                 lista.put("correo", rs.getString("correo_Per"));
                 lista.put("usuario", rs.getString("user"));
                 lista.put("contra", rs.getString("pass"));
                 lista.put("depar", rs.getString("nombre_depar"));
                 lista.put("apellidoP", rs.getString("apellidoPater_Per"));
                 lista.put("apellidoM", rs.getString("apellidoMater_Per"));
+                lista.put("idusuario", rs.getInt("idusuario"));
                 l.add(lista);
             }
         } catch (Exception e) {

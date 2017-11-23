@@ -17,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.portlet.bind.annotation.RenderMapping;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.spring.dao.PersonaDAO;
 import pe.edu.upeu.spring.dao.usuarioDAO;
@@ -102,7 +101,7 @@ public class HomeControlerPer {
                 }    
                
                 break;
-            case "3":// update de usuario de usuario logeado
+            case "3":// update de usuario logeado
                 sa.setIdusuario(Integer.parseInt(request.getParameter("iduser")));
                 sa.setUser(request.getParameter("user"));
                 sa.setPass(request.getParameter("pass"));
@@ -135,10 +134,19 @@ public class HomeControlerPer {
                 }
                     
                 } catch (Exception e) {
+                    System.out.println("Error al actualizar : " + e);
                 }
-                
-                
-               break; 
+               break;
+            case "5"://elimina los registro persona y usuario al mismo  tiempo con id=usuario
+                int id = Integer.parseInt(request.getParameter("idup"));
+                try {
+                    if(p.delete(id)>0){
+                       model.setViewName("fromMob");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Error al eliminar"+ e);
+                }
+               break;
                 
         }
      return model;
