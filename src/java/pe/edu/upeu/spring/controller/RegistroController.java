@@ -17,7 +17,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import pe.edu.upeu.spring.dao.Detalle_mobiliarioDAO;
 import pe.edu.upeu.spring.dao.mobiliarioDAO;
+import pe.edu.upeu.spring.model.detalle_mobiliario;
 import pe.edu.upeu.spring.model.mobiliario;
 import pe.edu.upeu.spring.model.mobiliariopartes;
 
@@ -32,6 +34,8 @@ public class RegistroController {
     private mobiliariopartes mob3 = new mobiliariopartes();
     Map<String, Object> mp = new HashMap<>();
     
+    detalle_mobiliario consul=new detalle_mobiliario();
+     private  Detalle_mobiliarioDAO con= new Detalle_mobiliarioDAO();
     @RequestMapping(value = "/maper")
     public ModelAndView RedireccionRenuncia(Model model2, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
@@ -158,5 +162,34 @@ public class RegistroController {
         out.flush();
         out.close();
     }
-
+        //consultar mobiliario
+    @RequestMapping(value = "/regconsul", method = RequestMethod.POST)
+    public ModelAndView crear(Model model90, ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        String opc = request.getParameter("opc");
+        switch (opc) {
+            case "1":
+                consul.setIdMobiliario(Integer.parseInt(request.getParameter("idMobiliariocon")));
+                consul.setIdPersona(Integer.parseInt(request.getParameter("idPersonacon")));
+                consul.setRegFeha_det_Mob(request.getParameter("fechacon"));
+                consul.setEstado_det_Mob(request.getParameter("cantidadcon"));
+                consul.setCantidad_det_Mob(request.getParameter("estadocon"));
+                consul.setDescripcion_det_Mob(request.getParameter("descripcioncon")); 
+                 try {
+                    if(con.create(consul)>0){
+                    //  model1.addAttribute("deyvis",p.listarAmiguito());
+                      model.setViewName("ConsultaMob");
+                      
+                    
+                    }
+                } catch (Exception e) {
+                   e.printStackTrace();
+                     System.out.println("error:"+e);
+                }
+                 break;
+      
+                
+        }
+     return model;
+    }
 }
