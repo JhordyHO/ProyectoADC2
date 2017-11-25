@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../META-INF/jdf/head.jspf" %>
         <title>Institución Educativa El Buen Pastor</title>
@@ -85,20 +86,20 @@
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Fecha<span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="fechacon" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" selected disabled type="text" value="<%=currentDate%>">
+                                                <input id="fechacon" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="fechacon" selected disabled type="text" value="<%=currentDate%>">
                                             </div>
                                         </div>
                                         <div class="item form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Cantidad<span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="cantidadcon" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" required="required" type="text">
+                                                <input id="cantidadcon" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="cantidadcon" required="required" type="text">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select id="estadocon" name="name" class="form-control">
+                                                <select id="estadocon" name="estadocon" class="form-control">
                                                     <option>Eliga una Opcion</option>
                                                     <option value="B">Bueno</option>
                                                     <option value="R">Regular</option>
@@ -107,19 +108,19 @@
 
                                             </div>
                                         </div>  
-                                       
-                                             <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Descripcion<span class="required">*</span>
+                                            
+                                           <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"><span class="required"></span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                               <textarea id="descripcioncon" required="required"  name="name"  ></textarea>
+                                               <textarea id="descripcioncon" required="required"  name="descripcioncon"  ></textarea>
                                             </div>
                                         </div>
                                                <div class="modal-footer">
-                                               <input type="hidden" id="idMobiliariocon" name="name">
-                                                   <input type="hidden" id="idPersonacon" name="name"> 
+                                                   <input type="hidden" class="btn btn-default" id="idmobi" name="idmobi" >   
+                                                   <input type="hidden" class="btn btn-default" id="idper" name="idper" >   
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                                    <input type="button" id="registrarcon" value="registrar" class="btn btn-primary">
+                                    <input type="button" id="registrarcon" value="registrar" class="btn btn-primary">
                                 </div> 
                                     </form>
                                             </div>
@@ -138,7 +139,7 @@
             </div> 
         </div>
             <%@include file="../../META-INF/jdf/footer.jspf" %> 
-            <script src="recursos/build/js/consultaMob.js" type="text/javascript"></script>
+            <script src="recursos/build/js/registrar detalleventa.js" type="text/javascript"></script>
             <script>
                 $(document).ready(function () {
                     listTable();

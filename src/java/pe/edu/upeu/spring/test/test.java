@@ -6,11 +6,14 @@
 package pe.edu.upeu.spring.test;
 
 
+import pe.edu.upeu.spring.dao.Detalle_mobiliarioDAO;
 import pe.edu.upeu.spring.dao.PersonaDAO;
 import pe.edu.upeu.spring.dao.mobiliarioDAO;
 import pe.edu.upeu.spring.dao.rolesDAO;
 import pe.edu.upeu.spring.dao.usuarioDAO;
 import pe.edu.upeu.spring.model.Persona;
+import pe.edu.upeu.spring.model.detalle_mobiliario;
+
 import pe.edu.upeu.spring.model.mobiliario;
 import pe.edu.upeu.spring.model.mobiliariopartes;
 import pe.edu.upeu.spring.model.usuarios;
@@ -26,18 +29,21 @@ public class test {
    public static PersonaDAO per = new PersonaDAO();
    public static Persona p=new Persona();
    public static usuarios u = new usuarios();
-
+   public static  Detalle_mobiliarioDAO de= new Detalle_mobiliarioDAO();
+   
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //validar("dayana", "1234");
+//        validar("deyvis", "garcia");
 //        roles(1);
           //reg();
           //reg2();
           //update();
-          update2();
+////          update2();
+//DELETE();
+registrar1();
           
     }
     
@@ -80,4 +86,30 @@ public class test {
         if(per.actualizar(p, u)>0)
                 System.out.println("se actualzo222");
         }
+        public static void DELETE(){
+            try {
+                if(per.delete(7)>0){
+                    System.out.println("exito");
+                }
+            } catch (Exception e) {
+                System.out.println("error:"+e);
+            }
+
+        
 }
+                    public static void registrar1(){
+                        try {
+                            detalle_mobiliario dey= new detalle_mobiliario(3, 4, "malo", "10/10/10", "123", "malo");
+                       if(de.create(dey)>0){
+                           System.out.println("exito");
+                       
+                       } else{
+                        System.out.println("error");
+                       }
+                        } catch (Exception e) {
+                            
+                            System.out.println("error"+e);
+                        }
+            }
+}
+
